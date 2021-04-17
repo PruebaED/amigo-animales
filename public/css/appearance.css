@@ -1,0 +1,16 @@
+/* Ajustes - Perfil */
+.justificado {
+  text-align: justify;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #e74c3c;
+  color: #000;
+  font-size: 18px;
+  border-radius: 2px;
+}
+/* ... */

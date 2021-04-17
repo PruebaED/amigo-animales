@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: url('../images/menu.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .toggle.active {
+  background: url(../images/close.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 30px;
+}
+
+header .toggle:before {
+  content: "Menú";
+  position: absolute;
+  right: 45px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 22px;
+  padding: 2px 5px;
+  background: #fff;
+  color: #111;
+}
+
+header .toggle.active:before {
+  content: "Cerrar";
+}
+
+header .logo {
+  position: relative;
+  font-size: 2em;
+  color: #111;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 rgba (0, 0, 0, 0.1);
+  transform: 0.5s;
+}
+
+header .logo:hover {
+  color: #111;
+}
+
+section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  transition-delay: 2.2s;
+}
+
+section.active .glass {
+  width: 100%;
+  backdrop-filter: blur(20px);
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+  transition-delay: 0s;
+}
+
+section .content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  transition: 0.5s;
+  transition-delay: 2.2s;
+}
+
+section.active .content{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200px);
+  transition-delay: 0s;
+}
+
+section .content h2 {
+  position: relative;
+  color: #fff;
+  font-size: 10vw;
+  line-height: 0.55em;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+section .content h2 span {
+  font-size: 0.2em;
+  font-weight: 300;
+  letter-spacing: 5px;
+  background: #fff;
+  color: #111;
+  padding: 0 10px;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+section .navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+section .navigation li {
+  list-style: none;
+  text-align: center;
+  margin: 15px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  transform: translateX(200px);
+  transition-delay: calc(0.2s * var(--i));
+}
+
+section.active .navigation li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+section .navigation li a {
+  color: #111;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  background: #fff;
+  padding: 4px 10px;
+  display: inline-block;
+}
+
+section .navigation li a:hover {
+  background: #111;
+  color: #fff;
+  letter-spacing: 10px;
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 20px;
+  }
+  .glass {
+    width: 50%;
+  }
+  section .content h2 {
+    font-size: 18vw;
+  }
+  section .content h2 span {
+    font-size: 0.25em;
+    letter-spacing: 2px;
+    padding: 0 5px;
+  }
+}
+/* ... */
+
+/* Sección animales */
+.single-content {
+  position: relative;
+  transition: 0.3s;
+  box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.8);
+}
+
+.single-content .text-content, .single-content:after {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+}
+
+.single-content:after {
+  content: '';
+  display: block;
+  background: crimson;
+  top: 20px;
+  bottom: 20px;
+  opacity: 0;
+  transform: rotate3d(-1, 1, 0, 100deg);
+  transition: 0.4s;
+}
+
+.single-content:hover:after {
+  opacity: 0.9;
+  transform: rotate3d(0, 0, 0, 0deg);
+}
+
+.single-content img {
+  width: 100%;
+  height: auto;
+}
+
+.text-content {
+  top: 45%;
+  opacity: 0;
+  z-index: 1;
+  transform: translate(10%, -30%);
+  transition: 0.3s;
+  text-align: center;
+  color: #fff;
+}
+
+.single-content:hover .text-content {
+  opacity: 1;
+  transform: translate(0, -50%);
+  transition-delay: 0.3s;
+}
+/* ... */

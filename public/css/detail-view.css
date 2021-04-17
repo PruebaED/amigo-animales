@@ -1,0 +1,41 @@
+/* Vista detalle */
+.icono {
+  width: 20%;
+}
+
+.link-detalle {
+  text-decoration: none;
+}
+
+.justificado {
+	text-align: justify;	
+}
+
+/* Tamaño sm */
+@media screen and (min-width: 576px) {
+  .icono {
+    width: 20%;
+  }
+}
+
+/* Tamaño md */
+@media screen and (min-width: 768px) {
+  .icono {
+    width: 15%;
+  }
+}
+
+/* A partir de tamaño lg */
+@media screen and (min-width: 992px) {
+	.icono {
+    width: 18%;
+  }
+}
+
+/* A partir de tamaño xl */
+@media screen and (min-width: 1200px) {
+	.icono {
+    width: 15%;
+  }
+}
+/* ... */

@@ -1,0 +1,193 @@
+/* Animales PPP */
+.justificado {
+  text-align: justify;
+}
+
+  /* Efecto imagenes animales PPP */
+.imagen {
+  overflow: hidden;
+  height: 300px;
+  width: 350px;
+  position: relative;
+  cursor: pointer;
+  margin: 0 15px;
+  transition: .5s;
+}
+
+.imagen:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-140%, -50%);
+  background-color: rgba(54, 216, 116, 0.8);
+  border-radius: 50%;
+  transition: .8s;
+}
+
+.imagen:hover:after {
+  transform: translate(-13%, -50%);
+}
+
+/* Tamaño sm */
+@media screen and (min-width: 576px) {	
+  .imagen:hover:after {
+    transform: translate(-7%, -50%);
+  }	
+}
+
+/* Tamaño md */
+@media screen and (min-width: 768px) {
+  .imagen:hover:after {
+    transform: translate(3%, -50%);
+  }	
+}
+
+/* Tamaño md-2 */
+@media screen and (min-width: 850px) {
+  .imagen:hover:after {
+    transform: translate(7%, -50%);
+  }	
+}
+
+/* Tamaño md-3 */
+@media screen and (min-width: 880px) {
+  .imagen:hover:after {
+    transform: translate(10%, -50%);
+  }	
+}
+
+/* Tamaño md-4 */
+@media screen and (min-width: 930px) {
+  .imagen:hover:after {
+    transform: translate(13%, -50%);
+  }	
+}
+
+/* A partir de tamaño lg */
+@media screen and (min-width: 992px) {	
+  .imagen:hover:after {
+    transform: translate(16%, -50%);
+  }	
+}
+
+/* Tamaño lg-2 */
+@media screen and (min-width: 1050px) {	
+  .imagen:hover:after {
+    transform: translate(19%, -50%);
+  }	
+}
+
+/* Tamaño lg-3*/
+@media screen and (min-width: 1100px) {	
+  .imagen:hover:after {
+    transform: translate(23%, -50%);
+  }	
+}
+
+/* Tamaño lg-4*/
+@media screen and (min-width: 1150px) {	
+  .imagen:hover:after {
+    transform: translate(26%, -50%);
+  }	
+}
+
+/* A partir de tamaño xl */
+@media screen and (min-width: 1200px) {	
+  .imagen:hover:after {
+    transform: translate(-13%, -50%);
+  }	
+}
+
+.imagen:hover img {
+  transform: translate(-50%, -50%) scale(1.3) rotate(10deg);
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .8s;
+}
+
+.titulo {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-2000px, -50%);
+  color: #fff;
+  transition: .8s;
+  transition-timing-function: ease-in;
+}
+
+.imagen:hover .titulo {
+  transform: translate(-50%, -50%);
+  transition-timing-function: ease;
+}
+  /* ... */
+
+  /* Efecto lista animales PPP */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista {
+  position: relative;
+}
+
+.lista ul {
+  position: relative;
+}
+
+.lista ul li {
+  position: relative;
+  left: 0.1;
+  list-style: none;
+  margin: 8px 0;
+  border-left: 2px solid #111;
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+.lista ul li::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.8s;
+}
+
+.lista ul li:hover::before {
+  transform: scaleX(1);
+}
+
+.lista ul li:hover {
+  left: 10px;
+}
+
+.lista ul li span {
+  position: relative;
+  padding: 8px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.lista ul li:hover span {
+  color: white;
+}
+  /* ... */
+
+.link {
+  text-decoration: none;
+}
+
+/* ... */

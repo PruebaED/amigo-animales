@@ -1,0 +1,91 @@
+/* Rescate */
+.justificado {
+  text-align: justify;
+}
+
+/* Efecto lista rescate */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista {
+  position: relative;
+}
+
+.lista ul {
+  position: relative;
+}
+
+.lista ul li {
+  position: relative;
+  left: 0.1;
+  list-style: none;
+  margin: 8px 0;
+  border-left: 2px solid #111;
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+.lista ul li::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.8s;
+}
+
+.lista ul li:hover::before {
+  transform: scaleX(1);
+}
+
+.lista ul li:hover {
+  left: 10px;
+}
+
+.lista ul li span {
+  position: relative;
+  padding: 8px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.lista ul li:hover span {
+  color: white;
+}
+/* ... */
+
+.link {
+  text-decoration: none;
+}
+
+.icono {
+  width: 9%;
+}
+
+/* Tamaño md */
+@media screen and (min-width: 768px) {
+  .icono {
+    width: 7%;
+  }
+}
+
+/* A partir de tamaño lg */
+@media screen and (min-width: 992px) {
+	.icono {
+    width: 5%;
+  }
+}
+
+/* A partir de tamaño xl */
+@media screen and (min-width: 1200px) {
+	.icono {
+    width: 4%;
+  }
+}
+
+/* ... */

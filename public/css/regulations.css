@@ -1,0 +1,34 @@
+/* Normativa */
+.justificado {
+  text-align: justify;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.icono {
+  width: 9%;
+}
+
+/* Tamaño md */
+@media screen and (min-width: 768px) {
+  .icono {
+    width: 7%;
+  }
+}
+
+/* A partir de tamaño lg */
+@media screen and (min-width: 992px) {
+	.icono {
+    width: 5%;
+  }
+}
+
+/* A partir de tamaño xl */
+@media screen and (min-width: 1200px) {
+	.icono {
+    width: 8.5%;
+  }
+}
+/* ... */

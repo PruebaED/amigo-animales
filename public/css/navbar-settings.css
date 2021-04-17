@@ -1,0 +1,27 @@
+/* Navbar - Settings */
+.nav-link {
+  text-decoration: none;
+  color: rgba(34,54,69,0.7);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #e74c3c !important;
+}
+
+.nav-link:active {
+  background-color: #f8f9fa !important;
+}
+
+.nav-link:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.vertical-menu {
+  border-left: 1px solid #e74c3c;
+}
+/* ... */
