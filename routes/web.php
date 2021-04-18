@@ -13,65 +13,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+Route::get('deliver', 'App\Http\Controllers\AnimalsController@deliver');
+
+Route::get('detail-view/{id}', 'App\Http\Controllers\AnimalsController@detail_view');
+
+Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@missing_animals');
+
+Route::get('rescue', 'App\Http\Controllers\AnimalsController@rescue');
+
+// Se modificará cuándo se llegue al apartado de AUTH.
+Route::get('login-register', function () {
+  return view('auth.login-register');
 });
 
-Route::get('/deliver', function () {
-    return view('animals.deliver');
-});
+Route::get('about-us', 'App\Http\Controllers\ContactController@about_us');
 
-// TO-DO. Adaptar la ruta vista-detalle de un animal en adopción. Al hacer click en un animal
-// de los del listado, se recoge su id, se pasa a la vista-detalle, mostrando el animal que
-// corresponda.
-Route::get('/detail-view', function () {
-    return view('animals.detail-view');
-});
+Route::get('contact-form', 'App\Http\Controllers\ContactController@contact_form');
 
-Route::get('/missing-animals', function () {
-    return view('animals.missing-animals');
-});
+Route::get('contact-information', 'App\Http\Controllers\ContactController@contact_information');
 
-Route::get('/rescue', function () {
-    return view('animals.rescue');
-});
+Route::get('animals-pd', 'App\Http\Controllers\InformationController@animals_pd');
 
-Route::get('/login-register', function () {
-    return view('auth.login-register');
-});
+Route::get('regulations', 'App\Http\Controllers\InformationController@regulations');
 
-Route::get('/about-us', function () {
-    return view('contact.about-us');
-});
+Route::get('account', 'App\Http\Controllers\SettingsController@account');
 
-Route::get('/contact-form', function () {
-    return view('contact.contact-form');
-});
+Route::get('appearance', 'App\Http\Controllers\SettingsController@appearance');
 
-Route::get('/contact-information', function () {
-    return view('contact.contact-information');
-});
+Route::get('profile', 'App\Http\Controllers\SettingsController@profile');
 
-Route::get('/animals-pd', function () {
-    return view('information.animals-pd');
-});
-
-Route::get('/regulations', function () {
-    return view('information.regulations');
-});
-
-Route::get('/account', function () {
-    return view('settings.account');
-});
-
-Route::get('/appearance', function () {
-    return view('settings.appearance');
-});
-
-Route::get('/profile', function () {
-    return view('settings.profile');
-});
-
-Route::get('/security', function () {
-    return view('settings.security');
-});
+Route::get('security', 'App\Http\Controllers\SettingsController@security');
