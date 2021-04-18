@@ -26,7 +26,7 @@
   <body>
 
     <!-- Navbar - Settings -->
-    <div class="col-2 offset-4 offset-lg-2">
+    <div class="col-2 offset-4 offset-md-2">
       <ul class="nav flex-column vertical-menu">
         <li class="nav-item">
           <a class="nav-link active" href="perfil.html">Perfil</a>

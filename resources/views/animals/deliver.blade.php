@@ -66,19 +66,19 @@
           en el Centro. No se hacen distinciones sobre si la persona que solicita la entrega es el propietario del animal o si por cualquier causa es solamente su
           poseedor temporal.</strong></p>
           <p class="justificado mt-4"> 
-            <img class="icono mx-3" src="imagenes/pdf.png" alt=""> 
-            <a class="link" href="descargables/entrega.pdf" target="_blank">Solicitud de entrega de animal</a>
+            <img class="icono mx-3" src="images/pdf.png" alt=""> 
+            <a class="link" href="downloadables/deliver.pdf" target="_blank">Solicitud de entrega de animal</a>
           </p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="imagenes/pdf.png" alt=""> 
-            <a class="link" href="descargables/rescate.pdf" target="_blank">Solicitud de rescate de animal</a>
+            <img class="icono mx-3" src="images/pdf.png" alt=""> 
+            <a class="link" href="downloadables/rescue.pdf" target="_blank">Solicitud de rescate de animal</a>
           </p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="imagenes/pdf.png" alt=""> 
-            <a class="link" href="descargables/retirada.pdf" target="_blank">Solicitud de retirada del domicilio</a>
+            <img class="icono mx-3" src="images/pdf.png" alt=""> 
+            <a class="link" href="downloadables/move-away.pdf" target="_blank">Solicitud de retirada del domicilio</a>
           </p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="imagenes/pago.png" alt=""> 
+            <img class="icono mx-3" src="images/pago.png" alt=""> 
             <a class="link" href="https://seguro.cartagena.es/sedeelectronica/tramites/detalleTramite.asp?codtramite=290" target="_blank">Formulario de autoliquidación</a>
           </p>
         </div>

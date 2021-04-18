@@ -1,6 +1,6 @@
 /* Acerca de nosotros - Parte superior */
 .bienvenida {
-	background: url('../imagenes/acercadenosotros.jpg') no-repeat center;
+	background: url('../images/acercadenosotros.jpg') no-repeat center;
 	background-size: cover;
 	background-attachment: fixed;
 	height: 100vh; 	/*100vh es 100% de la pantalla del usuario*/
@@ -34,7 +34,7 @@ body {
 }
 
 .about-section {
-  background: url('../imagenes/acercadenosotros2.jpg') no-repeat left;
+  background: url('../images/acercadenosotros2.jpg') no-repeat left;
   background-size: 55%;
   background-color: #fdfdfd;
   overflow: hidden;

@@ -53,7 +53,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header"> <h5 class="modal-title" id="exampleModalLongTitle">¿Estás seguro?</h5> </div>
-              <div class="modal-body"> 
+              <div class="modal-body justificado"> 
                 Es necesario que tengas en cuenta que el cambio de tu nombre puede generar una serie de problemas. <br> <br> Todas las acciones que hayas realizado en la 
                 página (adopción, entrega, contacto...) se mantendrán con tu antiguo nombre de usuario. Ello podría dificultar la identificación del titular que realizó
                 cualquiera de las mencionadas acciones.
@@ -83,7 +83,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header"> <h5 class="modal-title" id="exampleModalLongTitle">¿Estás seguro?</h5> </div>
-              <div class="modal-body"> 
+              <div class="modal-body justificado"> 
                 Es necesario que tengas en cuenta que vas a llevar a cabo una acción que NO es reversible. <br><br>Una vez confirmes el borrado de tu cuenta, desaparecerá
                 para siempre. No habrá posibilidad de recuperarla, ni tampoco cualquier tipo de acción o contenido asociado a la misma.
                 <form>

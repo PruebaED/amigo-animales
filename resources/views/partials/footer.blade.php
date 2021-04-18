@@ -11,15 +11,15 @@
 </head>
 <body>
 	<footer class="row footer mt-5">
-		<div class="footer-col col-md-6 col-xl-3 offset-xl-1">
+		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">
 			<h4>Tratamiento de los datos</h4>
 			<ul>
-				<li><a href="descargables/privacy-policy.pdf" target="_blank">Política de privacidad</a></li>
-				<li><a href="descargables/cookies.pdf" target="_blank">Uso de cookies</a></li>
+				<li><a href="downloadables/privacy-policy.pdf" target="_blank">Política de privacidad</a></li>
+				<li><a href="downloadables/cookies.pdf" target="_blank">Uso de cookies</a></li>
 				<li><a href="https://www.aepd.es/es/derechos-y-deberes/conoce-tus-derechos" target="_blank">Ejerce tus derechos | AEPD</a></li>
 			</ul>
 		</div>
-		<div class="footer-col col-md-6 col-xl-3 offset-xl-1">
+		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">
 			<h4>Contacto</h4>
 			<ul>
 				<li><a href="">Teléfono: +34 123 456 789</a></li>
@@ -27,7 +27,7 @@
 				<li><a href="">Localización: Calle Inventada Nº23</a></li>
 			</ul>
 		</div>
-		<div class="footer-col col-md-6 col-xl-3 offset-xl-1">
+		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">
 			<h4>Síguenos</h4>
 			<div class="social-links">
 				<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
