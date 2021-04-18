@@ -23,7 +23,7 @@
     <!-- Navbar -->
     <header class="row sticky-top">
       <nav class="col-12 navbar navbar-expand-xl navbar-light bg-light">
-        <a class="navbar-brand" class="mb-5 mb-lg-0" href="index.html">El Amigo de los Animales</a>
+        <a class="navbar-brand" class="mb-5 mb-lg-0" href="/">El Amigo de los Animales</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span></span>
           <span></span>
@@ -32,46 +32,46 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item inicio">
-              <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link" aria-current="page" href="/">Inicio</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Servicios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                <li><a class="dropdown-item" href="index.html#adopcion">Adopción</a></li>
-                <li><a class="dropdown-item" href="entrega.html">Entrega</a></li>
-                <li><a class="dropdown-item" href="rescate.html">Rescate</a></li>
+                <li><a class="dropdown-item" href="/#adopcion">Adopción</a></li>
+                <li><a class="dropdown-item" href="/deliver">Entrega</a></li>
+                <li><a class="dropdown-item" href="/rescue">Rescate</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="animalesdesaparecidos.html">Animales desaparecidos</a>
+              <a class="nav-link" href="/missing-animals">Animales desaparecidos</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Información de interés
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <li><a class="dropdown-item" href="normativa.html">Normativa</a></li>
-                <li><a class="dropdown-item" href="animalesppp.html">Animales PPP</a></li>
+                <li><a class="dropdown-item" href="/regulations">Normativa</a></li>
+                <li><a class="dropdown-item" href="/animals-pd">Animales PPP</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="perfil.html">Ajustes</a>
+              <a class="nav-link" href="/profile">Ajustes</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Contacto
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                <li><a class="dropdown-item" href="datosdecontacto.html">Datos de contacto</a></li>
-                <li><a class="dropdown-item" href="acercadenosotros.html">Acerca de nosotros</a></li>
-                <li><a class="dropdown-item" href="formulariodecontacto.html">Formulario de contacto</a></li>
+                <li><a class="dropdown-item" href="/contact-information">Datos de contacto</a></li>
+                <li><a class="dropdown-item" href="/about-us">Acerca de nosotros</a></li>
+                <li><a class="dropdown-item" href="/contact-form">Formulario de contacto</a></li>
               </ul>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
-            <a href="registro.html"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
+            <a href="/login-register"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
           </ul>
         </div>
       </nav>

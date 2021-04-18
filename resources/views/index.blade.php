@@ -44,16 +44,16 @@
             <h2><span>No vamos a cambiar el mundo ayudando a un animal, pero al menos el mundo habrá cambiado para él.</span></h2>
           </div>
           <ul class="navigation">
-            <li style="--i:1;"><a href="index.html">Inicio</a></li>
+            <li style="--i:1;"><a href="/">Inicio</a></li>
             <li style="--i:2;"><a href="#adopcion">Adopción</a></li>
-            <li style="--i:3;"><a href="entrega.html">Entrega</a></li>
-            <li style="--i:4;"><a href="rescate.html">Rescate</a></li>
-            <li style="--i:5;"><a href="animalesdesaparecidos.html">Animales desaparecidos</a></li>
-            <li style="--i:6;"><a href="normativa.html">Normativa</a></li>
-            <li style="--i:7;"><a href="animalesppp.html">Animales PPP</a></li>
-            <li style="--i:8;"><a href="formulariodecontacto.html">Contacto</a></li>
-            <li style="--i:9;"><a href="perfil.html">Ajustes</a></li>
-            <li style="--i:10;"><a href="registro.html">Iniciar sesión</a></li>
+            <li style="--i:3;"><a href="/deliver">Entrega</a></li>
+            <li style="--i:4;"><a href="/rescue">Rescate</a></li>
+            <li style="--i:5;"><a href="/missing-animals">Animales desaparecidos</a></li>
+            <li style="--i:6;"><a href="/regulations">Normativa</a></li>
+            <li style="--i:7;"><a href="/animals-pd">Animales PPP</a></li>
+            <li style="--i:8;"><a href="/contact-form">Contacto</a></li>
+            <li style="--i:9;"><a href="/profile">Ajustes</a></li>
+            <li style="--i:10;"><a href="/login-register">Iniciar sesión</a></li>
           </ul>
           <video src="videos/video.mp4" autoplay muted loop></video>
         </section>
