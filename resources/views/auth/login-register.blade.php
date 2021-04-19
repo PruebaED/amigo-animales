@@ -33,6 +33,7 @@
           <div class="imgBx"><img src="images/gato_registro.jpg"></div>
           <div class="formBx">
             <form>
+              @csrf
               <h2>Inicio de sesión</h2>
               <input class="form-control" type="email" name="" placeholder="Email">
               <input class="form-control" type="password" name="" placeholder="Contraseña">
@@ -44,6 +45,7 @@
         <div class="user signupBx">
           <div class="formBx formRegister">
             <form>
+              @csrf
               <h2>Crea una cuenta</h2>
               <input class="form-control" type="text" name="" placeholder="Nombre">
               <input class="form-control" type="text" name="" placeholder="Apellidos">

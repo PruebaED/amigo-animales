@@ -33,62 +33,65 @@
       <!-- ... -->
 
       <!-- Formulario de contacto -->
-      <div class="row mt-5 mb-5"> 
-        <div class="col-10 offset-1"> 
-          <h2>Formulario de contacto</h2> 
+      <form>
+        @csrf
+        <div class="row mt-5 mb-5"> 
+          <div class="col-10 offset-1"> 
+            <h2>Formulario de contacto</h2> 
+          </div>
         </div>
-      </div>
 
-      <div class="row mb-5">
-        <div class="col-8 offset-2">
-          <p class="parrafo justificado">Si desea que nuestro equipo le contacte, le rogamos que rellene los distintos campos que se presentan a continuación. 
-            Nos pondremos en contacto con .Vd con la mayor brevedad posible.
-          </p>
+        <div class="row mb-5">
+          <div class="col-8 offset-2">
+            <p class="parrafo justificado">Si desea que nuestro equipo le contacte, le rogamos que rellene los distintos campos que se presentan a continuación. 
+              Nos pondremos en contacto con .Vd con la mayor brevedad posible.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
-          <div class="inputBox">
-            <input type="text" name="" required="required">
-            <span class="text">Nombre</span>
-            <span class="line"></span>
+        <div class="row">
+          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
+            <div class="inputBox">
+              <input type="text" name="" required="required">
+              <span class="text">Nombre</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
+            <div class="inputBox">
+              <input type="text" name="" required="required">
+              <span class="text">Apellidos</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
+            <div class="inputBox">
+              <input type="text" name="" required="required">
+              <span class="text">Email</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
+            <div class="inputBox">
+              <input type="text" name="" required="required">
+              <span class="text">Teléfono</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col-10 col-xl-8 offset-1 offset-xl-2 mb-5">
+            <div class="inputBox">
+              <input type="text" name="" required="required">
+              <span class="text">Motivo de la consulta</span>
+              <span class="line"></span>
+            </div>
           </div>
         </div>
-        <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
-          <div class="inputBox">
-            <input type="text" name="" required="required">
-            <span class="text">Apellidos</span>
-            <span class="line"></span>
+        <div class="row">
+          <div class="text-center col-10 offset-1 mb-5">
+            <input type="submit" value="Enviar">
           </div>
         </div>
-        <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
-          <div class="inputBox">
-            <input type="text" name="" required="required">
-            <span class="text">Email</span>
-            <span class="line"></span>
-          </div>
-        </div>
-        <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
-          <div class="inputBox">
-            <input type="text" name="" required="required">
-            <span class="text">Teléfono</span>
-            <span class="line"></span>
-          </div>
-        </div>
-        <div class="col-10 col-xl-8 offset-1 offset-xl-2 mb-5">
-          <div class="inputBox">
-            <input type="text" name="" required="required">
-            <span class="text">Motivo de la consulta</span>
-            <span class="line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="text-center col-10 offset-1 mb-5">
-          <input type="submit" value="Enviar">
-        </div>
-      </div>
+      </form>
       <!-- ... -->
 
       <!-- Footer -->
