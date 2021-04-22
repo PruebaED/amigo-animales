@@ -19,7 +19,7 @@ class CreateAnimalsTable extends Migration
             $table->integer('age');
             $table->enum('gender', ['macho', 'hembra']);
             $table->string('breed', 255);
-            $table->float('weight', 3, 2);
+            $table->float('weight', 5, 2);
             $table->date('date');
             $table->string('image', 255);
             $table->enum('state', ['en acogida', 'en adopcion', 'urgente', 'desaparecido']);
