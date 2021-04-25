@@ -17,7 +17,7 @@ class CreateAnimalsTable extends Migration
             $table->id('animal_id');
             $table->string('name', 255);
             $table->integer('age');
-            $table->enum('gender', ['macho', 'hembra']);
+            $table->enum('gender', ['Macho', 'Hembra']);
             $table->string('breed', 255);
             $table->float('weight', 5, 2);
             $table->date('date');

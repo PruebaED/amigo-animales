@@ -6,22 +6,22 @@ use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
-  public function account()
+  public function getAccount()
   {
     return view('settings.account');
   }
 
-  public function appearance()
+  public function getAppearance()
   {
     return view('settings.appearance');
   }
 
-  public function profile()
+  public function getProfile()
   {
     return view('settings.profile');
   }
 
-  public function security()
+  public function getSecurity()
   {
     return view('settings.security');
   }

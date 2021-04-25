@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Animal;
 
 class HomeController extends Controller
 {
-  public function index()
+  public function getAnimalsToAdopt()
   {
-    return view('index');
+    return view('index', array('animalsToAdopt' => Animal::all()->where('state', 'en adopcion')));
   }
 }

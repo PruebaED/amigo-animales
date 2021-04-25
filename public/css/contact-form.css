@@ -43,7 +43,7 @@ body {
   color: #45f3ff;
 }
 
-.container-fluid .row .inputBox input, .container-fluid .row .inputBox.textarea textarea {
+.container-fluid .row .inputBox input {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -95,21 +95,6 @@ body {
   width: 100%;
   height: 100%;
   padding: 10px 0;
-}
-
-.container-fluid .row .inputBox.textarea textarea {
-  height: 100%;
-  overflow: hidden;
-  resize: none;
-} 
-
-.container-fluid .row .inputBox textarea:focus + .text, .container-fluid .row .inputBox textarea:valid + .text {
-  top: -35px;
-  left: -10px;
-}
-
-.container-fluid .row .inputBox textarea:focus ~ .line, .container-fluid .row .inputBox textarea:valid ~ .line {
-  height: 100%;
 }
 
 input[type="submit"] {

@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class InformationController extends Controller
 {
-  public function animals_pd()
+  public function getAnimalsPd()
   {
     return view('information.animals-pd');
   }
 
-  public function regulations()
+  public function getRegulations()
   {
     return view('information.regulations');
   }

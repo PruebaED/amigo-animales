@@ -13,35 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/', 'App\Http\Controllers\HomeController@getAnimalsToAdopt');
 
-Route::get('deliver', 'App\Http\Controllers\AnimalsController@deliver');
+Route::get('deliver', 'App\Http\Controllers\AnimalsController@getDeliver');
 
-Route::get('detail-view/{id}', 'App\Http\Controllers\AnimalsController@detail_view');
+Route::get('detail-view/{id}', 'App\Http\Controllers\AnimalsController@getDetailView');
 
-Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@missing_animals');
+Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@getMissingAnimals');
 
-Route::get('rescue', 'App\Http\Controllers\AnimalsController@rescue');
+Route::get('rescue', 'App\Http\Controllers\AnimalsController@getRescue');
 
-// Se modificará cuándo se llegue al apartado de AUTH.
-Route::get('login-register', function () {
-  return view('auth.login-register');
-});
+Route::get('login-register', 'App\Http\Controllers\AuthController@getLoginRegister');
 
-Route::get('about-us', 'App\Http\Controllers\ContactController@about_us');
+Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
 
-Route::get('contact-form', 'App\Http\Controllers\ContactController@contact_form');
+Route::get('contact-form', 'App\Http\Controllers\ContactController@getContactForm');
 
-Route::get('contact-information', 'App\Http\Controllers\ContactController@contact_information');
+Route::get('contact-information', 'App\Http\Controllers\ContactController@getContactInformation');
 
-Route::get('animals-pd', 'App\Http\Controllers\InformationController@animals_pd');
+Route::get('animals-pd', 'App\Http\Controllers\InformationController@getAnimalsPd');
 
-Route::get('regulations', 'App\Http\Controllers\InformationController@regulations');
+Route::get('regulations', 'App\Http\Controllers\InformationController@getRegulations');
 
-Route::get('account', 'App\Http\Controllers\SettingsController@account');
+Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
 
-Route::get('appearance', 'App\Http\Controllers\SettingsController@appearance');
+Route::get('appearance', 'App\Http\Controllers\SettingsController@getAppearance');
 
-Route::get('profile', 'App\Http\Controllers\SettingsController@profile');
+Route::get('profile', 'App\Http\Controllers\SettingsController@getProfile');
 
-Route::get('security', 'App\Http\Controllers\SettingsController@security');
+Route::get('security', 'App\Http\Controllers\SettingsController@getSecurity');

@@ -66,78 +66,20 @@
           <h1 class="text-center mt-5 mb-5"> Animales en adopción </h1> 
           <hr class="mb-4">
         </div>
-        <div class="col-sm-6 col-lg-4 mb-5">
+        @foreach($animalsToAdopt as $key => $animal) 
+        <div class="col-md-10 col-lg-6 col-xl-4 mb-5">
           <div class="single-content">
-            <img src="images/img1.jpg" alt="">
+            <img src="{{ $animal->image }}" alt="">
             <div class="text-content">
-              <h5 class="mt-3 mb-2">Juan</h5>
-              <h5 class="mb-2">Perro</h5>
-              <h5 class="mb-2">Murcia</h5>
+              <h5 class="mt-3 mb-2">{{ $animal->name }}</h5>
+              <h5 class="mb-2">{{ $animal->breed }}</h5>
+              <h5 class="mb-2">{{ $animal->province_id }}</h5>
               <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" class="btn btn-primary mt-3 mx-3">Más información</button>
+              <button type="button" onclick="window.location.href='{{ url('detail-view/' . $animal->animal_id ) }}';" class="btn btn-primary mt-3 mx-3">Más información</button>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mb-5">
-          <div class="single-content">
-            <img src="images/img2.jpg" alt="">
-            <div class="text-content">
-              <h5 class="mt-3 mb-2">Juan</h5>
-              <h5 class="mb-2">Perro</h5>
-              <h5 class="mb-2">Murcia</h5>
-              <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" class="btn btn-primary mt-3 mx-3">Más información</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-5">
-          <div class="single-content">
-            <img src="images/img3.jpg" alt="">
-            <div class="text-content">
-              <h5 class="mt-3 mb-2">Juan</h5>
-              <h5 class="mb-2">Perro</h5>
-              <h5 class="mb-2">Murcia</h5>
-              <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" class="btn btn-primary mt-3 mx-3">Más información</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-5">
-          <div class="single-content">
-            <img src="images/img1.jpg" alt="">
-            <div class="text-content">
-              <h5 class="mt-3 mb-2">Juan</h5>
-              <h5 class="mb-2">Perro</h5>
-              <h5 class="mb-2">Murcia</h5>
-              <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" class="btn btn-primary mt-3 mx-3">Más información</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-5">
-          <div class="single-content">
-            <img src="images/img2.jpg" alt="">
-            <div class="text-content">
-              <h5 class="mt-3 mb-2">Juan</h5>
-              <h5 class="mb-2">Perro</h5>
-              <h5 class="mb-2">Murcia</h5>
-              <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" class="btn btn-primary mt-3 mx-3">Más información</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-5">
-          <div class="single-content">
-            <img src="images/img3.jpg" alt="">
-            <div class="text-content">
-              <h5 class="mt-3 mb-2">Juan</h5>
-              <h5 class="mb-2">Perro</h5>
-              <h5 class="mb-2">Murcia</h5>
-              <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" class="btn btn-primary mt-3 mx-3">Más información</button>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </section>
       <!-- ... -->
 

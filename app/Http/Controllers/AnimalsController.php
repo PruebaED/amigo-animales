@@ -3,27 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Animal;
 
 class AnimalsController extends Controller
 {
-  public function deliver()
+  public function getDeliver()
   {
 		return view('animals.deliver');
   }
 
-  // Falta que reciba como parámetro el $id y lo envié en el return. Algo tipo:
-  // return view('animals.detail-view', array('animal' => Animal::findOrFail($id)));
-  public function detail_view($id)
+  public function getDetailView($id)
   {
-		return view('animals.detail-view');
+    return view('animals.detail-view',
+      array(
+        'animal' => Animal::findOrFail($id)
+      )
+    );
   }
 
-  public function missing_animals()
+  public function getMissingAnimals()
   {
-		return view('animals.missing-animals');
+    return view('animals.missing-animals', array('missingAnimals' => Animal::all()->where('state', 'desaparecido')));
   }
 
-  public function rescue()
+  public function getRescue()
   {
 		return view('animals.rescue');
   }

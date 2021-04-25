@@ -1,124 +1,124 @@
 html, body {
-  line-height: 1.5;
-  box-sizing: border-box;
-  margin: 0;
-  top: 0;
-  left: 0;
+	line-height: 1.5;
+	box-sizing: border-box;
+	margin: 0;
+	top: 0;
+	left: 0;
 }
 
 /* color de los componentes del menú */
 .nav-link, .navbar-brand {
-  text-decoration: none;
-  color: rgba(34,54,69,0.7);
-  font-weight: 500;
+	text-decoration: none;
+	color: rgba(34,54,69,0.7);
+	font-weight: 500;
 }
 
 .nav-link:hover, .navbar-brand:hover {
-  color: #e74c3c !important;
+	color: #e74c3c !important;
 }
 
 /* Mismo color que el color de fondo del navbars */
 .nav-link:active, .navbar-brand:active {
-  background-color: #f8f9fa !important;
+	background-color: #f8f9fa !important;
 }
 
 .nav-link:visited, .navbar-brand:visited {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 .navbar-nav {
-  background-color: #f8f9fa;
+	background-color: #f8f9fa;
 }
 
 .navbar {
-  background: #111;
-  padding: 3rem 2rem;
+	background: #111;
+	padding: 3rem 2rem;
 }
 
 .navbar .navbar-brand a {
-  padding: 1rem 0;
-  display: block;
-  text-decoration: none;
+	padding: 1rem 0;
+	display: block;
+	text-decoration: none;
 }
 
 .navbar-brand {
-  font-size: 2.5rem;
-  color: #e74c3c;
+	font-size: 2.5rem;
+	color: #e74c3c;
 }
 
 .navbar-toggler {
-  background: #e74c3c !important;
-  border: none;
-  padding: 10px 6px;
-  outline: none;
+	background: #e74c3c !important;
+	border: none;
+	padding: 10px 6px;
+	outline: none;
 }
 
 .navbar-toggler span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border: 1px;
-  background: #fff;
+	display: block;
+	width: 22px;
+	height: 2px;
+	border: 1px;
+	background: #fff;
 }
 
 .navbar-toggler span + span {
-  margin-top: 4px;
-  width: 18px;
-  height: 2px;
-  margin-left: 4px;
+	margin-top: 4px;
+	width: 18px;
+	height: 2px;
+	margin-left: 4px;
 }
 
 .navbar-toggler span + span + span {
-  width: 10px;
-  margin-left: 10px;
+	width: 10px;
+	margin-left: 10px;
 }
 
 .navbar-expand-xl .navbar-nav .nav-link {
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  position: relative;
+	padding: 1rem 1.2rem;
+	font-size: 1.1rem;
+	position: relative;
 }
 
 .navbar-expand-xl .navbar-nav .nav-link:hover {
-  border-top: 4px solid #e74c3c;
+	border-top: 4px solid #e74c3c;
 }
 
 .navbar-expand-xl .navbar-nav .nav-link:active {
-  border-top: 4px solid #e74c3c;
-  color: #e74c3c;
+	border-top: 4px solid #e74c3c;
+	color: #e74c3c;
 }
 
 /* Aplica a medidas inferiores al tamaño xl */
 @media screen and (max-width: 1200px) {
 	.navbar-expand-xl .navbar-nav .nav-link:hover {
-    border-top: 0;
-    border-bottom: 4px solid #e74c3c;
-  }
-  
-  .navbar-expand-xl .navbar-nav .nav-link:active {
-    border-top: 0;
-    border-bottom: 4px solid #e74c3c;
-    color: #e74c3c;
-  }
+	  border-top: 0;
+	  border-bottom: 4px solid #e74c3c;
+	}
+
+	.navbar-expand-xl .navbar-nav .nav-link:active {
+	  border-top: 0;
+	  border-bottom: 4px solid #e74c3c;
+	  color: #e74c3c;
+	}
 }
 
 .navbar-nav button {
-  padding: 1.2rem 0;
+	padding: 1.2rem 0;
 }
 
 .navbar .btn {
-  background-color: #e74c3c;
-  color: white;
-  border-radius: 0;
-  padding: 0.7rem 1rem; 
-  font-size: 1.1rem;
-  margin-top: -10px;
+	background-color: #e74c3c;
+	color: white;
+	border-radius: 0;
+	padding: 0.7rem 1rem; 
+	font-size: 1.1rem;
+	margin-top: -10px;
 }
 
 .navbar-nav .btn:hover {
-  background-color: #0a3d72;
+	background-color: #0a3d72;
 }

@@ -4,7 +4,11 @@
   <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/footer.css">
+  @if (isset($animal->animal_id))
+    <link rel="STYLESHEET" type="text/css" href="../css/footer.css">
+  @else
+    <link rel="STYLESHEET" type="text/css" href="css/footer.css">
+  @endif
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -14,9 +18,23 @@
 		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">
 			<h4>Tratamiento de los datos</h4>
 			<ul>
-				<li><a href="downloadables/privacy-policy.pdf" target="_blank">Política de privacidad</a></li>
-				<li><a href="downloadables/cookies.pdf" target="_blank">Uso de cookies</a></li>
-				<li><a href="https://www.aepd.es/es/derechos-y-deberes/conoce-tus-derechos" target="_blank">Ejerce tus derechos | AEPD</a></li>
+				<li>
+				  @if (isset($animal->animal_id))
+						<a href="../downloadables/privacy-policy.pdf" target="_blank">Política de privacidad</a>
+				  @else
+						<a href="downloadables/privacy-policy.pdf" target="_blank">Política de privacidad</a>
+				  @endif
+				</li>
+				<li>
+				  @if (isset($animal->animal_id))
+  					<a href="../downloadables/cookies.pdf" target="_blank">Uso de cookies</a>
+				  @else
+						<a href="downloadables/cookies.pdf" target="_blank">Uso de cookies</a>
+				  @endif
+				</li>
+				<li>
+					<a href="https://www.aepd.es/es/derechos-y-deberes/conoce-tus-derechos" target="_blank">Ejerce tus derechos | AEPD</a>
+				</li>
 			</ul>
 		</div>
 		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">

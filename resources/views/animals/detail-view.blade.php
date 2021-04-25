@@ -10,7 +10,7 @@
 		
 		<link rel="shortcut icon" type="image/x-icon" href="">
 
-		<link rel="STYLESHEET" type="text/css" href="css/detail-view.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/detail-view.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,35 +34,44 @@
 
       <!-- Vista detalle animal -->
       <section class="row">
-        <div class="col-12"> <h1 class="text-center mt-5 mb-5"> JUAN </h1> </div>
-        <div class="col-10 col-lg-4 offset-1"> <img class="w-100 mt-lg-3 mt-xl-0" src="images/img1.jpg"> </div>
+        <div class="col-12"> <h1 class="text-center mt-5 mb-5">{{ $animal->name }}</h1></div>
+        <div class="col-10 col-lg-4 offset-1"> <img class="w-100 mt-lg-3 mt-xl-0" src="{{ $animal->image }}"></div>
         <div class="col-10 col-lg-5 offset-1 offset-md-2 offset-lg-1 mt-5 mb-5 mt-lg-0 mt-xl-2 justificado">
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/edad.png">5 años</div>
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/ubicacion.png">Murcia</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/edad.png">{{ $animal->age }} años</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/ubicacion.png">{{ $animal->province_id }}</div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/sexo.png">Macho</div>
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/peso.png">23kg</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/sexo.png">{{ $animal->gender }}</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/peso.png">{{ $animal->weight }}kg</div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/vacunado.png">Vacunado: Si</div>
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/sano.png">Sano: No</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/vacunado.png">
+                Vacunado: @if($animal->vaccinated) Si @else No @endif
+              </div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/sano.png">
+                Sano: @if($animal->healthy) Si @else No @endif
+              </div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/esterilizado.png">Esterilizado: Si</div>
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/castrado.png">Castrado: No</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/esterilizado.png">
+                Esterilizado: @if($animal->sterilize) Si @else No @endif
+              </div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/castrado.png">
+                Castrado: @if($animal->castrated) Si @else No @endif
+              </div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/desparasitado.png">Espulgado: Si</div>
-              <div class="col-6"><img class="icono mx-3" src="images/iconosVistaDetalle/microchip.png">Microchip: No</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/desparasitado.png">
+                Espulgado: @if($animal->dewormed) Si @else No @endif
+              </div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/microchip.png">
+                Microchip: @if($animal->microchip) Si @else No @endif
+              </div>
             </div>
         </div>
         <div class="col-10 mb-5 offset-1 justificado"> 
-          <p>JUAN es un perrete que lleva mucho tiempo esperando su oportunidad. Es duro ver como todos tus compañeros de refugio se 
-          van con sus familias pero tú sigues ahí... JUAN en un principio se muestra timido, pero le encantan los mimos. Este caramelo
-          se merece ya una oportunidad. Nació en mayo de 2015 y pesa 20 kgs. Está en un pueblo de Ávila a una hora en coche desde la 
-          ciudad de Madrid. Busca adopción responsable con contrato y seguimiento</p>
+          <p>{{ $animal->description }}</p>
         </div>
         <div class="col-10 col-lg-4 offset-1 justificado">
           <h5>¿Crees que encajo en tu vida? <a class="link-detalle" href="">¡Adóptame!</a></h5>

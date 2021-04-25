@@ -6,17 +6,17 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-  public function about_us()
+  public function getAboutUs()
   {
 		return view('contact.about-us');
   }
 
-  public function contact_form()
+  public function getContactForm()
   {
 		return view('contact.contact-form');
   }
 
-  public function contact_information()
+  public function getContactInformation()
   {
 		return view('contact.contact-information');
   }

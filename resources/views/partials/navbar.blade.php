@@ -9,7 +9,11 @@
 		
 		<link rel="shortcut icon" type="image/x-icon" href="">
 
-		<link rel="STYLESHEET" type="text/css" href="css/navbar.css">
+    @if (isset($animal->animal_id))
+      <link rel="STYLESHEET" type="text/css" href="../css/navbar.css">
+    @else
+      <link rel="STYLESHEET" type="text/css" href="css/navbar.css">
+    @endif
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

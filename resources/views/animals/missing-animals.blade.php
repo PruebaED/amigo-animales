@@ -44,67 +44,30 @@
           el resto.
           </p>
           <div class="row mt-5">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 mb-5 mb-lg-0 offset-sm-1 offset-md-2 offset-lg-0 offset-xl-1">
+            @foreach($missingAnimals as $key => $missingAnimal)
+            <!-- col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 mb-5 mb-lg-0 offset-sm-1 offset-md-2 offset-lg-0 offset-xl-1 -->
+            <div class="col-md-6 col-xl-4 mb-5">
               <div class="card">
-                <img class="w-100" src="images/img1.jpg">
+                <img class="w-100" src="{{ $missingAnimal->image }}">
                 <div class="card-body">
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a 21/03/2021</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en Murcia</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;Julián</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;Mestizo</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;Hembra</p>
+                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a {{ $missingAnimal->date }}</p>
+                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en {{ $missingAnimal->province_id }}</p>
+                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;{{ $missingAnimal->name }}</p>
+                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;{{ $missingAnimal->breed }}</p>
+                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;{{ $missingAnimal->gender }}</p>
                   <a class="btn">¿Me has visto? ¡Contacta al 968 70 79 32!</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 offset-sm-1 offset-md-2">
-              <div class="card">
-                <img class="w-100" src="images/img1.jpg">
-                <div class="card-body">
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a 21/03/2021</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en Murcia</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;Julián</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;Mestizo</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;Hembra</p>
-                  <a class="btn">¿Me has visto? ¡Contacta al 678 50 99 02!</a>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
-          <div class="row mt-5">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 mb-5 mb-lg-0 offset-sm-1 offset-md-2 offset-lg-0 offset-xl-1">
-              <div class="card">
-                <img class="w-100" src="images/img1.jpg">
-                <div class="card-body">
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a 21/03/2021</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en Murcia</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;Julián</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;Mestizo</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;Hembra</p>
-                  <a class="btn">¿Me has visto? ¡Contacta al 920 25 29 09!</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 offset-sm-1 offset-md-2 offset-lg-2">
-              <div class="card">
-                <img class="w-100" src="images/img1.jpg">
-                <div class="card-body">
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a 21/03/2021</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en Murcia</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;Julián</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;Mestizo</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;Hembra</p>
-                  <a class="btn">¿Me has visto? ¡Contacta al 820 35 00 20!</a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <!-- ... -->
+        </div>
+        <!-- ... -->
 
-      <!-- Footer -->
-      @include('partials.footer')
-      <!-- ... -->
+        <!-- Footer -->
+        @include('partials.footer')
+        <!-- ... -->
+      </div>
     </div>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
