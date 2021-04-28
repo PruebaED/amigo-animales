@@ -13,4 +13,20 @@ class User extends Authenticatable
 
   protected $primaryKey = 'user_id';
   public $timestamps = false;
+
+  // Security improvements for "remember me" cookies
+  public function getRememberToken()
+	{
+    return $this->remember_token;
+	}
+
+	public function setRememberToken($value)
+	{
+    $this->remember_token = $value;
+	}
+
+	public function getRememberTokenName()
+	{
+    return 'remember_token';
+	}
 }

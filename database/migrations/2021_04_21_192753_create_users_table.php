@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 320)->unique();
             $table->string('password', 255);
             $table->string('phone', 255);
+            $table->rememberToken();
             $table->bigInteger('province_id')->unsigned();
             $table->foreign('province_id')->references('province_id')->on('provinces')->onDelete('cascade');
         });

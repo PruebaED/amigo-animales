@@ -72,7 +72,7 @@ section .container .user .formBx h2 {
   color: #111;
 }
 
-section .container .user .formBx input {
+section .container .user .formBx input:not([type="checkbox"]) {
   width: 100%;
   padding: 10px;
   background: #f5f5f5;
@@ -81,6 +81,16 @@ section .container .user .formBx input {
   outline: none;
   box-shadow: none;
   margin: 10px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+section .container .user .formBx label {
+  color: #111;
+  border: none;
+  outline: none;
+  box-shadow: none;
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 300;
@@ -144,50 +154,6 @@ section .container .user .formBx .signup a {
   text-decoration: none;
   color: #677eff;
 }
-
-section .container .signupBx {
-  pointer-events: none;
-}
-
-section .container.active .signupBx {
-  pointer-events: initial;
-}
-
-/* Registro */
-section .container .signupBx .formBx {
-  left: 100%;
-}
-
-section .container .signupBx .imgBx {
-  left: -100%;
-}
-
-section .container.active .signupBx .formBx {
-  left: 0;
-}
-
-section .container.active .signupBx .imgBx {
-  left: 0;
-}
-/* ... */
-
-/* Inicio sesión */
-section .container .signinBx .formBx {
-  left: 0;
-}
-
-section .container .signinBx .imgBx {
-  left: 0;
-}
-
-section .container.active .signinBx .formBx {
-  left: 100%;
-}
-
-section .container.active .signinBx .imgBx {
-  left: -100%;
-}
-/* ... */
 
 @media (max-width: 991px) {
   section .container {

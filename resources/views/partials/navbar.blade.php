@@ -75,7 +75,7 @@
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
-            <a href="/login-register"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
+            <a href="/login"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
           </ul>
         </div>
       </nav>

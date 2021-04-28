@@ -22,44 +22,31 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/login-register.js"></script>
 
-    <title> Inicio de Sesión/Registro </title>
+    <title> Registro </title>
 
   </head>
 
   <body>
     <section>
       <div class="container">
-        <div class="user signinBx">
-          <div class="imgBx"><img src="images/gato_registro.jpg"></div>
-          <div class="formBx">
-            <form>
-              @csrf
-              <h2>Inicio de sesión</h2>
-              <input class="form-control" type="email" name="" placeholder="Email">
-              <input class="form-control" type="password" name="" placeholder="Contraseña">
-              <input class="btn btn-primary" type="submit" name="" value="Iniciar sesión">
-              <p class="signup"> No tienes una cuenta? <a href="#"> Regístrate. </a> </p>
-            </form>
-          </div>
-        </div>
         <div class="user signupBx">
           <div class="formBx formRegister">
-            <form>
+            <form method="POST">
               @csrf
               <h2>Crea una cuenta</h2>
-              <input class="form-control" type="text" name="" placeholder="Nombre">
-              <input class="form-control" type="text" name="" placeholder="Apellidos">
-              <input class="form-control" type="text" name="" placeholder="Teléfono">
-              <input class="form-control" type="email" name="" placeholder="Email">
-              <select class="form-control" onmousedown="this.size=4;"  onchange='this.size=0;' onblur="this.size=0;">
-                <option selected>Seleccione una provincia</option>
+              <input class="form-control" type="text" name="registerName" placeholder="Nombre">
+              <input class="form-control" type="text" name="registerSurnames" placeholder="Apellidos">
+              <input class="form-control" type="text" name="registerPhone" placeholder="Teléfono">
+              <input class="form-control" type="email" name="registerEmail" placeholder="Email">
+              <select class="form-control" name="registerSelect" onmousedown="this.size=4;" onchange='this.size=0;' onblur="this.size=0;">
+                <option disabled selected>Seleccione una provincia</option>
                 @foreach($provinces as $key => $province) 
-                <option>{{ $province->name }}</option>
+                <option value="{{ $province->province_id }}">{{ $province->name }}</option>
                 @endforeach
               </select>
-              <input class="form-control" type="password" name="" placeholder="Contraseña">
-              <input class="btn btn-primary" type="submit" name="" value="Registrarse">
-              <p class="signup"> Ya tienes una cuenta? <a href="#"> Inicia sesión. </a> </p>
+              <input class="form-control" type="password" name="registerPassword" placeholder="Contraseña">
+              <input class="btn btn-primary" type="submit" name="registerSubmit" value="Registrarse">
+              <p class="signup"> Ya tienes una cuenta? <a href="/login"> Inicia sesión. </a> </p>
             </form>
           </div>
           <div class="imgBx imgRegister"><img src="images/perro_registro.jpg"></div>

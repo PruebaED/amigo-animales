@@ -23,7 +23,13 @@ Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@getMissing
 
 Route::get('rescue', 'App\Http\Controllers\AnimalsController@getRescue');
 
-Route::get('login-register', 'App\Http\Controllers\AuthController@getLoginRegister');
+Route::get('login', 'App\Http\Controllers\AuthController@getLogin');
+
+Route::get('register', 'App\Http\Controllers\AuthController@getRegister');
+
+Route::post('login', 'App\Http\Controllers\AuthController@postLogin');
+
+Route::post('register', 'App\Http\Controllers\AuthController@postRegister');
 
 Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
 
