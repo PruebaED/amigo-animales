@@ -52,28 +52,44 @@
         <div class="row">
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="text" name="" required="required"
+              @if (Auth::check())
+                value="{{ Auth::user()->name }}"
+              @endif
+              >
               <span class="text">Nombre</span>
               <span class="line"></span>
             </div>
           </div>
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="text" name="" required="required"
+              @if (Auth::check())
+                value="{{ Auth::user()->surnames }}"
+              @endif
+              >
               <span class="text">Apellidos</span>
               <span class="line"></span>
             </div>
           </div>
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="text" name="" required="required"
+              @if (Auth::check())
+                value="{{ Auth::user()->email }}"
+              @endif
+              >
               <span class="text">Email</span>
               <span class="line"></span>
             </div>
           </div>
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="text" name="" required="required"
+              @if (Auth::check())
+                value="{{ Auth::user()->phone }}"
+              @endif
+              >
               <span class="text">Teléfono</span>
               <span class="line"></span>
             </div>
