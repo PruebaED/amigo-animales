@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('logout', 'App\Http\Controllers\AuthController@getLogout');
+
+	Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
+
+	Route::get('appearance', 'App\Http\Controllers\SettingsController@getAppearance');
+
+	Route::get('profile', 'App\Http\Controllers\SettingsController@getProfile');
+
+	Route::get('security', 'App\Http\Controllers\SettingsController@getSecurity');
+});
+
 Route::get('/', 'App\Http\Controllers\HomeController@getAnimalsToAdopt');
 
 Route::get('deliver', 'App\Http\Controllers\AnimalsController@getDeliver');
@@ -23,15 +35,11 @@ Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@getMissing
 
 Route::get('rescue', 'App\Http\Controllers\AnimalsController@getRescue');
 
-Route::get('login', 'App\Http\Controllers\AuthController@getLogin');
-
-Route::get('register', 'App\Http\Controllers\AuthController@getRegister');
-
+Route::get('login', 'App\Http\Controllers\AuthController@getLogin')->name('login');
 Route::post('login', 'App\Http\Controllers\AuthController@postLogin');
 
+Route::get('register', 'App\Http\Controllers\AuthController@getRegister');
 Route::post('register', 'App\Http\Controllers\AuthController@postRegister');
-
-Route::get('logout', 'App\Http\Controllers\AuthController@getLogout');
 
 Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
 
@@ -42,11 +50,3 @@ Route::get('contact-information', 'App\Http\Controllers\ContactController@getCon
 Route::get('animals-pd', 'App\Http\Controllers\InformationController@getAnimalsPd');
 
 Route::get('regulations', 'App\Http\Controllers\InformationController@getRegulations');
-
-Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
-
-Route::get('appearance', 'App\Http\Controllers\SettingsController@getAppearance');
-
-Route::get('profile', 'App\Http\Controllers\SettingsController@getProfile');
-
-Route::get('security', 'App\Http\Controllers\SettingsController@getSecurity');
