@@ -31,6 +31,8 @@ Route::post('login', 'App\Http\Controllers\AuthController@postLogin');
 
 Route::post('register', 'App\Http\Controllers\AuthController@postRegister');
 
+Route::get('logout', 'App\Http\Controllers\AuthController@getLogout');
+
 Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
 
 Route::get('contact-form', 'App\Http\Controllers\ContactController@getContactForm');

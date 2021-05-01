@@ -27,7 +27,7 @@ class UserFactory extends Factory
       'surnames' => $this->faker->name,
       'email' => $this->faker->unique()->safeEmail,
       'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-      'phone' => $this->faker->numberBetween(600000000, 999999999),
+      'phone' => $this->faker->unique()->numberBetween(600000000, 999999999),
       'province_id' => $this->faker->numberBetween(1, 49)
     ];
   }

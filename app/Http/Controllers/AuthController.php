@@ -20,6 +20,12 @@ class AuthController extends Controller
     return view('auth.register', array('provinces' => Province::all()));
   }
 
+  public function getLogout(Request $request)
+  {
+    Auth::logout();
+    return redirect('/login');
+  }
+
   public function postLogin(Request $request)
   {
     $userData = array(

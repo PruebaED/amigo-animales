@@ -53,7 +53,13 @@
             <li style="--i:7;"><a href="/animals-pd">Animales PPP</a></li>
             <li style="--i:8;"><a href="/contact-form">Contacto</a></li>
             <li style="--i:9;"><a href="/profile">Ajustes</a></li>
-            <li style="--i:10;"><a href="/login">Iniciar sesión</a></li>
+            <li style="--i:10;">
+            @if (!Auth::check())
+              <a href="/login">Iniciar sesión</a>
+            @else
+              <a href="/logout">Cerrar sesión</a>
+            @endif
+            </li>
           </ul>
           <video src="videos/video.mp4" autoplay muted loop></video>
         </section>

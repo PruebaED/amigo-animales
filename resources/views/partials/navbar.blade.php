@@ -75,7 +75,11 @@
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
-            <a href="/login"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
+            @if (!Auth::check())
+              <a href="/login"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
+            @else
+              <a href="/logout"><button class="btn mt-1 mb-1">Cerrar sesión</button></a>
+            @endif
           </ul>
         </div>
       </nav>
