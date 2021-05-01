@@ -17,12 +17,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('logout', 'App\Http\Controllers\AuthController@getLogout');
 
 	Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
+	Route::put('account', 'App\Http\Controllers\SettingsController@putAccount');
 
 	Route::get('appearance', 'App\Http\Controllers\SettingsController@getAppearance');
+	Route::put('appearance', 'App\Http\Controllers\SettingsController@putAppearance');
 
 	Route::get('profile', 'App\Http\Controllers\SettingsController@getProfile');
+	Route::put('profile', 'App\Http\Controllers\SettingsController@putProfile');
 
 	Route::get('security', 'App\Http\Controllers\SettingsController@getSecurity');
+	Route::put('security', 'App\Http\Controllers\SettingsController@putSecurity');
 });
 
 Route::get('/', 'App\Http\Controllers\HomeController@getAnimalsToAdopt');

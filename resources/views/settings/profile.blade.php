@@ -43,41 +43,45 @@
         <h3>Perfil</h3>
         <hr class="mb-5">
         <div class="row">
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Nombre</span>
-              <span class="line"></span>
+          <form method="POST">
+            {{method_field('PUT')}}
+            @csrf
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="text" name="profileName" value="{{ Auth::user()->name }}" required="required">
+                <span class="text">Nombre</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Apellidos</span>
-              <span class="line"></span>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="text" name="profileSurnames" value="{{ Auth::user()->surnames }}" required="required">
+                <span class="text">Apellidos</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Email</span>
-              <span class="line"></span>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="email" name="profileEmail" value="{{ Auth::user()->email }}" required="required">
+                <span class="text">Email</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Teléfono</span>
-              <span class="line"></span>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="tel" name="profilePhone" pattern="[0-9]{9}" value="{{ Auth::user()->phone }}" required="required">
+                <span class="text">Teléfono</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <input type="submit" value="Actualizar perfil">
-          </div>
+            <div class="col-12">
+              <input type="submit" value="Actualizar perfil">
+            </div>
+          </form>
         </div>
       </div>
     </section>

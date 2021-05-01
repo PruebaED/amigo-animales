@@ -37,74 +37,46 @@
       <!-- Navbar - Settings -->
       @include('partials.navbar-settings')
       <!-- ... -->
-
+      
       <div class="w-100 d-md-none"></div>
       <div class="col-10 col-md-6 mt-5 mt-md-0 offset-1 offset-md-0">
-        <h3 class="mb-4">Cambiar nombre de usuario</h3>
+        <h3 class="mb-4">Borrar la cuenta</h3>
         <hr class="">
         <div class="row">
-          <div class="col-12">
-            <p class="justificado">Cambiar el nombre de usuario puede tener efectos contraproducentes</p>
-            <input type="submit" value="Cambiar nombre" data-toggle="modal" data-target="#cambiarNombreModal">
-          </div>
-        </div>
-        <!-- Cambiar nombre modal -->
-        <div class="modal fade" id="cambiarNombreModal">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header"> <h5 class="modal-title" id="exampleModalLongTitle">¿Estás seguro?</h5> </div>
-              <div class="modal-body justificado"> 
-                Es necesario que tengas en cuenta que el cambio de tu nombre puede generar una serie de problemas. <br> <br> Todas las acciones que hayas realizado en la 
-                página (adopción, entrega, contacto...) se mantendrán con tu antiguo nombre de usuario. Ello podría dificultar la identificación del titular que realizó
-                cualquiera de las mencionadas acciones.
-                <form>
-                  <div class="form-group">
-                    <br>
-                    <input type="text" class="form-control" placeholder="Nuevo nombre de usuario">
-                  </div>
-                </form>
+          <p class="justificado"> Es necesario que tengas en cuenta que vas a llevar a cabo una acción que NO es reversible. 
+          <br><br>Una vez confirmes el borrado de tu cuenta, desaparecerá para siempre. No habrá posibilidad de recuperarla, 
+          ni tampoco cualquier tipo de acción o contenido asociado a la misma.</p>
+          <form method="POST">
+            {{method_field('PUT')}}
+            @csrf
+            <div class="col-12 mt-5">
+              <div class="inputBox">
+                <input type="email" name="accountEmail" value="{{ Auth::user()->email }}" required="required">
+                <span class="text">Email</span>
+                <span class="line"></span>
               </div>
-              <div class="modal-footer"> 
-                <button type="button" class="btn btn-success"> Cambiar nombre </button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal"> Cancelar </button> </div>
+              <br><br>
             </div>
-          </div>
-        </div>
-        <h3 class="mt-5 mb-4">Borrar la cuenta</h3>
-        <hr class="">
-        <div class="row">
-          <div class="col-12">
-            <p class="justificado">Una vez que borres tu cuenta, no habrá marcha atrás. Tenlo en cuenta.</p>
-            <input type="submit" value="Borrar cuenta"  data-toggle="modal" data-target="#borrarCuentaModal">
-          </div>
-        </div>
-        <!-- Borrar cuenta modal -->
-        <div class="modal fade" id="borrarCuentaModal">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header"> <h5 class="modal-title" id="exampleModalLongTitle">¿Estás seguro?</h5> </div>
-              <div class="modal-body justificado"> 
-                Es necesario que tengas en cuenta que vas a llevar a cabo una acción que NO es reversible. <br><br>Una vez confirmes el borrado de tu cuenta, desaparecerá
-                para siempre. No habrá posibilidad de recuperarla, ni tampoco cualquier tipo de acción o contenido asociado a la misma.
-                <form>
-                  <div class="form-group">
-                    <br>
-                    <input type="email" class="form-control" placeholder="Introduce tu email">
-                    <br>
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu contraseña">
-                    <br>
-                  </div>
-                  <label for="confirmacionTextual"><strong>Escribe:</strong> <i>Deseo borrar mi cuenta</i></label>
-                  <input type="text" class="form-control" id="confirmacionTextual">
-                </form>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="password" name="accountPassword" required="required">
+                <span class="text">Contraseña</span>
+                <span class="line"></span>
               </div>
-              <div class="modal-footer"> 
-                <button type="button" class="btn btn-success"> Borrar cuenta </button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal"> Cancelar </button> </div>
+              <br><br>
             </div>
-          </div>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="text" name="accountConfirmDelete" required="required">
+                <span class="text"><strong>Escribe:</strong> <i>Deseo borrar mi cuenta</i></span>
+                <span class="line"></span>
+              </div>
+              <br><br>
+            </div>
+            <div class="col-12">
+              <input type="submit" value="Borrar cuenta">
+            </div>
+          </form>
         </div>
       </div>
     </section>

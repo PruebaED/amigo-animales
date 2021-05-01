@@ -43,33 +43,37 @@
         <h3>Cambiar la contraseña</h3>
         <hr class="mb-5">
         <div class="row">
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Antigua contraseña</span>
-              <span class="line"></span>
+          <form method="POST">
+            {{method_field('PUT')}}
+            @csrf
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="password" name="securityOldPassword" required="required">
+                <span class="text">Antigua contraseña</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Nueva contraseña</span>
-              <span class="line"></span>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="password" name="securityNewPassword" required="required">
+                <span class="text">Nueva contraseña</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span class="text">Confirme nueva contraseña</span>
-              <span class="line"></span>
+            <div class="col-12">
+              <div class="inputBox">
+                <input type="password" name="securityConfirmNewPassword" required="required">
+                <span class="text">Confirme nueva contraseña</span>
+                <span class="line"></span>
+              </div>
+              <br><br>
             </div>
-            <br><br>
-          </div>
-          <div class="col-12">
-            <input type="submit" value="Actualizar contraseña">
-          </div>
+            <div class="col-12">
+              <input type="submit" value="Actualizar contraseña">
+            </div>
+          </form>
         </div>
       </div>
     </section>
