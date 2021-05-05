@@ -29,7 +29,7 @@ class SettingsController extends Controller
     return view('settings.security');
   }
 
-  public function putAccount(Request $request)
+  public function deleteAccount(Request $request)
   {
     $user = User::findOrFail(Auth::user()->user_id);
     $confirmSentence = 'Deseo borrar mi cuenta';

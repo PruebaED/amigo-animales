@@ -47,7 +47,7 @@
           <br><br>Una vez confirmes el borrado de tu cuenta, desaparecerá para siempre. No habrá posibilidad de recuperarla, 
           ni tampoco cualquier tipo de acción o contenido asociado a la misma.</p>
           <form method="POST">
-            {{method_field('PUT')}}
+            {{method_field('DELETE')}}
             @csrf
             <div class="col-12 mt-5">
               <div class="inputBox">
