@@ -5,6 +5,8 @@
   <head>
 	
     <!-- Required meta tags -->
+    
+    <title>Entrega - El Amigo de los Animales</title>
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		

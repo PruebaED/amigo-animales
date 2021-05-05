@@ -6,6 +6,8 @@
 	
     <!-- Required meta tags -->
 
+    <title>Formulario de contacto - El Amigo de los Animales</title>
+
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
 		<link rel="shortcut icon" type="image/x-icon" href="">
@@ -43,7 +45,7 @@
 
         <div class="row mb-5">
           <div class="col-8 offset-2">
-            <p class="parrafo justificado">Si desea que nuestro equipo le contacte, le rogamos que rellene los distintos campos que se presentan a continuación. 
+            <p class="parrafo">Si desea que nuestro equipo le contacte, le rogamos que rellene los distintos campos que se presentan a continuación. 
               Nos pondremos en contacto con .Vd con la mayor brevedad posible.
             </p>
           </div>

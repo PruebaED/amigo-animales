@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-body {
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
+
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -33,7 +31,7 @@ ul {
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #e74c3c;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -54,7 +52,7 @@ ul {
 }
 
 .footer-col ul li a:hover {
-	color: #ffffff;
+	color: #e74c3c;
 	padding-left: 8px;
 }
 
@@ -73,5 +71,5 @@ ul {
 
 .footer-col .social-links a:hover {
 	color: #24262b;
-	background-color: #ffffff;
+	background-color: #e74c3c;
 }

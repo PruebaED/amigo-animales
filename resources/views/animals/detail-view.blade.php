@@ -6,6 +6,8 @@
 	
     <!-- Required meta tags -->
 
+    <title>{{ $animal->name }} - El Amigo de los Animales</title>
+
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
 		<link rel="shortcut icon" type="image/x-icon" href="">

@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 /* HEADER */
@@ -211,7 +214,7 @@ section .navigation li a:hover {
 .single-content {
   position: relative;
   transition: 0.3s;
-  box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8);
 }
 
 .single-content .text-content, .single-content:after {
@@ -223,7 +226,7 @@ section .navigation li a:hover {
 .single-content:after {
   content: '';
   display: block;
-  background: crimson;
+  background: #e74c3c;
   top: 20px;
   bottom: 20px;
   opacity: 0;

@@ -5,7 +5,9 @@
   <head>
 	
     <!-- Required meta tags -->
-
+    
+    <title>Acerca de nosotros - El Amigo de los Animales</title>
+    
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
 		<link rel="shortcut icon" type="image/x-icon" href="">
@@ -49,7 +51,7 @@
 
       <!-- Acerca de nosotros -->
       <section class="row mt-5">
-        <div class="col-10 offset-1 mt-5 about-section" style="background-color: #161623;">
+        <div class="col-10 offset-1 mt-5 about-section">
           <div class="inner-container">
               <h1 class="text-center mb-5"> Acerca de nosotros </h1> 
               <hr>
@@ -59,8 +61,8 @@
           </div>
         </div>
         <div class="col-10 mt-5 offset-1"> 
-          <h1 class="text-center mb-5" style="color: #fff"> Nuestro equipo </h1> 
-          <hr style="color: #fff">
+          <h1 class="text-center mb-5"> Nuestro equipo </h1> 
+          <hr>
         </div>
       </section>
       <section class="row">

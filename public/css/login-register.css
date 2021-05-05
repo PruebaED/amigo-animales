@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 section {
@@ -130,13 +134,18 @@ section .container .user .formBx select {
 
 section .container .user .formBx input[type="submit"] {
   max-width: 120px;
-  background: #677eff;
-  color: #fff;
+  background: #e74c3c;
+  color: #111111;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
   transition: 0.5s;
+}
+
+section .container .user .formBx input[type="submit"]:hover {
+  background-color: #24262b;
+  color: #ffffff;
 }
 
 section .container .user .formBx .signup {
@@ -152,7 +161,11 @@ section .container .user .formBx .signup {
 section .container .user .formBx .signup a {
   font-weight: 600;
   text-decoration: none;
-  color: #677eff;
+  color: #e74c3c;
+}
+
+section .container .user .formBx .signup a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 991px) {

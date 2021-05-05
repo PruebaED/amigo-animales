@@ -1,4 +1,14 @@
 /* Acerca de nosotros - Parte superior */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 .bienvenida {
 	background: url('../images/acercadenosotros.jpg') no-repeat center;
 	background-size: cover;
@@ -20,12 +30,6 @@
 /* ... */
 
 /* Acerca de nosotros */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100vh;
   display: flex;
@@ -44,7 +48,7 @@ body {
 .inner-container {
   width: 55%;
   float: right;
-  background-color: violet;
+  background-color: #e74c3c;
   padding: 120px;
 }
 
@@ -75,17 +79,12 @@ body {
 /* ... */
 
 /* Nuestro equipo */
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #161623 !important;
+  background-color: #ffffff !important;
   min-height: 100vh;
 }
 
@@ -121,11 +120,15 @@ section::after {
   margin: 40px 0;
 }
 
+.about-section {
+  background-color: #ffffff;
+}
+
 .container .card {
   position: relative;
   width: 300px;
   height: 400px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #24262b;
   margin: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   border-radius: 15px;
