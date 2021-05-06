@@ -78,7 +78,7 @@
         <div class="col-10 col-lg-4 offset-1 justificado">
           <h5>¿Crees que encajo en tu vida? <a class="link-detalle" href="">¡Adóptame!</a></h5>
         </div>
-        <div class="col-10 col-lg-4 mt-5 mt-lg-0 offset-1 offset-lg-2 justificado"><h5>¿Te gustaría dar un paseo conmigo? <a class="link-detalle" href="">¡Apadríname!</a></h5></div>
+        <div class="col-10 col-lg-4 mt-5 mt-lg-0 offset-1 offset-lg-2 justificado"><h5>¿Quieres que hoy duerma fuera de la perrera? <a class="link-detalle" href="">¡Acógeme!</a></h5></div>
       </section>              
       <!-- ... -->
 

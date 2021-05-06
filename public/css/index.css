@@ -244,6 +244,17 @@ section .navigation li a:hover {
   height: auto;
 }
 
+.single-content .btn {
+  background-color: #24262b;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.single-content .btn:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
 .text-content {
   top: 45%;
   opacity: 0;

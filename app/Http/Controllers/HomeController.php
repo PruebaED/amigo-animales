@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
   public function getAnimalsToAdopt()
   {
-    return view('index', array('animalsToAdopt' => Animal::all()->where('state', 'en adopcion')));
+    return view('index', array('animalsToAdopt' => Animal::all()->where('state', 'disponible')));
   }
 }

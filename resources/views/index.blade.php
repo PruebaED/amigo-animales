@@ -80,8 +80,7 @@
               <h5 class="mt-3 mb-2">{{ $animal->name }}</h5>
               <h5 class="mb-2">{{ $animal->breed }}</h5>
               <h5 class="mb-2">{{ $animal->province_id }}</h5>
-              <button type="button" class="btn btn-success mt-3 mx-3">¡Apadríname!</button>
-              <button type="button" onclick="window.location.href='{{ url('detail-view/' . $animal->animal_id ) }}';" class="btn btn-primary mt-3 mx-3">Más información</button>
+              <button type="button" onclick="window.location.href='{{ url('detail-view/' . $animal->animal_id ) }}';" class="btn mt-3 mx-3">Más información</button>
             </div>
           </div>
         </div>
