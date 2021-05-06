@@ -22,7 +22,7 @@ class CreateAnimalsTable extends Migration
             $table->float('weight', 5, 2);
             $table->date('date');
             $table->string('image', 255);
-            $table->enum('state', ['en acogida', 'en adopcion', 'urgente', 'desaparecido']);
+            $table->enum('state', ['en acogida', 'en adopcion', 'urgente', 'desaparecido', 'acogido', 'adoptado']);
             $table->string('description', 750);
             $table->boolean('vaccinated');
             $table->boolean('healthy');
