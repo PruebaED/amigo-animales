@@ -11,4 +11,24 @@ class Animal extends Model
 
   protected $primaryKey = 'animal_id';
   public $timestamps = false;
+
+  public function provinceAnimal()
+  {
+  	return $this->belongsTo(Province::class, 'province_id');
+  }
+
+  public function userAnimal()
+  {
+  	return $this->belongsTo(User::class, 'user_id');
+  }
+
+  public function adoptions()
+  {
+  	return $this->hasMany(Adoption::class, 'adoption_id');
+  }
+
+  public function fosters()
+  {
+  	return $this->hasMany(Foster::class, 'foster_id');
+  }
 }

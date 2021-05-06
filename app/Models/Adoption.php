@@ -11,4 +11,14 @@ class Adoption extends Model
 
   protected $primaryKey = 'adoption_id';
   public $timestamps = false;
+
+  public function userAdoption()
+  {
+  	return $this->belongsTo(User::class, 'user_id');
+  }
+
+  public function animalAdoption()
+  {
+  	return $this->belongsTo(Animal::class, 'animal_id');
+  }
 }

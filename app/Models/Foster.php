@@ -11,4 +11,14 @@ class Foster extends Model
 
   protected $primaryKey = 'foster_id';
   public $timestamps = false;
+
+  public function userFoster()
+  {
+  	return $this->belongsTo(User::class, 'user_id');
+  }
+
+  public function animalFoster()
+  {
+  	return $this->belongsTo(Animal::class, 'animal_id');
+  }
 }

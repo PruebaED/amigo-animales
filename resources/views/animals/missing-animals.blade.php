@@ -53,11 +53,11 @@
                 <img class="w-100" src="{{ $missingAnimal->image }}">
                 <div class="card-body">
                   <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a {{ $missingAnimal->date }}</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en {{ $missingAnimal->province_id }}</p>
+                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en {{ $missingAnimal->provinceAnimal->name }}</p>
                   <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;{{ $missingAnimal->name }}</p>
                   <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;{{ $missingAnimal->breed }}</p>
                   <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;{{ $missingAnimal->gender }}</p>
-                  <a class="btn">¿Me has visto? ¡Contacta al 968 70 79 32!</a>
+                  <a class="btn">¿Me has visto? ¡Contacta al {{ $missingAnimal->userAnimal->phone }}!</a>
                 </div>
               </div>
             </div>

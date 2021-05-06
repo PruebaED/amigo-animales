@@ -11,4 +11,14 @@ class Province extends Model
 
   protected $primaryKey = 'province_id';
   public $timestamps = false;
+
+  public function animals() 
+  {
+  	return $this->hasMany(Animal::class, 'animal_id');
+  }
+
+  public function users()
+  {
+  	return $this->hasMany(User::class, 'user_id');
+  }
 }

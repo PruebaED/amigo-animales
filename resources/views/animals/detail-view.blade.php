@@ -41,7 +41,7 @@
         <div class="col-10 col-lg-5 offset-1 offset-md-2 offset-lg-1 mt-5 mb-5 mt-lg-0 mt-xl-2 justificado">
             <div class="row mb-3">
               <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/edad.png">{{ $animal->age }} años</div>
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/ubicacion.png">{{ $animal->province_id }}</div>
+              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/ubicacion.png">{{ $animal->provinceAnimal->name }}</div>
             </div>
             <div class="row mb-3">
               <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/sexo.png">{{ $animal->gender }}</div>

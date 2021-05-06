@@ -14,19 +14,23 @@ class User extends Authenticatable
   protected $primaryKey = 'user_id';
   public $timestamps = false;
 
-  // Security improvements for "remember me" cookies
-  public function getRememberToken()
-	{
-		return $this->remember_token;
-	}
+  public function userProvince()
+  {
+  	return $this->belongsTo(Province::class, 'province_id');
+  }
 
-	public function setRememberToken($value)
-	{
-		$this->remember_token = $value;
-	}
+  public function animals()
+  {
+  	return $this->hasMany(Animal::class, 'animal_id');
+  }
 
-	public function getRememberTokenName()
-	{
-		return 'remember_token';
-	}
+  public function adoptions()
+  {
+  	return $this->hasMany(Adoption::class, 'adoption_id');
+  }
+
+  public function fosters()
+  {
+  	return $this->hasMany(Foster::class, 'foster_id');
+  }
 }
