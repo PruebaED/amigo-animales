@@ -1,5 +1,5 @@
 <!doctype html>
-
+@if ($animal->state == 'disponible')
 <html lang="en">
 
   <head>
@@ -72,13 +72,21 @@
               </div>
             </div>
         </div>
-        <div class="col-10 mb-5 offset-1 justificado"> 
+        <div class="col-10 offset-1 justificado
+          @if ($animal->state == 'disponible')
+          mb-5
+          @endif"
+        > 
           <p>{{ $animal->description }}</p>
         </div>
+        @if ($animal->state == 'disponible')
         <div class="col-10 col-lg-4 offset-1 justificado">
           <h5>¿Crees que encajo en tu vida? <a class="link-detalle" href="">¡Adóptame!</a></h5>
         </div>
-        <div class="col-10 col-lg-4 mt-5 mt-lg-0 offset-1 offset-lg-2 justificado"><h5>¿Quieres que hoy duerma fuera de la perrera? <a class="link-detalle" href="">¡Acógeme!</a></h5></div>
+        <div class="col-10 col-lg-4 mt-5 mt-lg-0 offset-1 offset-lg-2 justificado">
+          <h5>¿Quieres que hoy duerma fuera de la perrera? <a class="link-detalle" href="{{ url('foster/' . $animal->animal_id ) }}">¡Acógeme!</a></h5>
+        </div>
+        @endif
       </section>              
       <!-- ... -->
 
@@ -93,3 +101,6 @@
   </body>
 
 </html>
+@else
+<script>window.location = "/#adopcion";</script>
+@endif

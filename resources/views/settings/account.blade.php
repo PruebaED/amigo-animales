@@ -51,7 +51,11 @@
             @csrf
             <div class="col-12 mt-5">
               <div class="inputBox">
-                <input type="email" name="accountEmail" value="{{ Auth::user()->email }}" required="required">
+                <input type="email" name="accountEmail" required="required"
+                @if (Auth::check())
+                  value="{{ Auth::user()->email }}"
+                @endif
+                >
                 <span class="text">Email</span>
                 <span class="line"></span>
               </div>

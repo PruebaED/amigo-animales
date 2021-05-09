@@ -18,6 +18,7 @@ class CreateFostersTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('animal_id')->unsigned();
             $table->date('fostered_at');
+            $table->boolean('accepted_agreement');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->foreign('animal_id')->references('animal_id')->on('animals')->onDelete('cascade');
         });

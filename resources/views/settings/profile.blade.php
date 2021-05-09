@@ -48,7 +48,11 @@
             @csrf
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="profileName" value="{{ Auth::user()->name }}" required="required">
+                <input type="text" name="profileName" required="required"
+                @if (Auth::check())
+                  value="{{ Auth::user()->name }}"
+                @endif
+                >
                 <span class="text">Nombre</span>
                 <span class="line"></span>
               </div>
@@ -56,7 +60,11 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="profileSurnames" value="{{ Auth::user()->surnames }}" required="required">
+                <input type="text" name="profileSurnames" required="required"
+                @if (Auth::check())
+                  value="{{ Auth::user()->surnames }}"
+                @endif
+                >
                 <span class="text">Apellidos</span>
                 <span class="line"></span>
               </div>
@@ -64,7 +72,11 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="email" name="profileEmail" value="{{ Auth::user()->email }}" required="required">
+                <input type="email" name="profileEmail" required="required"
+                @if (Auth::check())
+                  value="{{ Auth::user()->email }}"
+                @endif
+                >
                 <span class="text">Email</span>
                 <span class="line"></span>
               </div>
@@ -72,7 +84,11 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="tel" name="profilePhone" pattern="[0-9]{9}" value="{{ Auth::user()->phone }}" required="required">
+                <input type="tel" name="profilePhone" pattern="[0-9]{9}" required="required"
+                @if (Auth::check())
+                  value="{{ Auth::user()->phone }}"
+                @endif
+                >
                 <span class="text">Teléfono</span>
                 <span class="line"></span>
               </div>

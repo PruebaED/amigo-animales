@@ -57,9 +57,7 @@ class SettingsController extends Controller
     $user->name = $request->profileName;
     $user->surnames = $request->profileSurnames;
     $user->email = $request->profileEmail;
-    $user->password = Auth::user()->password;
     $user->phone = $request->profilePhone;
-    $user->province_id = Auth::user()->province_id;
     $user->save();
     return redirect('profile');
   }
@@ -71,12 +69,7 @@ class SettingsController extends Controller
     {
       if ($request->securityNewPassword == $request->securityConfirmNewPassword)
       {
-        $user->name = Auth::user()->name;
-        $user->surnames = Auth::user()->surnames;
-        $user->email = Auth::user()->email;
         $user->password = Hash::make($request->securityNewPassword);
-        $user->phone = Auth::user()->phone;
-        $user->province_id = Auth::user()->province_id;
         $user->save();
         return redirect('logout');
       }

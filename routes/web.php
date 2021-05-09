@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('logout', 'App\Http\Controllers\AuthController@getLogout');
 
+	Route::get('foster/{id}', 'App\Http\Controllers\AnimalsController@getFoster');
+	Route::post('foster/{id}', 'App\Http\Controllers\AnimalsController@postFoster');
+
 	Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
 	Route::delete('account', 'App\Http\Controllers\SettingsController@deleteAccount');
 
