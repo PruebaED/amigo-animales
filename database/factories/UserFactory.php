@@ -22,13 +22,20 @@ class UserFactory extends Factory
    */
   public function definition()
   {
+
+    $faker = \Faker\Factory::create('es_ES');
+
+    $firstSurname = $faker->lastName;
+    $secondSurname = $faker->lastName;
+    $uniqueFakeEmail = strtolower($firstSurname . $secondSurname . '@' . $faker->freeEmailDomain);
+
     return [
-      'name' => $this->faker->name,
-      'surnames' => $this->faker->name,
-      'email' => $this->faker->unique()->safeEmail,
+      'name' => $faker->firstName,
+      'surnames' => $firstSurname . ' ' . $secondSurname,
+      'email' => $uniqueFakeEmail,
       'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-      'phone' => $this->faker->unique()->numberBetween(600000000, 999999999),
-      'province_id' => $this->faker->numberBetween(1, 49)
+      'phone' => $faker->unique()->tollFreeNumber,
+      'province_id' => $faker->numberBetween(1, 49)
     ];
   }
 }
