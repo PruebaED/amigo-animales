@@ -17,6 +17,7 @@ class CreateAdoptionsTable extends Migration
             $table->id('adoption_id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('animal_id')->unsigned();
+            $table->boolean('accepted_agreement');
             $table->date('adopted_at');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->foreign('animal_id')->references('animal_id')->on('animals')->onDelete('cascade');
