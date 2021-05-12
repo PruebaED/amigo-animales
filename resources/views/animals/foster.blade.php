@@ -34,6 +34,10 @@
       @include('partials.navbar')
       <!-- ... -->
 
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
+      <!-- ... -->
+
       <!-- Información acerca de la acogida -->
       <section class="row">
         <div class="col-10 offset-1"> 

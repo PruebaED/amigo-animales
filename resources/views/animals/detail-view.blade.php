@@ -34,6 +34,10 @@
       @include('partials.navbar')
       <!-- ... -->
 
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
+      <!-- ... -->
+
       <!-- Vista detalle animal -->
       <section class="row">
         <div class="col-12"> <h1 class="text-center mt-5 mb-5">{{ $animal->name }}</h1></div>

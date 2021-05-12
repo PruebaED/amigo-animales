@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
 	public function getLogin()
   {
-    // Creamos una cookie que almacena la URL previa al acceso al inicio de sesión.
+    // Creamos una variable de sesión que almacena la URL previa al acceso al inicio de sesión.
     session(['url.intended' => url()->previous()]);
     return view('auth.login');
   }

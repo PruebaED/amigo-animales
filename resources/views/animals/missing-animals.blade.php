@@ -34,6 +34,10 @@
       @include('partials.navbar')
       <!-- ... -->
 
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
+      <!-- ... -->
+
       <!-- Animales desaparecidos -->
       <div class="row">
         <div class="col-10 offset-1"> 

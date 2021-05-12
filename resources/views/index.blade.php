@@ -31,7 +31,10 @@
   <body>
 
     <div class="container-fluid">
-
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
+      <!-- ... -->
+      
       <!-- PRESENTACIÓN PÁGINA -->
       <div class="row">
         <section class="col-12">

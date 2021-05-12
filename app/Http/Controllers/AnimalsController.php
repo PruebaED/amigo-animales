@@ -28,7 +28,7 @@ class AnimalsController extends Controller
 
   public function getAdopt($id)
   {
-    // Creamos una cookie que almacena la URL previa al acceso del proceso de acogida.
+    // Creamos una variable de sesión que almacena la URL previa al acceso del proceso de acogida.
     session(['url.intended' => url()->previous()]);
     return view('animals.adopt',
       array(
@@ -39,7 +39,7 @@ class AnimalsController extends Controller
 
   public function getFoster($id)
   {
-    // Creamos una cookie que almacena la URL previa al acceso del proceso de acogida.
+    // Creamos una variable de sesión que almacena la URL previa al acceso del proceso de acogida.
     session(['url.intended' => url()->previous()]);
     return view('animals.foster',
       array(

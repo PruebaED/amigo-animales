@@ -34,6 +34,10 @@
       @include('partials.navbar')
       <!-- ... -->
 
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
+      <!-- ... -->
+
       <!-- Normativa -->
       <section class="row">
         <div class="col-10 col-xl-4 offset-1"> 

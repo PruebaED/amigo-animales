@@ -35,6 +35,10 @@
       @include('partials.navbar')
       <!-- ... -->
 
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
+      <!-- ... -->
+
       <!-- Datos de contacto -->
       <section class="row mt-5">
         <div class="col-10 offset-1">

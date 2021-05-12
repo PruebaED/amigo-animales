@@ -30,7 +30,6 @@
   <body>
 
     <div class="container-fluid">
-
       <!-- Bienvenida -->
       <div class="row">
 				<div class="col-12 bienvenida"> 
@@ -47,6 +46,10 @@
 
       <!-- Navbar -->
       @include('partials.navbar')
+      <!-- ... -->
+
+      <!-- Scroll to top button -->
+      @include('utilities.scroll-to-top')
       <!-- ... -->
 
       <!-- Acerca de nosotros -->

@@ -31,6 +31,10 @@
     @include('partials.navbar')
     <!-- ... -->
 
+    <!-- Scroll to top button -->
+    @include('utilities.scroll-to-top')
+    <!-- ... -->
+
     <!-- Ajustes - Perfil -->
     <section class="row mt-5">
       
