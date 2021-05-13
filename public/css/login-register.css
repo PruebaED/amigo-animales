@@ -1,3 +1,4 @@
+/* Login - Register */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -179,3 +180,47 @@ section .container .user .formBx .signup a:hover {
     width: 100%;
   }
 }
+
+/* Dark mode */
+body.dark section {
+  background: #010409 !important;
+}
+
+body.dark .formBx {
+  background-color: #21262d !important;
+}
+
+body.dark .imgBx {
+  filter: grayscale(0.5);
+}
+
+body.dark label,
+body.dark p,
+body.dark h2 {
+  color: #f0f6fc !important;
+}
+
+body.dark section .container .user .formBx select,
+body.dark section .container .user .formBx select option:disabled,
+body.dark section .container .user .formBx select option:active,
+body.dark section .container .user .formBx input:not([type="checkbox"]):not([type="submit"]) {
+  background-color: #b1bac4;
+}
+
+body.dark section .container .user .formBx .signup a {
+  color: #b1bac4;
+}
+
+body.dark section .container .user .formBx input[type="submit"] {
+  opacity: 0.7;
+  color: #24262b !important;
+}
+
+body.dark section .container .user .formBx input[type="submit"]:hover {
+  opacity: 0.85;
+  color: #f0f6fc !important;
+  background-color: #e74c3c;
+}
+/* ... */
+
+/* ... */

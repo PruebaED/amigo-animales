@@ -38,4 +38,15 @@
     width: 8.5%;
   }
 }
+
+/* Dark mode */
+body.dark {
+  background: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark .link {
+  color: #6e7681 !important;
+}
+/* ... */
 /* ... */

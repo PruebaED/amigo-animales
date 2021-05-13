@@ -187,4 +187,38 @@ section::after {
   font-weight: 300;
   text-transform: initial;
 }
+
+/* Dark mode */
+body.dark {
+  background: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark .bienvenida,
+body.dark img,
+body.dark .about-section {
+  filter: grayscale(0.5);
+}
+
+body.dark .texto-bienvenida, body.dark .subtexto-bienvenida {
+  color: #010409 !important;
+}
+
+body.dark .container .card .content .imgBx {
+  border-color: #010409 !important;
+}
+
+body.dark .about-section {
+  background-color: #010409 !important;
+}
+
+body.dark .card {
+  background: #21262d !important;
+}
+
+body.dark .container .card:hover .content {
+  opacity: 0.85;
+}
+/* ... */
+
 /* ... */

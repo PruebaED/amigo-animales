@@ -28,7 +28,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Scroll to top button -->
@@ -78,7 +78,7 @@
         @foreach($animalsToAdopt as $key => $animal) 
         <div class="col-md-10 col-lg-6 col-xl-4 mb-5">
           <div class="single-content">
-            <img src="{{ $animal->image }}" alt="">
+            <img src="{{ $animal->image }}" alt="{{ $animal->name }}">
             <div class="text-content">
               <h5 class="mt-3 mb-2">{{ $animal->name }}</h5>
               <h5 class="mb-2">{{ $animal->breed }}</h5>

@@ -1,3 +1,4 @@
+/* Navbar */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -98,6 +99,25 @@ ul {
 	color: #e74c3c;
 }
 
+.dropdown-menu,
+.dropdown-item:active,
+.dropdown-item:visited {
+  background: #f8f9fa !important;
+}
+
+.dropdown-item,
+.navbar-brand  {
+  color: rgba(34,54,69,0.7) !important;
+}
+
+.dropdown-item li {
+  background: #30363d !important;
+}
+
+.dropdown-item:hover {
+  color: #e74c3c !important;
+}
+
 /* Aplica a medidas inferiores al tamaño xl */
 @media screen and (max-width: 1200px) {
 	.navbar-expand-xl .navbar-nav .nav-link:hover {
@@ -129,3 +149,71 @@ ul {
   background-color: #24262b;
   color: #ffffff;
 }
+
+/* Dark mode */
+body.dark #navbar {
+  background: #30363d !important;
+  color: #f0f6fc !important;
+}
+
+body.dark .navbar-nav,
+body.dark .nav-link:active {
+  background: #30363d !important;	
+}
+
+body.dark .nav-link {
+  color: #f0f6fc !important;
+  opacity: 0.7;
+}
+
+body.dark .nav-link:hover {
+  opacity: 0.85;
+  color: #e74c3c !important;
+}
+
+body.dark .dropdown-menu,
+body.dark .dropdown-item:active,
+body.dark .dropdown-item:visited {
+  background: #30363d !important;
+}
+
+body.dark .dropdown-item {
+  color: #f0f6fc !important;
+}
+
+body.dark .dropdown-item li {
+  background: #30363d !important;
+}
+
+body.dark .dropdown-item:hover {
+  opacity: 0.85;
+  color: #e74c3c !important;
+}
+
+body.dark .navbar-brand {
+  opacity: 0.7;
+  color: #f0f6fc !important;
+}
+
+body.dark .navbar-brand:hover {
+  opacity: 0.85;
+  color: #e74c3c !important;
+}
+
+body.dark a .nav-link {
+  color: #f0f6fc !important;
+}
+
+body.dark .navbar .btn {
+  opacity: 0.7;
+  color: #24262b !important;
+}
+
+body.dark .navbar-nav .btn:hover {
+  opacity: 0.85;
+  color: #f0f6fc !important;
+  background-color: #e74c3c;
+}
+/* ... */
+
+/* ... */

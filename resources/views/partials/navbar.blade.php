@@ -22,11 +22,11 @@
 		
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <!-- Navbar -->
     <header class="row sticky-top">
-      <nav class="col-12 navbar navbar-expand-xl navbar-light bg-light">
+      <nav id="navbar" class="col-12 navbar navbar-expand-xl navbar-light bg-light">
         <a class="navbar-brand" class="mb-5 mb-lg-0" href="/">El Amigo de los Animales</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span></span>

@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -44,34 +44,112 @@
         <div class="col-10 col-lg-4 offset-1"> <img class="w-100 mt-lg-3 mt-xl-0" src="{{ $animal->image }}"></div>
         <div class="col-10 col-lg-5 offset-1 offset-md-2 offset-lg-1 mt-5 mb-5 mt-lg-0 mt-xl-2 justificado">
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/edad.png">{{ $animal->age }} años</div>
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/ubicacion.png">{{ $animal->provinceAnimal->name }}</div>
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/edad.png"
+                  @else src="../images/iconosVistaDetalle/edad-white.png"
+                  @endif 
+                  alt=""
+                >
+                {{ $animal->age }} años
+              </div>
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/ubicacion.png"
+                  @else src="../images/iconosVistaDetalle/ubicacion-white.png"
+                  @endif 
+                  alt=""
+                >
+                {{ $animal->provinceAnimal->name }}
+              </div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/sexo.png">{{ $animal->gender }}</div>
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/peso.png">{{ $animal->weight }}kg</div>
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') 
+                    @if ($animal->gender == 'Macho')
+                      src="../images/iconosVistaDetalle/sexo-macho.png"
+                    @else
+                      src="../images/iconosVistaDetalle/sexo-hembra.png"
+                    @endif
+                  @else
+                    @if ($animal->gender == 'Macho')
+                      src="../images/iconosVistaDetalle/sexo-white-macho.png"
+                    @else
+                      src="../images/iconosVistaDetalle/sexo-white-hembra.png"
+                    @endif
+                  @endif 
+                  alt=""
+                >
+                {{ $animal->gender }}
+              </div>
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/peso.png"
+                  @else src="../images/iconosVistaDetalle/peso-white.png"
+                  @endif 
+                  alt=""
+                >
+                {{ $animal->weight }}kg
+              </div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/vacunado.png">
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/vacunado.png"
+                  @else src="../images/iconosVistaDetalle/vacunado-white.png"
+                  @endif 
+                  alt=""
+                >
                 Vacunado: @if($animal->vaccinated) Si @else No @endif
               </div>
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/sano.png">
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/sano.png"
+                  @else src="../images/iconosVistaDetalle/sano-white.png"
+                  @endif 
+                  alt=""
+                >
                 Sano: @if($animal->healthy) Si @else No @endif
               </div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/esterilizado.png">
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/esterilizado.png"
+                  @else src="../images/iconosVistaDetalle/esterilizado-white.png"
+                  @endif 
+                  alt=""
+                >
                 Esterilizado: @if($animal->sterilize) Si @else No @endif
               </div>
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/castrado.png">
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/castrado.png"
+                  @else src="../images/iconosVistaDetalle/castrado-white.png"
+                  @endif 
+                  alt=""
+                >
                 Castrado: @if($animal->castrated) Si @else No @endif
               </div>
             </div>
             <div class="row mb-3">
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/desparasitado.png">
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/desparasitado.png"
+                  @else src="../images/iconosVistaDetalle/desparasitado-white.png"
+                  @endif 
+                  alt=""
+                >
                 Espulgado: @if($animal->dewormed) Si @else No @endif
               </div>
-              <div class="col-6"><img class="icono mx-3" src="../images/iconosVistaDetalle/microchip.png">
+              <div class="col-6">
+                <img class="icono mx-3" 
+                  @if (Session::get('theme') != 'dark') src="../images/iconosVistaDetalle/microchip.png"
+                  @else src="../images/iconosVistaDetalle/microchip-white.png"
+                  @endif 
+                  alt=""
+                >
                 Microchip: @if($animal->microchip) Si @else No @endif
               </div>
             </div>

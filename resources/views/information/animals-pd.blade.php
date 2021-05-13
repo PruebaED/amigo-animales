@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->

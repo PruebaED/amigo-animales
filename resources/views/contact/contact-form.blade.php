@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -43,7 +43,7 @@
         @csrf
         <div class="row mt-5 mb-5"> 
           <div class="col-10 offset-1"> 
-            <h2>Formulario de contacto</h2> 
+            <h1>Formulario de contacto</h1>
           </div>
         </div>
 
@@ -109,7 +109,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="text-center col-10 offset-1 mb-5">
+          <div class="text-center col-10 offset-1">
             <input type="submit" value="Enviar">
           </div>
         </div>

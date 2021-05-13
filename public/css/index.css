@@ -270,4 +270,26 @@ section .navigation li a:hover {
   transform: translate(0, -50%);
   transition-delay: 0.3s;
 }
+
+/* Dark mode */
+body.dark {
+  background: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark video {
+  filter: grayscale(0.5);
+}
+
+body.dark img {
+  filter: grayscale(0.5);
+}
+
+body.dark .btn {
+  opacity: 0.7;
+}
+
+body.dark .btn:hover {
+  opacity: 0.85;
+}
 /* ... */

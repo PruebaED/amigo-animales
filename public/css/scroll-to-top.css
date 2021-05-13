@@ -18,4 +18,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, .05) !important;
   background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1571057658/cd-top-arrow.svg) no-repeat center 50%;
 }
+
+/* Dark mode */
+body.dark .cd-top {
+  opacity: 0.7;
+}
+/* ... */
+
 /* ... */

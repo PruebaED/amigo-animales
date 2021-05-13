@@ -46,9 +46,10 @@ class SettingsController extends Controller
     return redirect('account');
   }
 
-  public function putAppearance()
+  public function postAppearance(Request $request)
   {
-
+    session(['theme' => $request->appearanceRadioButton]);
+    return redirect('appearance');
   }
 
   public function putProfile(Request $request)

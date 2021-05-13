@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -191,7 +191,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="text-center col-10 offset-1 mt-3 mb-5">
+            <div class="text-center col-10 offset-1 mt-3">
               <input type="submit" name="fosterSubmit" value="Enviar">
             </div>
           </div>

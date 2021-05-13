@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -92,8 +92,7 @@
   
           <div class="row mb-4">
             <div class="col-10 offset-1 mt-3 mb-3">
-              <p class="parrafo">Si desea continuar con el proceso de adopción, revise los datos que se le muestran a continuación y acepte los acuerdos de 
-              responsabilidad. </p>
+              <p class="parrafo">Si desea continuar con el proceso de adopción, revise los datos que se le muestran a continuación y acepte los acuerdos de responsabilidad. </p>
             </div>
           </div>
   
@@ -208,7 +207,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="text-center col-10 offset-1 mt-3 mb-5">
+            <div class="text-center col-10 offset-1 mt-3">
               <input type="submit" name="adoptSubmit" value="Enviar">
             </div>
           </div>

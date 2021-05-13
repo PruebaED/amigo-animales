@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -50,23 +50,43 @@
           <p class="justificado">Es igualmente de obligado cumplimiento el comunicar al censo las bajas por muerte o desaparición del animal así como los cambios de 
           propietario.</p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="images/pdf.png" alt=""> <a class="link" href="downloadables/municipal-ordinance.pdf" target="_blank">Ordenanza municipal</a>
+            <img class="icono mx-3" 
+              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              alt=""
+            >
+            <a class="link" href="downloadables/municipal-ordinance.pdf" target="_blank">Ordenanza municipal</a>
           </p>
         </div>
         <div class="col-10 col-xl-4 offset-1 offset-xl-2"> 
           <h1 class="text-center mt-5 mb-5"> Normativa estatal </h1> 
           <hr>
           <p class="justificado"> 
-            <img class="icono mx-3" src="images/pdf.png" alt=""> <a class="link" href="downloadables/state-ordinance1.pdf" target="_blank">Ley 10/1990</a>
+            <img class="icono mx-3" 
+              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              alt=""
+            >
+            <a class="link" href="downloadables/state-ordinance1.pdf" target="_blank">Ley 10/1990</a>
           </p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="images/pdf.png" alt=""> <a class="link" href="downloadables/state-ordinance2.pdf" target="_blank">Ley 50/1999</a>
+            <img class="icono mx-3" 
+              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif
+              alt=""
+            >
+            <a class="link" href="downloadables/state-ordinance2.pdf" target="_blank">Ley 50/1999</a>
           </p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="images/pdf.png" alt=""> <a class="link" href="downloadables/state-ordinance3.pdf" target="_blank">R.D. 287/2002</a>
+            <img class="icono mx-3" 
+              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              alt=""
+            > 
+            <a class="link" href="downloadables/state-ordinance3.pdf" target="_blank">R.D. 287/2002</a>
           </p>
           <p class="justificado mt-5"> 
-            <img class="icono mx-3" src="images/pdf.png" alt=""> <a class="link" href="downloadables/state-ordinance4.pdf" target="_blank">Orden 29/06/13</a>
+            <img class="icono mx-3" 
+              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              alt=""
+            >
+            <a class="link" href="downloadables/state-ordinance4.pdf" target="_blank">Orden 29/06/13</a>
           </p>
         </div>
       </section>

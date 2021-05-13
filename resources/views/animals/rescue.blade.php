@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
       <div class="container-fluid">
       <!-- Navbar -->
@@ -64,7 +64,10 @@
           sin microchip, el plazo de retención es de cuatro días.</p>
           <p class="justificado">La estancia en el centro será costeada por el propietario. Consulte aquí las tarifas municipales por la custodia diaria:</p>
           <p class="justificado mt-4"> 
-            <img class="icono mx-3" src="images/ordenanza.png" alt=""> 
+            <img class="icono mx-3" 
+              @if (Session::get('theme') != 'dark') src="images/ordenanza.png" @else src="images/ordenanza-white.png" @endif 
+              alt=""
+            >
             <a class="link" href="https://www.cartagena.es/ordenanzas_fiscales.asp" target="_blank">Ordenanzas Fiscales</a>
           </p>
         </div>

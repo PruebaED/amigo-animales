@@ -174,4 +174,40 @@ input[type="submit"]:hover {
 }
   /* ... */
 
+/* Dark mode */
+body.dark {
+  background: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark .parrafo {
+  color: #f0f6fc !important;
+}
+
+body.dark .lista ul li {
+  border-color: #30363d !important;
+}
+
+body.dark .lista ul li::before {
+  background: #30363d !important;
+}
+
+body.dark .link-detalle {
+  color: #6e7681 !important;
+}
+
+body.dark .container-fluid .row .inputBox {
+  opacity: 0.7;
+}
+
+body.dark input[type="submit"] {
+  opacity: 0.7;
+}
+
+body.dark input[type="submit"]:hover {
+  opacity: 0.85;
+  background-color: #e74c3c;
+}
+/* ... */
+
 /* ... */

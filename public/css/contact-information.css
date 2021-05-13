@@ -78,4 +78,21 @@ body {
   }
 }
 
+/* Dark mode */
+body.dark {
+  background: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark .card {
+  background: #21262d !important;
+}
+
+body.dark .card-icon {
+  opacity: 0.7;
+}
+
+body.dark .card-icon:hover {
+  opacity: 0.85;
+}
 /* ... */

@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::delete('account', 'App\Http\Controllers\SettingsController@deleteAccount');
 
 	Route::get('appearance', 'App\Http\Controllers\SettingsController@getAppearance');
-	Route::put('appearance', 'App\Http\Controllers\SettingsController@putAppearance');
+	Route::post('appearance', 'App\Http\Controllers\SettingsController@postAppearance');
 
 	Route::get('profile', 'App\Http\Controllers\SettingsController@getProfile');
 	Route::put('profile', 'App\Http\Controllers\SettingsController@putProfile');

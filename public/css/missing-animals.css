@@ -34,7 +34,7 @@
   padding: 10px 5px;
 }
 
-.card-body .btn:hover {
+body:not(.dark) .card-body .btn:hover {
   background-color: #24262b;
   color: #ffffff !important;
 }
@@ -47,4 +47,29 @@
 .icono {
   width: 10%;
 }
+
+/* Dark mode */
+body.dark {
+  background: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark img {
+  filter: grayscale(0.5);
+}
+
+body.dark .card {
+  background: #21262d !important;
+  border-color: #21262d !important;
+}
+
+body.dark .btnMissingAnimal {
+  opacity: 0.7;
+}
+
+body.dark .btnMissingAnimal:hover {
+  opacity: 0.85;
+}
+/* ... */
+
 /* ... */

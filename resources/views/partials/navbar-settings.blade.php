@@ -23,22 +23,22 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <!-- Navbar - Settings -->
     <div class="col-2 offset-4 offset-md-2">
       <ul class="nav flex-column vertical-menu">
         <li class="nav-item">
-          <a class="nav-link active" href="/profile">Perfil</a>
+          <a class="nav-link nav-link-settings active" href="/profile">Perfil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/account">Cuenta</a>
+          <a class="nav-link nav-link-settings" href="/account">Cuenta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/appearance">Apariencia</a>
+          <a class="nav-link nav-link-settings" href="/appearance">Apariencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/security">Seguridad</a>
+          <a class="nav-link nav-link-settings" href="/security">Seguridad</a>
         </li>
       </ul>
     </div>

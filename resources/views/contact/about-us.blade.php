@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Bienvenida -->
@@ -37,7 +37,7 @@
             <div class="col-0 col-lg-1"></div>
 						<div class="col-8 col-lg-3 offset-2 offset-lg-0 mt-2 justificado"> 
 							<p class="texto-bienvenida"><i>El Amigo de los animales</i> le da la bienvenida. Esperemos que disfrute de la estancia.</p>
-							<p class="text-center">¡Gracias por visitarnos!</p>
+							<p class="text-center subtexto-bienvenida">¡Gracias por visitarnos!</p>
 						</div>
 					</div>
 				</div>

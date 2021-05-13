@@ -24,7 +24,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-<body>
+
+<body class="{{ Session::get('theme') }}">
 
   <div class="container-fluid">
     <!-- Navbar -->
@@ -50,37 +51,40 @@
           <div class="col-12">
             <p class="justificado">Elige como quieres que se te muestre <i>El Amigo de los Animales.</i></p>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-              <label class="form-check-label" for="flexRadioDefault1">
-                Modo por defecto
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-              <label class="form-check-label" for="flexRadioDefault2">
-                Modo oscuro
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-              <label class="form-check-label" for="flexRadioDefault3">
-                Modo dislexia
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-              <label class="form-check-label" for="flexRadioDefault4">
-                Modo daltonismo
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
-              <label class="form-check-label" for="flexRadioDefault5">
-                Modo vista cuidada (aumenta el tamaño de la fuente)
-              </label>
-            </div>
-            <br>
-            <input type="submit" value="Guardar preferencias">
+              <form method="POST">
+                @csrf
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault1" value="default" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Modo por defecto
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault2" value="dark">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Modo oscuro
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault3" value="dyslexia">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Modo dislexia
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault4" value="color-blindness">
+                <label class="form-check-label" for="flexRadioDefault4">
+                  Modo daltonismo
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault5" value="blurred-vision">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  Modo vista cuidada
+                </label>
+              </div>
+              <br>
+              <input type="submit" value="Guardar preferencias">
+            </form>
           </div>
         </div>
       </div>

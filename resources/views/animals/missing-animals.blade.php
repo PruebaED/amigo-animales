@@ -27,7 +27,7 @@
 
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -56,12 +56,67 @@
               <div class="card">
                 <img class="w-100" src="{{ $missingAnimal->image }}">
                 <div class="card-body">
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/fecha.png">&nbsp;&nbsp;Desaparece a {{ $missingAnimal->date }}</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/lugar.png">&nbsp;&nbsp;Desaparece en {{ $missingAnimal->provinceAnimal->name }}</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/nombre.png">&nbsp;&nbsp;{{ $missingAnimal->name }}</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/raza.png">&nbsp;&nbsp;{{ $missingAnimal->breed }}</p>
-                  <p class="justificado"><img class="icono" src="images/iconosAnimalesDesaparecidos/sexo.png">&nbsp;&nbsp;{{ $missingAnimal->gender }}</p>
-                  <a class="btn">¿Me has visto? ¡Contacta al {{ $missingAnimal->userAnimal->phone }}!</a>
+                  <p class="justificado">
+                    <img class="icono" 
+                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/fecha.png"
+                      @else src="images/iconosAnimalesDesaparecidos/fecha-white.png"
+                      @endif 
+                      alt=""
+                    >
+                    &nbsp;&nbsp;
+                    Desaparece a {{ $missingAnimal->date }}
+                  </p>
+                  <p class="justificado">
+                    <img class="icono" 
+                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/lugar.png"
+                      @else src="images/iconosAnimalesDesaparecidos/lugar-white.png"
+                      @endif 
+                      alt=""
+                    >
+                    &nbsp;&nbsp;
+                    Desaparece en {{ $missingAnimal->provinceAnimal->name }}
+                  </p>
+                  <p class="justificado">
+                    <img class="icono" 
+                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/nombre.png"
+                      @else src="images/iconosAnimalesDesaparecidos/nombre-white.png"
+                      @endif 
+                      alt=""
+                    >
+                    &nbsp;&nbsp;
+                    {{ $missingAnimal->name }}
+                  </p>
+                  <p class="justificado">
+                    <img class="icono" 
+                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/raza.png"
+                      @else src="images/iconosAnimalesDesaparecidos/raza-white.png"
+                      @endif 
+                      alt=""
+                    >
+                    &nbsp;&nbsp;
+                    {{ $missingAnimal->breed }}
+                  </p>
+                  <p class="justificado">
+                    <img class="icono" 
+                      @if (Session::get('theme') != 'dark') 
+                        @if ($missingAnimal->gender == 'Macho')
+                          src="images/iconosAnimalesDesaparecidos/sexo-macho.png"
+                        @else
+                          src="images/iconosAnimalesDesaparecidos/sexo-hembra.png"
+                        @endif
+                      @else
+                        @if ($missingAnimal->gender == 'Macho')
+                          src="images/iconosAnimalesDesaparecidos/sexo-white-macho.png"
+                        @else
+                          src="images/iconosAnimalesDesaparecidos/sexo-white-hembra.png"
+                        @endif
+                      @endif 
+                      alt=""
+                    >
+                    &nbsp;&nbsp;
+                    {{ $missingAnimal->gender }}
+                  </p>
+                  <a class="btn btnMissingAnimal">¿Me has visto? ¡Contacta al {{ $missingAnimal->userAnimal->phone }}!</a>
                 </div>
               </div>
             </div>

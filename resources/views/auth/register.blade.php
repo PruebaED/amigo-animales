@@ -26,7 +26,7 @@
     
   </head>
 
-  <body>
+  <body class="{{ Session::get('theme') }}">
     <section>
       <div class="container">
         <div class="user signupBx">

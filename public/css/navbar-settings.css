@@ -31,4 +31,24 @@ ul {
 .vertical-menu {
   border-left: 1px solid #e74c3c;
 }
+
+/* Dark mode */
+body.dark nav, body.dark .nav-link-settings {
+  background-color: #010409 !important;
+  color: #f0f6fc !important;
+}
+
+body.dark .nav-link-settings:active {
+  background-color: #010409 !important;
+}
+
+body.dark .nav-link-settings:hover {
+  color: #e74c3c !important;
+}
+
+body.dark .vertical-menu {
+  opacity: 0.7;
+}
+/* ... */
+
 /* ... */
