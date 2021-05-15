@@ -27,7 +27,11 @@
 
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -58,9 +62,13 @@
                 <div class="card-body">
                   <p class="justificado">
                     <img class="icono" 
-                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/fecha.png"
-                      @else src="images/iconosAnimalesDesaparecidos/fecha-white.png"
-                      @endif 
+                      @if (Auth::check() && Auth::user()->theme == 'dark')
+                        src="images/iconosAnimalesDesaparecidos/fecha-white.png"
+                      @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                        src="images/iconosAnimalesDesaparecidos/fecha-white.png"
+                      @else
+                        src="images/iconosAnimalesDesaparecidos/fecha.png"
+                      @endif
                       alt=""
                     >
                     &nbsp;&nbsp;
@@ -68,9 +76,13 @@
                   </p>
                   <p class="justificado">
                     <img class="icono" 
-                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/lugar.png"
-                      @else src="images/iconosAnimalesDesaparecidos/lugar-white.png"
-                      @endif 
+                      @if (Auth::check() && Auth::user()->theme == 'dark')
+                        src="images/iconosAnimalesDesaparecidos/lugar-white.png"
+                      @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                        src="images/iconosAnimalesDesaparecidos/lugar-white.png"
+                      @else
+                        src="images/iconosAnimalesDesaparecidos/lugar.png"
+                      @endif
                       alt=""
                     >
                     &nbsp;&nbsp;
@@ -78,9 +90,13 @@
                   </p>
                   <p class="justificado">
                     <img class="icono" 
-                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/nombre.png"
-                      @else src="images/iconosAnimalesDesaparecidos/nombre-white.png"
-                      @endif 
+                      @if (Auth::check() && Auth::user()->theme == 'dark')
+                        src="images/iconosAnimalesDesaparecidos/nombre-white.png"
+                      @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                        src="images/iconosAnimalesDesaparecidos/nombre-white.png"
+                      @else
+                        src="images/iconosAnimalesDesaparecidos/nombre.png"
+                      @endif
                       alt=""
                     >
                     &nbsp;&nbsp;
@@ -88,9 +104,13 @@
                   </p>
                   <p class="justificado">
                     <img class="icono" 
-                      @if (Session::get('theme') != 'dark') src="images/iconosAnimalesDesaparecidos/raza.png"
-                      @else src="images/iconosAnimalesDesaparecidos/raza-white.png"
-                      @endif 
+                      @if (Auth::check() && Auth::user()->theme == 'dark')
+                        src="images/iconosAnimalesDesaparecidos/raza-white.png"
+                      @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                        src="images/iconosAnimalesDesaparecidos/raza-white.png"
+                      @else
+                        src="images/iconosAnimalesDesaparecidos/raza.png"
+                      @endif
                       alt=""
                     >
                     &nbsp;&nbsp;
@@ -98,19 +118,25 @@
                   </p>
                   <p class="justificado">
                     <img class="icono" 
-                      @if (Session::get('theme') != 'dark') 
+                      @if (Auth::check() && Auth::user()->theme == 'dark')
                         @if ($missingAnimal->gender == 'Macho')
-                          src="images/iconosAnimalesDesaparecidos/sexo-macho.png"
+                          src="../images/iconosVistaDetalle/sexo-white-macho.png"
                         @else
-                          src="images/iconosAnimalesDesaparecidos/sexo-hembra.png"
+                          src="../images/iconosVistaDetalle/sexo-white-hembra.png"
+                        @endif
+                      @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                        @if ($missingAnimal->gender == 'Macho')
+                          src="../images/iconosVistaDetalle/sexo-white-macho.png"
+                        @else
+                          src="../images/iconosVistaDetalle/sexo-white-hembra.png"
                         @endif
                       @else
                         @if ($missingAnimal->gender == 'Macho')
-                          src="images/iconosAnimalesDesaparecidos/sexo-white-macho.png"
+                          src="../images/iconosVistaDetalle/sexo-macho.png"
                         @else
-                          src="images/iconosAnimalesDesaparecidos/sexo-white-hembra.png"
+                          src="../images/iconosVistaDetalle/sexo-hembra.png"
                         @endif
-                      @endif 
+                      @endif
                       alt=""
                     >
                     &nbsp;&nbsp;

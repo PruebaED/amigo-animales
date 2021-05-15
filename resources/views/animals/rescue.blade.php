@@ -27,7 +27,11 @@
 
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
 
       <div class="container-fluid">
       <!-- Navbar -->
@@ -65,7 +69,13 @@
           <p class="justificado">La estancia en el centro será costeada por el propietario. Consulte aquí las tarifas municipales por la custodia diaria:</p>
           <p class="justificado mt-4"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/ordenanza.png" @else src="images/ordenanza-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/ordenanza-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/ordenanza-white.png"
+              @else
+                src="images/ordenanza.png"
+              @endif
               alt=""
             >
             <a class="link" href="https://www.cartagena.es/ordenanzas_fiscales.asp" target="_blank">Ordenanzas Fiscales</a>

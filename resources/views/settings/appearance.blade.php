@@ -25,7 +25,11 @@
 
 </head>
 
-<body class="{{ Session::get('theme') }}">
+<body 
+  @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+  @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+  @endif
+>
 
   <div class="container-fluid">
     <!-- Navbar -->
@@ -52,32 +56,36 @@
             <p class="justificado">Elige como quieres que se te muestre <i>El Amigo de los Animales.</i></p>
             <div class="form-check">
               <form method="POST">
+                {{method_field('PUT')}}
                 @csrf
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault1" value="default" checked>
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault1" value="default"
+                @if (Auth::check()) {{ (Auth::user()->theme == 'default')? "checked" : "" }} @endif >
                 <label class="form-check-label" for="flexRadioDefault1">
                   Modo por defecto
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault2" value="dark">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault2" value="dark"
+                @if (Auth::check()) {{ (Auth::user()->theme == 'dark')? "checked" : "" }} @endif >
                 <label class="form-check-label" for="flexRadioDefault2">
                   Modo oscuro
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault3" value="dyslexia">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault3" value="dyslexia"
+                @if (Auth::check()) {{ (Auth::user()->theme == 'dyslexia')? "checked" : "" }} @endif >
                 <label class="form-check-label" for="flexRadioDefault3">
                   Modo dislexia
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault4" value="color-blindness">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault4" value="color-blindness" @if (Auth::check()) {{ (Auth::user()->theme == 'color-blindness')? "checked" : "" }} @endif >
                 <label class="form-check-label" for="flexRadioDefault4">
                   Modo daltonismo
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault5" value="blurred-vision">
+                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault5" value="blurred-vision" @if (Auth::check()) {{ (Auth::user()->theme == 'blurred-vision')? "checked" : "" }} @endif >
                 <label class="form-check-label" for="flexRadioDefault5">
                   Modo vista cuidada
                 </label>

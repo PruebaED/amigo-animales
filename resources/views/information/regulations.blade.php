@@ -27,7 +27,11 @@
 
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -51,7 +55,13 @@
           propietario.</p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/municipal-ordinance.pdf" target="_blank">Ordenanza municipal</a>
@@ -62,28 +72,52 @@
           <hr>
           <p class="justificado"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/state-ordinance1.pdf" target="_blank">Ley 10/1990</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/state-ordinance2.pdf" target="_blank">Ley 50/1999</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
-            > 
+            >
             <a class="link" href="downloadables/state-ordinance3.pdf" target="_blank">R.D. 287/2002</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/state-ordinance4.pdf" target="_blank">Orden 29/06/13</a>

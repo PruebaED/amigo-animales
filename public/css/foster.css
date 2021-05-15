@@ -172,6 +172,11 @@ input[type="submit"]:hover {
   background-color: #24262b;
   color: #ffffff;
 }
+
+input[type="checkbox"]:checked {
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
   /* ... */
 
 /* Dark mode */
@@ -207,6 +212,10 @@ body.dark input[type="submit"] {
 body.dark input[type="submit"]:hover {
   opacity: 0.85;
   background-color: #e74c3c;
+}
+
+body.dark input[type="checkbox"]:checked {
+  opacity: 0.7;
 }
 /* ... */
 

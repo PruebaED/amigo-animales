@@ -22,7 +22,11 @@
 		
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
 
     <!-- Navbar -->
     <header class="row sticky-top">

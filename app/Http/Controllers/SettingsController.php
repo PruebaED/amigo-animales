@@ -46,9 +46,20 @@ class SettingsController extends Controller
     return redirect('account');
   }
 
-  public function postAppearance(Request $request)
+  public function putAppearance(Request $request)
   {
-    session(['theme' => $request->appearanceRadioButton]);
+    $selectedAppearance = $request->appearanceRadioButton;
+
+    // Se almacena en la BBDD la preferencia de tema escogida por el usuario.
+    $user = User::findOrFail(Auth::user()->user_id);
+    $user->theme = $selectedAppearance;
+    $user->save();
+
+    // Nombre de la cookie = theme
+    // Valor = el seleccionado por el usuario
+    // Tiempo de expiración = 1 año
+    // ¿Dónde está disponible la cookie? = en la totalidad del dominio
+    setcookie('theme', $selectedAppearance, time() + 31556926, '/');
     return redirect('appearance');
   }
 

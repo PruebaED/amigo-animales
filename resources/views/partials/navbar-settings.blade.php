@@ -23,7 +23,11 @@
 
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
 
     <!-- Navbar - Settings -->
     <div class="col-2 offset-4 offset-md-2">

@@ -27,7 +27,11 @@
 
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
 
     <div class="container-fluid">
       <!-- Navbar -->
@@ -71,30 +75,54 @@
           <p class="justificado"><strong>AVISO IMPORTANTE: La presentación del justificante de pago de la tasa es preceptiva para la aceptación de cualquier animal
           en el Centro. No se hacen distinciones sobre si la persona que solicita la entrega es el propietario del animal o si por cualquier causa es solamente su
           poseedor temporal.</strong></p>
-          <p class="justificado mt-4"> 
+          <p class="justificado mt-4">
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/deliver.pdf" target="_blank">Solicitud de entrega de animal</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/rescue.pdf" target="_blank">Solicitud de rescate de animal</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pdf.png" @else src="images/pdf-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pdf-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pdf-white.png"
+              @else
+                src="images/pdf.png"
+              @endif
               alt=""
             >
             <a class="link" href="downloadables/move-away.pdf" target="_blank">Solicitud de retirada del domicilio</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
-              @if (Session::get('theme') != 'dark') src="images/pago.png" @else src="images/pago-white.png" @endif 
+              @if (Auth::check() && Auth::user()->theme == 'dark')
+                src="images/pago-white.png"
+              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+                src="images/pago-white.png"
+              @else
+                src="images/pago.png"
+              @endif
               alt=""
             >
             <a class="link" href="https://seguro.cartagena.es/sedeelectronica/tramites/detalleTramite.asp?codtramite=290" target="_blank">Formulario de autoliquidación</a>

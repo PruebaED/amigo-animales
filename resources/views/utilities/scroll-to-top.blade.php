@@ -13,7 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body class="{{ Session::get('theme') }}">
+  <body 
+    @if (Auth::check()) class="{{ Auth::user()->theme }}" 
+    @elseif (isset($_COOKIE['theme'])) class="{{ $_COOKIE['theme'] }}" 
+    @endif
+  >
   	<!-- Scroll to top -->
   	<a href="#" id="scrollToTopButton" class="cd-top"></a>
   	<!-- ... -->
