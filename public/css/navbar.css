@@ -31,6 +31,7 @@ html, body {
 
 .nav-link:visited, .navbar-brand:visited {
 	text-decoration: none;
+    color: rgba(34,54,69,0.7) !important;
 }
 
 ul {
