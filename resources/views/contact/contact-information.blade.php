@@ -19,7 +19,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 		<!-- JavaScript -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -54,17 +53,17 @@
           </p>
         </div>
         <div class="card col-10 col-md-8 mb-5 offset-1 offset-md-2">
-          <i class="card-icon far fa-envelope"></i>
+          <img class="card-icon" src="images/email.png">
           <p>soporte@amigoanimales.com</p>
         </div>
   
         <div class="card col-10 col-md-8 mb-5 offset-1 offset-md-2">
-          <i class="card-icon fas fa-phone"></i>
+          <img class="card-icon" src="images/telefono.png">
           <p>+34 123 456 789</p>
         </div>
   
         <div class="card col-10 col-md-8 offset-1 offset-md-2">
-          <i class="card-icon fas fa-map-marker-alt"></i>
+          <img class="card-icon" src="images/localizacion.png">
           <p>Calle Inventada, Nº23</p>
         </div>
       </section>

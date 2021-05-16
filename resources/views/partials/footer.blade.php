@@ -11,7 +11,6 @@
   @endif
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body 
 	@if (Auth::check()) class="{{ Auth::user()->theme }}" 
@@ -55,10 +54,102 @@
 		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">
 			<h4>Síguenos</h4>
 			<div class="social-links">
-				<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-				<a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-				<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-				<a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+				<a href="https://www.facebook.com/" target="_blank">
+		            <img
+		              @if (Auth::check() && Auth::user()->theme == 'dark')
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/facebook-white.png" 
+  				  		@else 
+  				  			src="images/social/facebook-white.png"
+			  			@endif
+		              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/facebook-white.png" 
+  				  		@else 
+  				  			src="images/social/facebook-white.png"
+			  			@endif
+		              @else
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/facebook.png" 
+  				  		@else 
+  				  			src="images/social/facebook.png"
+			  			@endif
+		              @endif
+		              alt=""
+		            >
+				</a>
+				<a href="https://twitter.com/" target="_blank">
+		            <img
+		              @if (Auth::check() && Auth::user()->theme == 'dark')
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/twitter-white.png" 
+  				  		@else 
+  				  			src="images/social/twitter-white.png"
+			  			@endif
+		              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/twitter-white.png" 
+  				  		@else 
+  				  			src="images/social/twitter-white.png"
+			  			@endif
+		              @else
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/twitter.png" 
+  				  		@else 
+  				  			src="images/social/twitter.png"
+			  			@endif
+		              @endif
+		              alt=""
+		            >
+				</a>
+				<a href="https://www.instagram.com/" target="_blank">
+		            <img
+		              @if (Auth::check() && Auth::user()->theme == 'dark')
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/instagram-white.png" 
+  				  		@else 
+  				  			src="images/social/instagram-white.png"
+			  			@endif
+		              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/instagram-white.png" 
+  				  		@else 
+  				  			src="images/social/instagram-white.png"
+			  			@endif
+		              @else
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/instagram.png" 
+  				  		@else 
+  				  			src="images/social/instagram.png"
+			  			@endif
+		              @endif
+		              alt=""
+		            >
+				</a>
+				<a href="https://www.linkedin.com/" target="_blank">
+		            <img
+		              @if (Auth::check() && Auth::user()->theme == 'dark')
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/linkedin-white.png" 
+  				  		@else 
+  				  			src="images/social/linkedin-white.png"
+			  			@endif
+		              @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/linkedin-white.png" 
+  				  		@else 
+  				  			src="images/social/linkedin-white.png"
+			  			@endif
+		              @else
+      				  	@if (isset($animal->animal_id)) 
+      				  		src="../images/social/linkedin.png" 
+  				  		@else 
+  				  			src="images/social/linkedin.png"
+			  			@endif
+		              @endif
+		              alt=""
+		            >
+				</a>
 			</div>
 		</div>
 		<div class="footer-col col-md-6 col-xl-3 mx-auto d-block">

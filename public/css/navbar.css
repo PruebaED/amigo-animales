@@ -16,7 +16,7 @@ html, body {
 /* color de los componentes del menú */
 .nav-link, .navbar-brand {
 	text-decoration: none;
-	color: rgba(34,54,69,0.7);
+	color: rgba(34,54,69,0.7) !important;
 	font-weight: 500;
 }
 
@@ -31,7 +31,6 @@ html, body {
 
 .nav-link:visited, .navbar-brand:visited {
 	text-decoration: none;
-    color: rgba(34,54,69,0.7) !important;
 }
 
 ul {

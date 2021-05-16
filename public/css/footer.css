@@ -58,15 +58,19 @@ ul {
 
 .footer-col .social-links a {
   display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255,255,255,0.2);
-  margin:0 10px 10px 0;
+  height: 48px;
+  width: 48px;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
   color: #ffffff;
   transition: all 0.5s ease;
+  margin-right: 5px;
+}
+
+.footer-col .social-links a img {
+  width: 48px;
+  height: 48px;
 }
 
 .footer-col .social-links a:hover {
@@ -97,7 +101,7 @@ body.dark .footer-col ul li a:hover {
 }
 
 body.dark .footer-col .social-links a {
-	background-color: #484f58 !important;
+	color: #484f58 !important;
 	opacity: 0.7;
 }
 
