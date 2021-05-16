@@ -44,7 +44,10 @@
 
       <!-- Animales desaparecidos -->
       <div class="row">
-        <div class="col-10 offset-1"> 
+        <div class="col-10 offset-1">
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... --> 
           <h1 class="text-center mt-5 mb-5"> Animales desaparecidos </h1> 
           <hr>
         </div>

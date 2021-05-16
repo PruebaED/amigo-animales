@@ -75,7 +75,10 @@
 
       <!-- SECCIÓN ANIMALES -->
       <section class="row">
-        <div id="adopcion" class="col-10"> 
+        <div id="adopcion" class="col-10">
+          <!-- Éxitos producidos en formularios que redirigen a la página de inicio -->
+            @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... --> 
           <h1 class="text-center mt-5 mb-5"> Animales en adopción </h1> 
           <hr class="mb-4">
         </div>

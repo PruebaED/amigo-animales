@@ -45,6 +45,9 @@
       <!-- Rescate -->
       <section class="row">
         <div class="col-10 offset-1"> 
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... -->
           <h1 class="text-center mt-5 mb-5">Recuperación de animales extraviados</h1> 
           <hr>
           <p class="justificado">Todos los animales que abandonan el Centro, tienen que hacerlo con los tratamientos mínimos obligatorios que exige la Normativa vigente,

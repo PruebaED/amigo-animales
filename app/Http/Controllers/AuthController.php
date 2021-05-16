@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterPostRequest;
+use App\Http\Requests\LoginPostRequest;
+use Illuminate\Support\MessageBag;
 
 class AuthController extends Controller
 {
@@ -26,10 +29,10 @@ class AuthController extends Controller
   public function getLogout(Request $request)
   {
     Auth::logout();
-    return redirect('/login');
+    return redirect('/login')->withSuccess('Ha cerrado sesión de forma satisfactoria.');
   }
 
-  public function postLogin(Request $request)
+  public function postLogin(LoginPostRequest $request)
   {
     $userData = array(
       'email' => $request->loginEmail,
@@ -53,16 +56,18 @@ class AuthController extends Controller
             $previousUrl != 'http://amigo-animales.test/login'
           ) 
         {
-          return redirect(Session::get('url.intended', url('/')));
+          return redirect(Session::get('url.intended', url('/')))->withSuccess('Ha iniciado sesión de forma satisfactoria.');
         }
       }
-      return redirect('/');
+      return redirect('/')->withSuccess('Ha iniciado sesión de forma satisfactoria.');
     } else {
-      return redirect('/login')->withInput();
+      $errors = new MessageBag();
+      $errors->add('incorrect_login_credentials', 'La contraseña introducida es incorrecta.');
+      return redirect('/login')->withInput()->withErrors($errors);
     }
 }
 
-  public function postRegister(Request $request)
+  public function postRegister(RegisterPostRequest $request)
   {
     $user = new User();
     $user->name = $request->registerName;
@@ -72,6 +77,6 @@ class AuthController extends Controller
     $user->province_id = $request->registerSelect;
     $user->password = Hash::make($request->registerPassword);
     $user->save();
-    return redirect('/login');
+    return redirect('/login')->withSuccess('Su cuenta ha sido registrada satisfactoriamente.');
   }
 }

@@ -45,6 +45,9 @@
       <!-- Entrega -->
       <section class="row">
         <div class="col-10 offset-1"> 
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... -->
           <h1 class="text-center mt-5 mb-5"> Entrega de un animal </h1> 
           <hr>
           <p class="justificado">En el Centro se acogen para la adopción o eutanasia los perros de los ciudadanos del municipio de Cartagena que no puedan seguir 

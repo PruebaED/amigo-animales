@@ -44,7 +44,10 @@
 
       <!-- Información acerca de la acogida -->
       <section class="row">
-        <div class="col-10 offset-1"> 
+        <div class="col-10 offset-1">
+          <!-- Errores producidos en el formulario -->
+          @if (count($errors) > 0) @include('utilities.form-errors') @endif
+          <!-- ... -->
           <h1 class="text-center mt-5 mb-5"> Acogida de {{ $animal->name }} </h1> 
           <hr>
           <p class="justificado"> <strong> Una casa de acogida </strong> es un hogar temporal que se ofrece, desinteresadamente, a animales que han sido previamente
@@ -93,14 +96,16 @@
   
           <div class="row mb-4">
             <div class="col-10 offset-1 mt-3 mb-3">
-              <p class="parrafo"> Si desea continuar con el proceso de acogida, revise los datos que se le muestran a continuación y acepte los acuerdos de responsabilidad. </p>
+              <p class="parrafo"> 
+                Si desea continuar con el proceso de acogida, revise los datos que se le muestran a continuación: 
+              </p>
             </div>
           </div>
   
           <div class="row">
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterName" required="required"
+                <input type="text" name="fosterName"
                 @if (Auth::check())
                   value="{{ Auth::user()->name }}"
                 @endif
@@ -111,7 +116,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterSurnames" required="required"
+                <input type="text" name="fosterSurnames"
                 @if (Auth::check())
                   value="{{ Auth::user()->surnames }}"
                 @endif
@@ -122,7 +127,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterEmail" required="required"
+                <input type="text" name="fosterEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -133,7 +138,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterProvince" required="required"
+                <input type="text" name="fosterProvince"
                 @if (Auth::check())
                   value="{{ Auth::user()->userProvince->name }}"
                 @endif
@@ -144,7 +149,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterPhone" required="required"
+                <input type="text" name="fosterPhone"
                 @if (Auth::check())
                   value="{{ Auth::user()->phone }}"
                 @endif
@@ -155,42 +160,34 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterAnimalName" required="required" value="{{ $animal->name }}">
+                <input type="text" name="fosterAnimalName" value="{{ $animal->name }}">
                 <span class="text">Nombre del animal</span>
                 <span class="line"></span>
               </div>
             </div>
             <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="fosterAgreementOne"> 
-                <input class="form-check-input" type="checkbox" name="fosterAgreementOne" id="fosterAgreementOne" required> 
-                He sido informado/a correctamente acerca de lo que supone la acogida de un animal. 
-              </label>
+              <p class="parrafo mb-4">Para hacer efectivo el proceso de adopción, debe aceptar los acuerdos de responsabilidad:</p>
+              <ul class="acuerdo-responsabilidad justificado">
+                <li>He sido informado correctamente acerca de lo que supone la adopción de un animal.</li>
+                <li>Soy consciente de la responsibilidad que supone tener un animal a mi cuidado.</li>
+                <li>Afirmo disponer de una casa en propiedad. En caso de estar alquilado, afirmo disponer
+                del permiso necesario para poder alojar un animal en la vivienda.</li>
+                <li>Afirmo disponer del tiempo necesario para proporcionar al animal unos cuidados correctos,
+                incluyendo los correspondientes paseos diarios (en que caso de acoger a un perro).</li>
+                <li class="mb-4">Soy consciente que el animal puede ocasionar algún destrozo en la vivienda, derivado de
+                posibles traumas y/o problemas de comportamiento.</li>
+              </ul>
             </div>
             <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="fosterAgreementTwo"> 
-                <input class="form-check-input" type="checkbox" name="fosterAgreementTwo" id="fosterAgreementTwo" required> 
-                Soy consciente de la responsibilidad que supone tener un animal a mi cuidado. 
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="fosterAgreementThree"> 
-                <input class="form-check-input" type="checkbox" name="fosterAgreementThree" id="fosterAgreementThree" required> 
-                Afirmo disponer de una casa en propiedad. En caso de estar alquilado/a, afirmo disponer del permiso
-                necesario para poder alojar un animal en la vivienda. 
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="fosterAgreementFour"> 
-                <input class="form-check-input" type="checkbox" name="fosterAgreementFour" id="fosterAgreementFour" required> 
-                Afirmo disponer del tiempo necesario para proporcionar al animal unos cuidados correctos, incluyendo
-                los correspondientes paseos diarios (en que caso de acoger a un perro).
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="fosterAgreementFive"> 
-                <input class="form-check-input" type="checkbox" name="fosterAgreementFive" id="fosterAgreementFive" required> 
-                Soy consciente que el animal puede ocasionar algún destrozo en la vivienda, derivado de posibles traumas
-                y/o problemas de comportamiento.
+              <label class="form-check-label mb-4 justificado" for="fosterAgreement"> 
+                <input class="form-check-input" type="checkbox" name="fosterAgreement" id="fosterAgreement"> 
+                  @if (Auth::check())
+                    Yo, {{ Auth::user()->name }} {{ Auth::user()->surnames }}, actuando en mi propio nombre y representación, 
+                    declaro bajo mi responsabilidad que: Acepto el acuerdo de responsabilidad presente en la página web 'El Amigo
+                    de los Animales', referente a la acogida de {{ $animal->name }}.
+                  @else
+                    Acepto el acuerdo de responsabilidad.
+                  @endif 
               </label>
             </div>
           </div>

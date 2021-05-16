@@ -32,6 +32,14 @@
     @endif
   >
     <section>
+      <!-- Errores producidos en el formulario -->
+      @if (count($errors) > 0) @include('utilities.form-errors') @endif
+      <!-- ... -->
+
+      <!-- Éxitos producidos en formularios que redirigen al login -->
+      @if (session('success')) @include('utilities.form-success') @endif
+      <!-- ... -->
+
       <div class="container">
         <div class="user signinBx">
           <div class="imgBx"><img src="images/gato_registro.jpg"></div>
@@ -39,9 +47,9 @@
             <form method="POST">
               @csrf
               <h2>Inicio de sesión</h2>
-              <input class="form-control" type="email" name="loginEmail" value="{{ old('loginEmail')}}" placeholder="Email">
-              <input class="form-control" type="password" name="loginPassword" placeholder="Contraseña">
-              <input class="form-check-input mt-2 mb-2" type="checkbox" name="loginRememberMe" id="loginRememberMe">
+              <input class="form-control" type="text" name="loginEmail" placeholder="Email" value="{{ old('loginEmail') }}">
+              <input class="form-control" type="password" name="loginPassword" placeholder="Contraseña" value="{{ old('loginPassword') }}">
+              <input class="form-check-input mt-2 mb-2" type="checkbox" value="on" name="loginRememberMe" id="loginRememberMe">
               <label class="form-check-label mt-2 mb-2" for="loginRememberMe"> Recuérdame </label>
               <br>
               <input class="btn btn-primary" type="submit" name="loginSubmit" value="Iniciar sesión">

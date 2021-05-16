@@ -42,9 +42,16 @@
 
     <!-- Ajustes - Perfil -->
     <section class="row mt-5">
-      
       <!-- Navbar - Settings -->
       @include('partials.navbar-settings')
+      <!-- ... -->
+
+      <!-- Errores producidos en el formulario -->
+      @if (count($errors) > 0) @include('utilities.form-errors') @endif
+      <!-- ... -->
+
+      <!-- Mensaje de éxito tras actualizar el perfil correctamente -->
+      @if (session('success')) @include('utilities.form-success') @endif
       <!-- ... -->
       
       <div class="w-100 d-lg-none"></div>
@@ -57,7 +64,7 @@
             @csrf
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="securityOldPassword" required="required">
+                <input type="password" name="securityOldPassword" value="{{ old('securityOldPassword') }}">
                 <span class="text">Antigua contraseña</span>
                 <span class="line"></span>
               </div>
@@ -65,7 +72,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="securityNewPassword" required="required">
+                <input type="password" name="securityNewPassword" value="{{ old('securityNewPassword') }}">
                 <span class="text">Nueva contraseña</span>
                 <span class="line"></span>
               </div>
@@ -73,7 +80,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="securityConfirmNewPassword" required="required">
+                <input type="password" name="securityConfirmNewPassword" value="{{ old('securityConfirmNewPassword') }}">
                 <span class="text">Confirme nueva contraseña</span>
                 <span class="line"></span>
               </div>

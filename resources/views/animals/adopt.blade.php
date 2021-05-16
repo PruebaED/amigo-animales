@@ -45,6 +45,9 @@
       <!-- Información acerca de la adopcion -->
       <section class="row">
         <div class="col-10 offset-1"> 
+          <!-- Errores producidos en el formulario -->
+          @if (count($errors) > 0) @include('utilities.form-errors') @endif
+          <!-- ... -->
           <h1 class="text-center mt-5 mb-5"> Adopción de {{ $animal->name }} </h1> 
           <hr>
           <p class="justificado"> <strong> Traer un animal a tu vida </strong> a través de la adopción puede ser una oportunidad para salvar la vida de un animal que
@@ -96,14 +99,16 @@
   
           <div class="row mb-4">
             <div class="col-10 offset-1 mt-3 mb-3">
-              <p class="parrafo">Si desea continuar con el proceso de adopción, revise los datos que se le muestran a continuación y acepte los acuerdos de responsabilidad. </p>
+              <p class="parrafo">
+                Si desea continuar con el proceso de adopción, revise los datos que se le muestran a continuación:
+              </p>
             </div>
           </div>
   
           <div class="row">
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="adoptName" required="required"
+                <input type="text" name="adoptName"
                 @if (Auth::check())
                   value="{{ Auth::user()->name }}"
                 @endif
@@ -114,7 +119,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="adoptSurnames" required="required"
+                <input type="text" name="adoptSurnames"
                 @if (Auth::check())
                   value="{{ Auth::user()->surnames }}"
                 @endif
@@ -125,7 +130,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="adoptEmail" required="required"
+                <input type="text" name="adoptEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -136,7 +141,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="adoptProvince" required="required"
+                <input type="text" name="adoptProvince"
                 @if (Auth::check())
                   value="{{ Auth::user()->userProvince->name }}"
                 @endif
@@ -147,7 +152,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="adoptPhone" required="required"
+                <input type="text" name="adoptPhone"
                 @if (Auth::check())
                   value="{{ Auth::user()->phone }}"
                 @endif
@@ -158,55 +163,35 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="adoptAnimalName" required="required" value="{{ $animal->name }}">
+                <input type="text" name="adoptAnimalName" value="{{ $animal->name }}">
                 <span class="text">Nombre del animal</span>
                 <span class="line"></span>
               </div>
             </div>
             <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementOne"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementOne" id="adoptAgreementOne" required> 
-                He sido informado correctamente acerca de lo que supone la adopción de un animal. 
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementTwo"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementTwo" id="adoptAgreementTwo" required> 
-                Soy consciente de la responsibilidad que supone tener un animal a mi cuidado. 
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementThree"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementThree" id="adoptAgreementThree" required> 
-                Afirmo disponer de una casa en propiedad. En caso de estar alquilado, afirmo disponer del permiso
-                necesario para poder alojar un animal en la vivienda. 
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementFour"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementFour" id="adoptAgreementFour" required> 
-                Afirmo disponer del tiempo necesario para proporcionar al animal unos cuidados correctos, incluyendo
-                los correspondientes paseos diarios (en que caso de acoger a un perro).
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementFive"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementFive" id="adoptAgreementFive" required> 
-                Me comprometo a no destinar al animal a la cría o a la reproducción.
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementSix"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementSix" id="adoptAgreementSix" required> 
-                Me comprometo a notificar a 'El Amigo de los Animales' cualquier cambio producido respecto al estado
-                del animal (desaparición, robo, defunción...).
-              </label>
-            </div>
-            <div class="col-10 offset-1">
-              <label class="form-check-label mb-4 justificado" for="adoptAgreementSeven"> 
-                <input class="form-check-input" type="checkbox" name="adoptAgreementSeven" id="adoptAgreementSeven" required> 
-                Soy consciente que el animal puede ocasionar algún destrozo en la vivienda, derivado de posibles traumas
-                y/o problemas de comportamiento.
+              <p class="parrafo mb-4">Para hacer efectivo el proceso de adopción, debe aceptar los acuerdos de responsabilidad:</p>
+              <ul class="acuerdo-responsabilidad justificado">
+                <li>He sido informado correctamente acerca de lo que supone la adopción de un animal.</li>
+                <li>Soy consciente de la responsibilidad que supone tener un animal a mi cuidado.</li>
+                <li>Afirmo disponer de una casa en propiedad. En caso de estar alquilado, afirmo disponer
+                del permiso necesario para poder alojar un animal en la vivienda.</li>
+                <li>Afirmo disponer del tiempo necesario para proporcionar al animal unos cuidados correctos,
+                incluyendo los correspondientes paseos diarios (en que caso de acoger a un perro).</li>
+                <li>Me comprometo a no destinar al animal a la cría o a la reproducción.</li>
+                <li>Me comprometo a notificar a 'El Amigo de los Animales' cualquier cambio producido respecto
+                al estado del animal (desaparición, robo, defunción...).</li>
+                <li class="mb-4">Soy consciente que el animal puede ocasionar algún destrozo en la vivienda, derivado de
+                posibles traumas y/o problemas de comportamiento.</li>
+              </ul>
+              <label class="form-check-label mb-4 justificado" for="adoptAgreement"> 
+                <input class="form-check-input" type="checkbox" name="adoptAgreement" id="adoptAgreement"> 
+                  @if (Auth::check())
+                    Yo, {{ Auth::user()->name }} {{ Auth::user()->surnames }}, actuando en mi propio nombre y representación, 
+                    declaro bajo mi responsabilidad que: Acepto el acuerdo de responsabilidad presente en la página web 'El Amigo
+                    de los Animales', referente a la adopción de {{ $animal->name }}.
+                  @else
+                    Acepto el acuerdo de responsabilidad.
+                  @endif 
               </label>
             </div>
           </div>

@@ -44,7 +44,10 @@
 
       <!-- Normativa -->
       <section class="row">
-        <div class="col-10 col-xl-4 offset-1"> 
+        <div class="col-10 col-xl-4 offset-1">
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... --> 
           <h1 class="text-center mt-5 mb-5"> Normativa municipal </h1> 
           <hr>
           <p class="justificado">La inclusión en el registro es <strong>OBLIGATORIA</strong> para aquellos perros y gatos mayores de tres meses que residan en el Término

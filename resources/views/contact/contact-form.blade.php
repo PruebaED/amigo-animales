@@ -43,10 +43,17 @@
       <!-- ... -->
 
       <!-- Formulario de contacto -->
-      <form>
+      <form method="POST">
         @csrf
         <div class="row mt-5 mb-5"> 
-          <div class="col-10 offset-1"> 
+          <div class="col-10 offset-1">
+            <!-- Errores producidos en el formulario -->
+            @if (count($errors) > 0) @include('utilities.form-errors') @endif
+            <!-- ... -->
+
+            <!-- Mensaje de éxito tras loguearse correctamente o tras enviar el formulario de contacto correctamente -->
+            @if (session('success')) @include('utilities.form-success') @endif
+            <!-- ... -->
             <h1>Formulario de contacto</h1>
           </div>
         </div>
@@ -62,9 +69,11 @@
         <div class="row">
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required"
+              <input type="text" name="contactFormName"
               @if (Auth::check())
                 value="{{ Auth::user()->name }}"
+              @else
+                value="{{ old('contactFormName') }}"
               @endif
               >
               <span class="text">Nombre</span>
@@ -73,9 +82,11 @@
           </div>
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required"
+              <input type="text" name="contactFormSurnames"
               @if (Auth::check())
                 value="{{ Auth::user()->surnames }}"
+              @else
+                value="{{ old('contactFormSurnames') }}"
               @endif
               >
               <span class="text">Apellidos</span>
@@ -84,9 +95,11 @@
           </div>
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required"
+              <input type="text" name="contactFormEmail"
               @if (Auth::check())
                 value="{{ Auth::user()->email }}"
+              @else
+                value="{{ old('contactFormEmail') }}"
               @endif
               >
               <span class="text">Email</span>
@@ -95,9 +108,11 @@
           </div>
           <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required"
+              <input type="text" name="contactFormPhone"
               @if (Auth::check())
                 value="{{ Auth::user()->phone }}"
+              @else
+                value="{{ old('contactFormPhone') }}"
               @endif
               >
               <span class="text">Teléfono</span>
@@ -106,7 +121,7 @@
           </div>
           <div class="col-10 col-xl-8 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="text" name="contactFormQuery" value="{{ old('contactFormQuery') }}">
               <span class="text">Motivo de la consulta</span>
               <span class="line"></span>
             </div>
@@ -114,7 +129,7 @@
         </div>
         <div class="row">
           <div class="text-center col-10 offset-1">
-            <input type="submit" value="Enviar">
+            <input type="submit" name="contactFormSubmit" value="Enviar">
           </div>
         </div>
       </form>

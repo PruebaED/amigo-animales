@@ -77,6 +77,11 @@ body {
   color: #ffffff;
 }
 
+.acuerdo-responsabilidad li {
+  list-style-type: initial;
+  margin-bottom: 8px;
+}
+
 .link {
   text-decoration: none;
 }

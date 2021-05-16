@@ -44,7 +44,12 @@
 
       <!-- Vista detalle animal -->
       <section class="row">
-        <div class="col-12"> <h1 class="text-center mt-5 mb-5">{{ $animal->name }}</h1></div>
+        <div class="col-12"> 
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... -->
+          <h1 class="text-center mt-5 mb-5">{{ $animal->name }}</h1>
+        </div>
         <div class="col-10 col-lg-4 offset-1"> <img class="w-100 mt-lg-3 mt-xl-0" src="{{ $animal->image }}"></div>
         <div class="col-10 col-lg-5 offset-1 offset-md-2 offset-lg-1 mt-5 mb-5 mt-lg-0 mt-xl-2 justificado">
             <div class="row mb-3">

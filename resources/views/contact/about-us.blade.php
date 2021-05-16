@@ -36,7 +36,7 @@
     <div class="container-fluid">
       <!-- Bienvenida -->
       <div class="row">
-				<div class="col-12 bienvenida"> 
+				<div class="col-12 bienvenida">
 					<div class="row">
             <div class="col-0 col-lg-1"></div>
 						<div class="col-8 col-lg-3 offset-2 offset-lg-0 mt-2 justificado"> 
@@ -59,6 +59,9 @@
       <!-- Acerca de nosotros -->
       <section class="row mt-5">
         <div class="col-10 offset-1 mt-5 about-section">
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... --> 
           <div class="inner-container">
               <h1 class="text-center mb-5"> Acerca de nosotros </h1> 
               <hr>

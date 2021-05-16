@@ -42,9 +42,16 @@
 
     <!-- Ajustes - Perfil -->
     <section class="row mt-5">
-
       <!-- Navbar - Settings -->
       @include('partials.navbar-settings')
+      <!-- ... -->
+
+      <!-- Errores producidos en el formulario -->
+      @if (count($errors) > 0) @include('utilities.form-errors') @endif
+      <!-- ... -->
+
+      <!-- Mensaje de éxito tras actualizar el perfil correctamente -->
+      @if (session('success')) @include('utilities.form-success') @endif
       <!-- ... -->
       
       <div class="w-100 d-md-none"></div>
@@ -57,7 +64,7 @@
             @csrf
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="profileName" required="required"
+                <input type="text" name="profileName"
                 @if (Auth::check())
                   value="{{ Auth::user()->name }}"
                 @endif
@@ -69,7 +76,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="profileSurnames" required="required"
+                <input type="text" name="profileSurnames"
                 @if (Auth::check())
                   value="{{ Auth::user()->surnames }}"
                 @endif
@@ -81,7 +88,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="email" name="profileEmail" required="required"
+                <input type="email" name="profileEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -93,7 +100,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="tel" name="profilePhone" pattern="[0-9]{9}" required="required"
+                <input type="tel" name="profilePhone"
                 @if (Auth::check())
                   value="{{ Auth::user()->phone }}"
                 @endif

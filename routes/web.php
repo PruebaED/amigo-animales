@@ -54,6 +54,7 @@ Route::post('register', 'App\Http\Controllers\AuthController@postRegister');
 Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
 
 Route::get('contact-form', 'App\Http\Controllers\ContactController@getContactForm');
+Route::post('contact-form', 'App\Http\Controllers\ContactController@postContactForm');
 
 Route::get('contact-information', 'App\Http\Controllers\ContactController@getContactInformation');
 

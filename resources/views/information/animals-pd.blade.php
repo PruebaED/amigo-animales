@@ -44,7 +44,10 @@
 
       <!-- Normativa -->
       <section class="row">
-        <div class="col-10 offset-1"> 
+        <div class="col-10 offset-1">
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... --> 
           <h1 class="text-center mt-5 mb-5"> Tenencia de animales potencialmente peligrosos </h1> 
           <hr>
           <p class="justificado"> <strong> IMPORTANTE </strong> - En los casos en que un mismo animal clasificado como potencialmente peligroso sea conducido por 

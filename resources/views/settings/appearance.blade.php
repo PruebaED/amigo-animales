@@ -42,9 +42,12 @@
 
     <!-- Ajustes - Apariencia -->
     <section class="row mt-5">
-
       <!-- Navbar - Settings -->
       @include('partials.navbar-settings')
+      <!-- ... -->
+
+      <!-- Mensaje de éxito tras actualizar el tema correctamente -->
+      @if (session('success')) @include('utilities.form-success') @endif
       <!-- ... -->
       
       <div class="w-100 d-md-none"></div>

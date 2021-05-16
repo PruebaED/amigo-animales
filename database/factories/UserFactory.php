@@ -28,6 +28,7 @@ class UserFactory extends Factory
     $firstSurname = $faker->lastName;
     $secondSurname = $faker->lastName;
     $uniqueFakeEmail = strtolower($firstSurname . $secondSurname . '@' . $faker->freeEmailDomain);
+    $phoneNumber = $faker->unique()->tollFreeNumber;
 
     /* Quitamos los caracteres especiales de los fake email que vamos generando */
     //Reemplazamos la A y a
@@ -73,12 +74,16 @@ class UserFactory extends Factory
     );
     /* ... */
 
+    /* Quitamos los espacios en blanco del número de teléfono */
+    $phoneNumber = str_replace(' ', '', $phoneNumber);
+    /* ... */
+
     return [
       'name' => $faker->firstName,
       'surnames' => $firstSurname . ' ' . $secondSurname,
       'email' => $uniqueFakeEmail,
       'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-      'phone' => $faker->unique()->tollFreeNumber,
+      'phone' => $phoneNumber,
       'province_id' => $faker->numberBetween(1, 49)
     ];
   }

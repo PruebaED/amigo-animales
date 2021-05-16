@@ -42,9 +42,12 @@
 
     <!-- Ajustes - Cuenta -->
     <section class="row mt-5">
-
       <!-- Navbar - Settings -->
       @include('partials.navbar-settings')
+      <!-- ... -->
+
+      <!-- Errores producidos en el formulario -->
+      @if (count($errors) > 0) @include('utilities.form-errors') @endif
       <!-- ... -->
       
       <div class="w-100 d-md-none"></div>
@@ -60,7 +63,7 @@
             @csrf
             <div class="col-12 mt-5">
               <div class="inputBox">
-                <input type="email" name="accountEmail" required="required"
+                <input type="email" name="accountEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -72,7 +75,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="accountPassword" required="required">
+                <input type="password" name="accountPassword" value="{{ old('accountPassword') }}">
                 <span class="text">Contraseña</span>
                 <span class="line"></span>
               </div>
@@ -80,7 +83,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="accountConfirmDelete" required="required">
+                <input type="text" name="accountConfirmDelete" value="{{ old('accountConfirmDelete') }}">
                 <span class="text"><strong>Escribe:</strong> <i>Deseo borrar mi cuenta</i></span>
                 <span class="line"></span>
               </div>

@@ -32,23 +32,27 @@
     @endif
   >
     <section>
+      <!-- Errores producidos en el formulario -->
+      @if (count($errors) > 0) @include('utilities.form-errors') @endif
+      <!-- ... -->
+
       <div class="container">
         <div class="user signupBx">
           <div class="formBx formRegister">
             <form method="POST">
               @csrf
               <h2>Crea una cuenta</h2>
-              <input class="form-control" type="text" name="registerName" placeholder="Nombre">
-              <input class="form-control" type="text" name="registerSurnames" placeholder="Apellidos">
-              <input class="form-control" type="text" name="registerPhone" placeholder="Teléfono">
-              <input class="form-control" type="email" name="registerEmail" placeholder="Email">
+              <input class="form-control" type="text" name="registerName" placeholder="Nombre" value="{{ old('registerName') }}">
+              <input class="form-control" type="text" name="registerSurnames" placeholder="Apellidos" value="{{ old('registerSurnames')}}">
+              <input class="form-control" type="text" name="registerPhone" placeholder="Teléfono" value="{{ old('registerPhone') }}">
+              <input class="form-control" type="text" name="registerEmail" placeholder="Email" value="{{ old('registerEmail') }}">
               <select class="form-control" name="registerSelect" onmousedown="this.size=4;" onchange='this.size=0;' onblur="this.size=0;">
                 <option disabled selected>Seleccione una provincia</option>
                 @foreach($provinces as $key => $province) 
-                <option value="{{ $province->province_id }}">{{ $province->name }}</option>
+                <option value="{{ $province->province_id }}" {{ old('registerSelect') == $province->province_id ? 'selected' : '' }}>{{ $province->name }}</option>
                 @endforeach
               </select>
-              <input class="form-control" type="password" name="registerPassword" placeholder="Contraseña">
+              <input class="form-control" type="password" name="registerPassword" placeholder="Contraseña" value="{{ old('registerPassword') }}">
               <input class="btn btn-primary" type="submit" name="registerSubmit" value="Registrarse">
               <p class="signup"> Ya tienes una cuenta? <a href="/login"> Inicia sesión. </a> </p>
             </form>

@@ -45,6 +45,9 @@
       <!-- Datos de contacto -->
       <section class="row mt-5">
         <div class="col-10 offset-1">
+          <!-- Mensaje de éxito tras loguearse correctamente -->
+          @if (session('success')) @include('utilities.form-success') @endif
+          <!-- ... -->
           <h1 class="text-center mb-5"> Datos de contacto </h1> 
           <hr>
           <p class="justificado mb-5"> Si desea ponerse en contacto de forma directa con nuestro equipo, le rogamos que use cualquiera de las siguientes formas  que se le 
