@@ -47,7 +47,7 @@
 			<h4>Contacto</h4>
 			<ul>
 				<li><a href="">Teléfono: +34 123 456 789</a></li>
-				<li><a href="">Email: soporte@amigoanimales.com</a></li>
+				<li><a href="">Email: soporteamigoanimales@gmail.com</a></li>
 				<li><a href="">Localización: Calle Inventada Nº23</a></li>
 			</ul>
 		</div>

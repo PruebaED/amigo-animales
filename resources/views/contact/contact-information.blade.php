@@ -57,7 +57,7 @@
         </div>
         <div class="card col-10 col-md-8 mb-5 offset-1 offset-md-2">
           <img class="card-icon" src="images/email.png">
-          <p>soporte@amigoanimales.com</p>
+          <p>soporteamigoanimales@gmail.com</p>
         </div>
   
         <div class="card col-10 col-md-8 mb-5 offset-1 offset-md-2">

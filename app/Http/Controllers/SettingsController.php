@@ -10,6 +10,11 @@ use App\Http\Requests\ProfilePutRequest;
 use App\Http\Requests\AccountDeleteRequest;
 use App\Http\Requests\SecurityPutRequest;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AccountDeleted;
+use App\Mail\PasswordChanged;
+use App\Mail\UserEmailChanged;
+use App\Mail\AccountInformationChanged;
 
 class SettingsController extends Controller
 {
@@ -41,6 +46,7 @@ class SettingsController extends Controller
     if ($request->accountEmail == Auth::user()->email) {
       if (Hash::check($request->accountPassword, Auth::user()->password)) {
         if ($request->accountConfirmDelete == $confirmSentence) {
+          Mail::to($user->email)->send(new AccountDeleted($user));
           $user->delete();
           $request->session()->flush();
           return redirect('login')->withSuccess('Ha eliminado su cuenta de forma satisfactoria.');
@@ -78,9 +84,17 @@ class SettingsController extends Controller
     $user = User::findOrFail(Auth::user()->user_id);
     $user->name = $request->profileName;
     $user->surnames = $request->profileSurnames;
+    $oldEmail = $user->email;
     $user->email = $request->profileEmail;
     $user->phone = $request->profilePhone;
     $user->save();
+    // Si el usuario ha cambiado su correo electrónico, se le envía un mensaje al antiguo correo
+    // indicándole que ha cambiada de cuenta. Por otro lado, se enviará al nuevo correo
+    // electrónico la información de su cuenta actualizada.
+    if ($oldEmail != $user->email) {
+      Mail::to($oldEmail)->send(new UserEmailChanged($user));
+    }
+    Mail::to($user->email)->send(new AccountInformationChanged($user));
     return redirect('profile')->withSuccess('Ha actualizado su perfil de forma satisfactoria.');
   }
 
@@ -92,6 +106,7 @@ class SettingsController extends Controller
       if ($request->securityNewPassword == $request->securityConfirmNewPassword) {
         $user->password = Hash::make($request->securityNewPassword);
         $user->save();
+        Mail::to($user->email)->send(new PasswordChanged($user));
         $request->session()->flush();
         return redirect('login')->withSuccess('Ha cambiado su contraseña de forma satisfactoria.');
       } else {

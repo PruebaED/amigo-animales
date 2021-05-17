@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Requests\AdoptPostRequest;
 use App\Http\Requests\FosterPostRequest;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AnimalAdopted;
+use App\Mail\AnimalFostered;
 
 class AnimalsController extends Controller
 {
@@ -86,6 +89,7 @@ class AnimalsController extends Controller
           $animal->state = 'adoptado';
           $animal->save();
 
+          Mail::to($user->email)->send(new AnimalAdopted($user, $animal));
           return redirect('/#adopcion')->withSuccess('Ha adoptado a ' . $animal->name . ' de forma satisfactoria.');
         } else {
           $errors->add('incorrect_animal_postAdopt', 'El nombre del animal introducido no se corresponde al seleccionado para
@@ -125,6 +129,7 @@ class AnimalsController extends Controller
           $animal->state = 'acogido';
           $animal->save();
 
+          Mail::to($user->email)->send(new AnimalFostered($user, $animal));
           return redirect('/#adopcion')->withSuccess('Ha acogido a ' . $animal->name . ' de forma satisfactoria.');
         } else {
           $errors->add('incorrect_animal_postAdopt', 'El nombre del animal introducido no se corresponde al seleccionado para

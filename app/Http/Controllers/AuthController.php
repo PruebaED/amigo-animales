@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterPostRequest;
 use App\Http\Requests\LoginPostRequest;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserRegistered;
 
 class AuthController extends Controller
 {
@@ -77,6 +79,7 @@ class AuthController extends Controller
     $user->province_id = $request->registerSelect;
     $user->password = Hash::make($request->registerPassword);
     $user->save();
+    Mail::to($user->email)->send(new UserRegistered($user));
     return redirect('/login')->withSuccess('Su cuenta ha sido registrada satisfactoriamente.');
   }
 }
