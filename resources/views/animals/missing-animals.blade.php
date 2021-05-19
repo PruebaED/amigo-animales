@@ -18,7 +18,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 		<!-- JavaScript -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -48,6 +47,9 @@
           <!-- Mensaje de éxito tras loguearse correctamente -->
           @if (session('success')) @include('utilities.form-success') @endif
           <!-- ... --> 
+          <!-- Errores producidos en el formulario de avistamiento de animal desaparecido -->
+          @if (count($errors) > 0) @include('utilities.form-errors') @endif
+          <!-- ... -->
           <h1 class="text-center mt-5 mb-5"> Animales desaparecidos </h1> 
           <hr>
         </div>
@@ -145,7 +147,72 @@
                     &nbsp;&nbsp;
                     {{ $missingAnimal->gender }}
                   </p>
-                  <a class="btn btnMissingAnimal">¿Me has visto? ¡Contacta al {{ $missingAnimal->userAnimal->phone }}!</a>
+                  <a type="button" class="btn btnMissingAnimal" data-toggle="modal" data-target="#@('haveYouSeenMe' + {{ $missingAnimal->name }})">
+                    ¿Me has visto? ¡Avisa a mi dueño!
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- ¿Me has visto? Modal -->
+            <div class="modal fade" id="@('haveYouSeenMe' + {{ $missingAnimal->name }})" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">¿Has encontrado a {{ $missingAnimal->name }}?</h5>
+                    <button type="button" class="close modal-closed" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST">
+                      @csrf
+              
+                      <div class="row mb-4">
+                        <div class="col-10 offset-1 mt-3 mb-3">
+                          <p class="parrafo"> 
+                            Si crees haber encontrado a {{ $missingAnimal->name }}, rogamos cumplimentes el siguiente formulario: 
+                          </p>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="reportEmail"
+                            @if (Auth::check())
+                              value="{{ Auth::user()->email }}"
+                            @else
+                              value="{{ old('reportEmail') }}"
+                            @endif
+                            >
+                            <span class="text">Introduzca su email</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="provincia-text">¿Dónde me has visto?</span>
+                          <select class="select-provincia" name="reportSelect" onmousedown="this.size=6" onclick="this.size=0">
+                            @foreach($provinces as $key => $province) 
+                            <option value="{{ $province->province_id }}" {{ old('registerSelect') == $province->province_id ? 'selected' : '' }}>{{ $province->name }}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="reportAnimalName" value="{{ $missingAnimal->name }}">
+                            <span class="text">Nombre del animal</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <input type="hidden" name="reportAnimalId" value="{{ $missingAnimal->animal_id }}">
+                      </div>
+                      <div class="row">
+                        <div class="text-center col-10 offset-1 mt-3 mb-3">
+                          <input type="submit" name="reportSubmit" value="Enviar">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

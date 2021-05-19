@@ -33,4 +33,9 @@ class User extends Authenticatable
   {
   	return $this->hasMany(Foster::class, 'foster_id');
   }
+
+  public function reports()
+  {
+    return $this->hasMany(Report::class, 'report_id');
+  }
 }

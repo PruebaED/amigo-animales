@@ -21,4 +21,9 @@ class Province extends Model
   {
   	return $this->hasMany(User::class, 'user_id');
   }
+
+  public function reports()
+  {
+    return $this->hasMany(Report::class, 'report_id');
+  }
 }

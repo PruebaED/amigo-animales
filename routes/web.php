@@ -22,6 +22,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('foster/{id}', 'App\Http\Controllers\AnimalsController@getFoster');
 	Route::post('foster/{id}', 'App\Http\Controllers\AnimalsController@postFoster');
 
+	Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@getMissingAnimals');
+	Route::post('missing-animals', 'App\Http\Controllers\AnimalsController@postMissingAnimalViewed')->name('missing');
+
 	Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
 	Route::delete('account', 'App\Http\Controllers\SettingsController@deleteAccount');
 
@@ -40,8 +43,6 @@ Route::get('/', 'App\Http\Controllers\HomeController@getAnimalsToAdopt');
 Route::get('deliver', 'App\Http\Controllers\AnimalsController@getDeliver');
 
 Route::get('detail-view/{id}', 'App\Http\Controllers\AnimalsController@getDetailView');
-
-Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@getMissingAnimals');
 
 Route::get('rescue', 'App\Http\Controllers\AnimalsController@getRescue');
 
