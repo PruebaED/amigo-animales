@@ -10,7 +10,7 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="">
+		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
 		<link rel="STYLESHEET" type="text/css" href="css/contact-form.css">
 		
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="text-center col-10 offset-1">
+          <div class="text-center col-10 offset-1 mb-3">
             <input type="submit" name="contactFormSubmit" value="Enviar">
           </div>
         </div>

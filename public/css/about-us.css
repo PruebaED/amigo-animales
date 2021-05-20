@@ -10,7 +10,7 @@
 }
 
 .bienvenida {
-	background: url('../images/acercadenosotros.jpg') no-repeat center;
+	background: url('../images/about-us/acercadenosotros.jpg') no-repeat center;
 	background-size: cover;
 	background-attachment: fixed;
 	height: 100vh; 	/*100vh es 100% de la pantalla del usuario*/
@@ -38,7 +38,7 @@ body {
 }
 
 .about-section {
-  background: url('../images/acercadenosotros2.jpg') no-repeat left;
+  background: url('../images/about-us/acercadenosotros2.jpg') no-repeat left;
   background-size: 55%;
   background-color: #fdfdfd;
   overflow: hidden;
@@ -54,26 +54,26 @@ body {
 
 @media screen and (max-width:1200px){
   .inner-container{
-      padding: 80px;
+    padding: 80px;
   }
 }
 
 @media screen and (max-width:1000px){
   .about-section{
-      background-size: 100%;
-      padding: 100px 40px;
+    background-size: 100%;
+    padding: 100px 40px;
   }
   .inner-container{
-      width: 100%;
+    width: 100%;
   }
 }
 
 @media screen and (max-width:600px){
   .about-section{
-      padding: 0;
+    padding: 0;
   }
   .inner-container{
-      padding: 60px;
+    padding: 60px;
   }
 }
 /* ... */

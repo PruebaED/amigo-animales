@@ -9,7 +9,7 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
     <link rel="STYLESHEET" type="text/css" href="css/login-register.css">
     
@@ -56,7 +56,7 @@
               <p class="signup"> Ya tienes una cuenta? <a href="/login"> Inicia sesión. </a> </p>
             </form>
           </div>
-          <div class="imgBx imgRegister"><img src="images/perro_registro.jpg"></div>
+          <div class="imgBx imgRegister"><img src="images/login-register/perro_registro.jpg"></div>
         </div>
       </div>
     </section>

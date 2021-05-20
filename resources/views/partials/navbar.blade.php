@@ -2,13 +2,10 @@
 <html lang="en">
 
   <head>
-	
     <!-- Required meta tags -->
 
-		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
+		<meta content="text/html" charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="">
-
     @if (isset($animal->animal_id))
       <link rel="STYLESHEET" type="text/css" href="../css/navbar.css">
     @else
@@ -19,7 +16,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
   </head>
 
   <body 
@@ -31,7 +27,17 @@
     <!-- Navbar -->
     <header class="row sticky-top">
       <nav id="navbar" class="col-12 navbar navbar-expand-xl navbar-light bg-light">
-        <a class="navbar-brand" class="mb-5 mb-lg-0" href="/">El Amigo de los Animales</a>
+        <a class="navbar-brand" class="mb-5 mb-lg-0" href="/">
+          <img class="d-inline-block align-top logo mr-2"
+            @if (isset($animal->animal_id))
+              src="../images/logo.png"
+            @else
+              src="images/logo.png"
+            @endif
+            alt=""
+          >
+          El Amigo de los Animales
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span></span>
           <span></span>

@@ -112,7 +112,7 @@ body {
   transform: translate(-50%, -50%) scale(1.3) rotate(10deg);
 }
 
-img {
+img:not(.logo):not(.social-image) {
   position: absolute;
   top: 50%;
   left: 50%;

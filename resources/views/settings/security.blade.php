@@ -8,7 +8,7 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
 
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
     <link rel="STYLESHEET" type="text/css" href="css/security.css">
     
@@ -87,7 +87,7 @@
               <br><br>
             </div>
             <div class="col-12">
-              <input type="submit" value="Actualizar contraseña">
+              <input class="mb-3" type="submit" value="Actualizar contraseña">
             </div>
           </form>
         </div>

@@ -8,7 +8,7 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
 
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
     <link rel="STYLESHEET" type="text/css" href="css/appearance.css">
     
@@ -94,7 +94,7 @@
                 </label>
               </div>
               <br>
-              <input type="submit" value="Guardar preferencias">
+              <input class="mb-3" type="submit" value="Guardar preferencias">
             </form>
           </div>
         </div>

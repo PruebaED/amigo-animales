@@ -10,7 +10,7 @@
     
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="">
+		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
 		<link rel="STYLESHEET" type="text/css" href="css/about-us.css">
 		
@@ -66,7 +66,9 @@
               <h1 class="text-center mb-5"> Acerca de nosotros </h1> 
               <hr>
               <p class="justificado">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+                Año 2016. Tres amigos, amantes de los peludos, quieren emprender. Se dan cuenta que todas las páginas de adopciones
+                de animales tienen tres gran defectos: la falta de asistencia técnica, su diseño y la no presencia del personal
+                sanitario animal necesario. Por ello, deciden formarse durante cinco años en sus respectivas ramas. El trabajo constante culmina a principios de 2021 en la página web de adopciones 'El Amigo de los Animales'.
               </p>
           </div>
         </div>
@@ -79,25 +81,25 @@
         <div class="container">
           <div class="card">
             <div class="content">
-              <div class="imgBx"><img src="images/nuestroequipo1.jpg"></div>
+              <div class="imgBx"><img src="images/about-us/nuestroequipo1.jpg"></div>
               <div class="contentBx">
-                <h3>Ezekixl Akinnewu<br><span>UX/UI Designer</span></h3>
+                <h3>Ezekixl Akinnewu<br><span>Full Stack Developer</span></h3>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="content">
-              <div class="imgBx"><img src="images/nuestroequipo2.jpg"></div>
+              <div class="imgBx"><img src="images/about-us/nuestroequipo2.jpg"></div>
               <div class="contentBx">
-                <h3>Kindle Shulpina<br><span>Front-end developer</span></h3>
+                <h3>Kindle Shulpina<br><span>Technical Assistant</span></h3>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="content">
-              <div class="imgBx"><img src="images/nuestroequipo3.jpg"></div>
+              <div class="imgBx"><img src="images/about-us/nuestroequipo3.jpg"></div>
               <div class="contentBx">
-                <h3>Andrea Piacquadio<br><span>Back-end developer</span></h3>
+                <h3>Andrea Piacquadio<br><span>Veterinary Surgeon</span></h3>
               </div>
             </div>
           </div>

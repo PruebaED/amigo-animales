@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   @if (isset($animal->animal_id))
@@ -19,7 +18,11 @@
 >
 	<footer class="row footer mt-5">
 		<div class="col-10 offset-1">
-			<hr class="footer-hr mb-5">
+			<hr class="footer-hr mb-5
+            @if ((Auth::check() && Auth::user()->theme == 'dark') || (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark'))
+            mt-n4
+          	@endif
+			">
 		</div>
 		<div class="footer-col mt-xl-5 col-md-6 col-xl-3 offset-xl-1">
 			<h4>Tratamiento de los datos</h4>
@@ -55,7 +58,7 @@
 			<h4>Síguenos</h4>
 			<div class="social-links">
 				<a href="https://www.facebook.com/" target="_blank">
-		            <img
+		            <img class="social-image"
 		              @if (Auth::check() && Auth::user()->theme == 'dark')
       				  	@if (isset($animal->animal_id)) 
       				  		src="../images/social/facebook-white.png" 
@@ -79,7 +82,7 @@
 		            >
 				</a>
 				<a href="https://twitter.com/" target="_blank">
-		            <img
+		            <img class="social-image"
 		              @if (Auth::check() && Auth::user()->theme == 'dark')
       				  	@if (isset($animal->animal_id)) 
       				  		src="../images/social/twitter-white.png" 
@@ -103,7 +106,7 @@
 		            >
 				</a>
 				<a href="https://www.instagram.com/" target="_blank">
-		            <img
+		            <img class="social-image"
 		              @if (Auth::check() && Auth::user()->theme == 'dark')
       				  	@if (isset($animal->animal_id)) 
       				  		src="../images/social/instagram-white.png" 
@@ -127,7 +130,7 @@
 		            >
 				</a>
 				<a href="https://www.linkedin.com/" target="_blank">
-		            <img
+		            <img class="social-image"
 		              @if (Auth::check() && Auth::user()->theme == 'dark')
       				  	@if (isset($animal->animal_id)) 
       				  		src="../images/social/linkedin-white.png" 

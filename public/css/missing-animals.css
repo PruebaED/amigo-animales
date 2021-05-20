@@ -83,8 +83,7 @@ body:not(.dark) .modal-body .btn:hover {
   color: #e74c3c;
 }
 
-.container-fluid .row .inputBox input,
-.container-fluid .row .inputBox select {
+.container-fluid .row .inputBox input {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -133,8 +132,7 @@ body:not(.dark) .modal-body .btn:hover {
   pointer-events: none;
 }
 
-.container-fluid .row .inputBox input:focus + .text, .container-fluid .row .inputBox input:valid + .text,
-.container-fluid .row .inputBox select:focus + .text, .container-fluid .row .inputBox select:valid + .text {
+.container-fluid .row .inputBox input:focus + .text, .container-fluid .row .inputBox input:valid + .text {
   top: -35px;
   left: -10px;
 }
@@ -151,8 +149,7 @@ body:not(.dark) .modal-body .btn:hover {
   pointer-events: none;
 }
 
-.container-fluid .row .inputBox input:focus ~ .line, .container-fluid .row .inputBox input:valid ~ .line,
-.container-fluid .row .inputBox select:focus ~ .line, .container-fluid .row .inputBox select:valid ~ .line {
+.container-fluid .row .inputBox input:focus ~ .line, .container-fluid .row .inputBox input:valid ~ .line {
   height: 100%;
 }
 

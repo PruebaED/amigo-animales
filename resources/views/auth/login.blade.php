@@ -9,7 +9,7 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
     <link rel="STYLESHEET" type="text/css" href="css/login-register.css">
     
@@ -41,7 +41,7 @@
 
       <div class="container">
         <div class="user signinBx">
-          <div class="imgBx"><img src="images/gato_registro.jpg"></div>
+          <div class="imgBx"><img src="images/login-register/gato_registro.jpg"></div>
           <div class="formBx">
             <form method="POST">
               @csrf

@@ -5,10 +5,8 @@
   
     <!-- Required meta tags -->
 
-    <meta content="text/html"; charset="utf-8" http-equiv="content-type">
+    <meta content="text/html" charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="">
-
     <link rel="STYLESHEET" type="text/css" href="css/navbar-settings.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">

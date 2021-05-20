@@ -10,7 +10,7 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="">
+		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
 		<link rel="STYLESHEET" type="text/css" href="css/regulations.css">
 		
@@ -59,11 +59,11 @@
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @else
-                src="images/pdf.png"
+                src="images/mixture/pdf.png"
               @endif
               alt=""
             >
@@ -76,11 +76,11 @@
           <p class="justificado"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @else
-                src="images/pdf.png"
+                src="images/mixture/pdf.png"
               @endif
               alt=""
             >
@@ -89,11 +89,11 @@
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @else
-                src="images/pdf.png"
+                src="images/mixture/pdf.png"
               @endif
               alt=""
             >
@@ -102,11 +102,11 @@
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @else
-                src="images/pdf.png"
+                src="images/mixture/pdf.png"
               @endif
               alt=""
             >
@@ -115,11 +115,11 @@
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/pdf-white.png"
+                src="images/mixture/pdf-white.png"
               @else
-                src="images/pdf.png"
+                src="images/mixture/pdf.png"
               @endif
               alt=""
             >
