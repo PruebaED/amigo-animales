@@ -23,7 +23,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('foster/{id}', 'App\Http\Controllers\AnimalsController@postFoster');
 
 	Route::get('missing-animals', 'App\Http\Controllers\AnimalsController@getMissingAnimals');
-	Route::post('missing-animals', 'App\Http\Controllers\AnimalsController@postMissingAnimalViewed')->name('missing');
+	Route::post('missing-animals', 'App\Http\Controllers\AnimalsController@postMissingAnimalViewed');
+
+	Route::get('contact-form', 'App\Http\Controllers\ContactController@getContactForm');
+	Route::post('contact-form', 'App\Http\Controllers\ContactController@postContactForm');
 
 	Route::get('account', 'App\Http\Controllers\SettingsController@getAccount');
 	Route::delete('account', 'App\Http\Controllers\SettingsController@deleteAccount');
@@ -53,9 +56,6 @@ Route::get('register', 'App\Http\Controllers\AuthController@getRegister');
 Route::post('register', 'App\Http\Controllers\AuthController@postRegister');
 
 Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
-
-Route::get('contact-form', 'App\Http\Controllers\ContactController@getContactForm');
-Route::post('contact-form', 'App\Http\Controllers\ContactController@postContactForm');
 
 Route::get('contact-information', 'App\Http\Controllers\ContactController@getContactInformation');
 

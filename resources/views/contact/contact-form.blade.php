@@ -60,8 +60,7 @@
 
         <div class="row mb-5">
           <div class="col-8 offset-2">
-            <p class="parrafo">Si desea que nuestro equipo le contacte, le rogamos que rellene los distintos campos que se presentan a continuación. 
-              Nos pondremos en contacto con .Vd con la mayor brevedad posible.
+            <p class="parrafo">Si desea que nuestro equipo le contacte, le rogamos que rellene los distintos campos que se presentan a continuación. Nos pondremos en contacto con .Vd con la mayor brevedad posible.
             </p>
           </div>
         </div>
