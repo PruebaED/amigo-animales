@@ -1,6 +1,10 @@
 /* Ajustes - Cuenta */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+/* Dyslexia mode */
+@import "dyslexia-theme.css";
+/* ... */
+
 * {
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif !important;
@@ -49,6 +53,7 @@
   display: block;
   transition: 0.5s;
   pointer-events: none;
+	min-width: 500px;
 }
 
 .container-fluid .row .inputBox input:focus + .text, .container-fluid .row .inputBox input:valid + .text {

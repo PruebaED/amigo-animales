@@ -55,7 +55,7 @@
       <!-- ... -->
       
       <div class="w-100 d-md-none"></div>
-      <div class="col-10 col-md-6 mt-5 mt-md-0 offset-1 offset-md-0">
+      <div class="col-10 col-lg-6 mt-5 mt-lg-0 offset-1 offset-lg-0">
         <h3>Perfil</h3>
         <hr class="mb-5">
         <div class="row">

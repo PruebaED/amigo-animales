@@ -220,11 +220,10 @@
           </div>
         </div>
         <!-- ... -->
-
-        <!-- Footer -->
-        @include('partials.footer')
-        <!-- ... -->
       </div>
+      <!-- Footer -->
+      @include('partials.footer')
+      <!-- ... -->
     </div>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

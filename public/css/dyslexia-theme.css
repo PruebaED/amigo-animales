@@ -1,0 +1,12 @@
+/* Dyslexia mode */
+@font-face {
+  font-family: 'DyslexiaFont';
+  src: url('../fonts/OpenDyslexicMono-Regular.woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+body.dyslexia * {
+  font-family: 'DyslexiaFont' !important;
+}
+/* ... */

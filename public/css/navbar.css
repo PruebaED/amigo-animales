@@ -1,6 +1,22 @@
 /* Navbar */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+/* Dyslexia mode */
+@import "dyslexia-theme.css";
+
+body.dyslexia .navbar-toggler {
+  margin-left: -9px;
+}
+
+body.dyslexia .navbar-brand img {
+  margin-right: -4px !important;
+}
+
+body.dyslexia .nav-link {
+  font-size: 18px;
+}
+/* ... */
+
 * {
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif !important;
@@ -121,14 +137,14 @@ ul {
 /* Aplica a medidas inferiores al tamaño xl */
 @media screen and (max-width: 1200px) {
   .navbar-expand-xl .navbar-nav .nav-link:hover {
-	border-top: 0;
-	border-bottom: 4px solid #e74c3c;
+  	border-top: 0;
+  	border-bottom: 4px solid #e74c3c;
   }
 
   .navbar-expand-xl .navbar-nav .nav-link:active {
-	border-top: 0;
-	border-bottom: 4px solid #e74c3c;
-	color: #e74c3c;
+  	border-top: 0;
+  	border-bottom: 4px solid #e74c3c;
+  	color: #e74c3c;
   }
 }
 

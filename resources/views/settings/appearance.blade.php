@@ -51,7 +51,7 @@
       <!-- ... -->
       
       <div class="w-100 d-md-none"></div>
-      <div class="col-10 col-md-6 mt-5 mt-md-0 offset-1 offset-md-0">
+      <div class="col-10 col-lg-6 mt-5 mt-lg-0 offset-1 offset-lg-0">
         <h3 class="mb-4">Apariencia</h3>
         <hr class="">
         <div class="row">
@@ -85,12 +85,6 @@
                 <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault4" value="color-blindness" @if (Auth::check()) {{ (Auth::user()->theme == 'color-blindness')? "checked" : "" }} @endif >
                 <label class="form-check-label" for="flexRadioDefault4">
                   Modo daltonismo
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault5" value="blurred-vision" @if (Auth::check()) {{ (Auth::user()->theme == 'blurred-vision')? "checked" : "" }} @endif >
-                <label class="form-check-label" for="flexRadioDefault5">
-                  Modo vista cuidada
                 </label>
               </div>
               <br>
