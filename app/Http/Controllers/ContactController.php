@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactFormPostRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserContactForm;
 
@@ -29,14 +28,10 @@ class ContactController extends Controller
   // Queda pendiente darle funcionalidad al formulario que envía el visitante o el usuario de la web.
   public function postContactForm(ContactFormPostRequest $request)
   {
-    $user = User::findOrFail(Auth::user()->user_id);
-    $errors = new MessageBag();
-    if ($request->contactFormEmail == $user->email) {
+    if (Auth::check()) {
+	    $user = User::findOrFail(Auth::user()->user_id);
       Mail::to('soporteamigoanimales@gmail.com')->send(new UserContactForm($user, $request));
       return redirect('contact-form')->withSuccess('Su formulario se ha enviado de forma satisfactoria.');
-    } else {
-      $errors->add('incorrect_email_postContactForm', 'El email introducido no se corresponde al registrado en su cuenta.');
-    }
-    return redirect('/contact-form')->withInput()->withErrors($errors);
+  	}
   }
 }

@@ -29,10 +29,8 @@ class ContactFormPostRequest extends FormRequest
     return [
       'contactFormName' => 'required|regex:/^[\pL\s]+$/u',
       'contactFormSurnames' => 'required|regex:/^[\pL\s]+$/u',
-      // El email y teléfono usados han de ser únicos (que no existan en la BBDD). Sin embargo, 
-      // se permitirá que dichos valores no sean únicos cuando sean iguales al email o al
-      // teléfono del usuario logueado.
-      'contactFormEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
+      // El eléfono usado ha de ser único (que no exista en la BBDD). Sin embargo, se permitirá
+      // permitirá que dicho valor no sea único cuando sea igual al teléfono del usuario logueado.
       'contactFormPhone' => 'required|numeric|digits:9|unique:users,phone,' . $user->phone . ',phone',
       'contactFormQuery' => 'required'
     ];
@@ -50,9 +48,6 @@ class ContactFormPostRequest extends FormRequest
       'contactFormName.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Nombre".',
       'contactFormSurnames.required' => 'El campo "Apellidos" no puede estar vacío.',
       'contactFormSurnames.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Apellidos".',
-      'contactFormEmail.required' => 'El campo "Email" no puede estar vacío.',
-      'contactFormEmail.email' => 'Ha de cumplir con el patrón texto@texto.dominio en el campo "Email".',
-      'contactFormEmail.unique' => 'El email introducido se encuentra en uso.',
       'contactFormPhone.required' => 'El campo "Teléfono" no puede estar vacío.',
       'contactFormPhone.numeric' => 'El campo "Teléfono" solo permite valores númericos, sin espacios.',
       'contactFormPhone.digits' => 'El campo "Teléfono" ha de contener 9 caracteres númericos.',

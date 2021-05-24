@@ -66,7 +66,7 @@
         </div>
 
         <div class="row">
-          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
+          <div class="col-10 col-lg-3 col-xl-3 offset-1 offset-lg-2 offset-xl-2 mb-5">
             <div class="inputBox">
               <input type="text" name="contactFormName"
               @if (Auth::check())
@@ -79,7 +79,7 @@
               <span class="line"></span>
             </div>
           </div>
-          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
+          <div class="col-10 col-lg-4 col-xl-3 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
               <input type="text" name="contactFormSurnames"
               @if (Auth::check())
@@ -92,20 +92,7 @@
               <span class="line"></span>
             </div>
           </div>
-          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
-            <div class="inputBox">
-              <input type="text" name="contactFormEmail"
-              @if (Auth::check())
-                value="{{ Auth::user()->email }}"
-              @else
-                value="{{ old('contactFormEmail') }}"
-              @endif
-              >
-              <span class="text">Email</span>
-              <span class="line"></span>
-            </div>
-          </div>
-          <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
+          <div class="col-10 col-lg-3 col-xl-3 offset-1 offset-lg-2 mb-5">
             <div class="inputBox">
               <input type="text" name="contactFormPhone"
               @if (Auth::check())
@@ -118,7 +105,7 @@
               <span class="line"></span>
             </div>
           </div>
-          <div class="col-10 col-xl-8 offset-1 offset-xl-2 mb-5">
+          <div class="col-10 col-lg-4 col-xl-3 offset-1 offset-xl-2 mb-5">
             <div class="inputBox">
               <input type="text" name="contactFormQuery" value="{{ old('contactFormQuery') }}">
               <span class="text">Motivo de la consulta</span>
