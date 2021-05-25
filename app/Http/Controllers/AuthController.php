@@ -55,7 +55,8 @@ class AuthController extends Controller
         if 
           (
             $previousUrl != 'http://amigo-animales.test/register' && 
-            $previousUrl != 'http://amigo-animales.test/login'
+            $previousUrl != 'http://amigo-animales.test/login' &&
+            $previousUrl != 'http://amigo-animales.test/logout'
           ) 
         {
           // Cuando iniciemos sesión, en caso de existir la cookie 'theme', le asignaremos a dicha cookie la preferencia que
@@ -64,10 +65,9 @@ class AuthController extends Controller
           // su preferencia de tema a 'default', si después de esto, el segundo usuario inicia sesión en el mismo equipo que
           // el primer usuario, pueden surgir problemas derivados de la incoherencia entre el valor de preferencia de tema
           // que el segundo usuario tiene guardado y el valor de preferencia de tema almacenado en la cookie 'theme'.
-          if (isset($_COOKIE['theme'])) {
-            $user = User::findOrFail(Auth::user()->user_id);
-            setcookie('theme', $user->theme, time() + 31556926, '/');
-          }
+          $user = User::findOrFail(Auth::user()->user_id);
+          setcookie('theme', $user->theme, time() + 31556926, '/');
+
           return redirect(Session::get('url.intended', url('/')))->withSuccess('Ha iniciado sesión de forma satisfactoria.');
         }
       }
