@@ -55,6 +55,12 @@ Route::post('login', 'App\Http\Controllers\AuthController@postLogin');
 Route::get('register', 'App\Http\Controllers\AuthController@getRegister');
 Route::post('register', 'App\Http\Controllers\AuthController@postRegister');
 
+Route::get('password-reset', 'App\Http\Controllers\PasswordResetController@getPasswordReset');
+Route::post('password-reset', 'App\Http\Controllers\PasswordResetController@postSendResetLinkEmail');
+
+Route::get('password-reset/{token}', 'App\Http\Controllers\PasswordResetController@getSetPasswordReset');
+Route::post('password-reset/{token}', 'App\Http\Controllers\PasswordResetController@postPasswordResetSetted');
+
 Route::get('about-us', 'App\Http\Controllers\ContactController@getAboutUs');
 
 Route::get('contact-information', 'App\Http\Controllers\ContactController@getContactInformation');

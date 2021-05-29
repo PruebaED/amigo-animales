@@ -5,13 +5,13 @@
 
     <!-- Required meta tags -->
 
-    <title>Inicio de sesión - El Amigo de los Animales</title>
+    <title>Restablece tu contraseña - El Amigo de los Animales</title>
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
     <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
 
-    <link rel="STYLESHEET" type="text/css" href="css/login-register.css">
+    <link rel="STYLESHEET" type="text/css" href="css/password-reset.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,7 +22,7 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    
   </head>
 
   <body 
@@ -35,27 +35,18 @@
       @if (count($errors) > 0) @include('utilities.form-errors') @endif
       <!-- ... -->
 
-      <!-- Éxitos producidos en formularios que redirigen al login -->
-      @if (session('success')) @include('utilities.form-success') @endif
-      <!-- ... -->
-
       <div class="container">
-        <div class="user signinBx">
-          <div class="imgBx"><img src="images/login-register/gato_registro.jpg"></div>
-          <div class="formBx">
+        <div class="user">
+          <div class="formBx formRegister">
             <form method="POST">
               @csrf
-              <h2>Inicio de sesión</h2>
-              <input class="form-control" type="text" name="loginEmail" placeholder="Email" value="{{ old('loginEmail') }}">
-              <input class="form-control" type="password" name="loginPassword" placeholder="Contraseña" value="{{ old('loginPassword') }}">
-              <input class="form-check-input mt-2 mb-2" type="checkbox" value="on" name="loginRememberMe" id="loginRememberMe">
-              <label class="form-check-label mt-2 mb-2" for="loginRememberMe"> Recuérdame </label>
-              <br>
-              <input class="btn btn-primary" type="submit" name="loginSubmit" value="Iniciar sesión">
-              <p class="signup"> ¿No tienes una cuenta? <a href="/register"> Regístrate. </a> </p>
-              <p class="signup"> ¿Has olvidado tu contraseña? <a href="/password-reset"> Recupérala. </a> </p>
+              <h2>Restablece tu contraseña</h2>
+              <input class="form-control" type="text" name="passwordResetEmail" placeholder="Email" value="{{ old('passwordResetEmail') }}">
+              <input class="btn btn-primary" type="submit" name="passwordResetSubmit" value="Envía el link de recuperación">
+              <p class="signup"> ¿Recuerdas tu contraseña? <a href="/login"> Inicia sesión. </a> </p>
             </form>
           </div>
+          <div class="imgBx"><img src="images/password-reset/perro_recuperar_contraseña.jpg"></div>
         </div>
       </div>
     </section>

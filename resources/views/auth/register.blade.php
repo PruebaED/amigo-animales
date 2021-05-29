@@ -53,7 +53,7 @@
               </select>
               <input class="form-control" type="password" name="registerPassword" placeholder="Contraseña" value="{{ old('registerPassword') }}">
               <input class="btn btn-primary" type="submit" name="registerSubmit" value="Registrarse">
-              <p class="signup"> Ya tienes una cuenta? <a href="/login"> Inicia sesión. </a> </p>
+              <p class="signup"> ¿Ya tienes una cuenta? <a href="/login"> Inicia sesión. </a> </p>
             </form>
           </div>
           <div class="imgBx imgRegister"><img src="images/login-register/perro_registro.jpg"></div>

@@ -25,7 +25,7 @@ class SecurityPutRequest extends FormRequest
   {
     return [
       'securityOldPassword' => 'required',
-      'securityNewPassword' => 'required',
+      'securityNewPassword' => 'required|min:8',
       'securityConfirmNewPassword' => 'required'
     ];
   }
@@ -40,6 +40,7 @@ class SecurityPutRequest extends FormRequest
     return [
       'securityOldPassword.required' => 'El campo "Antigua contraseña" no puede estar vacío.',
       'securityNewPassword.required' => 'El campo "Nueva contraseña" no puede estar vacío.',
+      'securityNewPassword.min' => 'La contraseña ha de contener, como mínimo, 8 caracteres.',
       'securityConfirmNewPassword.required' => 'El campo "Confirme nueva contraseña" no puede estar vacío.'
     ];
   }
