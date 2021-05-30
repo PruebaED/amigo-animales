@@ -7,9 +7,9 @@
 		<meta content="text/html" charset="utf-8" http-equiv="content-type">
 		
     @if (isset($animal->animal_id))
-      <link rel="STYLESHEET" type="text/css" href="../css/navbar.css">
+      <link rel="STYLESHEET" type="text/css" href="../../css/navbar.css">
     @else
-      <link rel="STYLESHEET" type="text/css" href="css/navbar.css">
+      <link rel="STYLESHEET" type="text/css" href="../css/navbar.css">
     @endif
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,7 @@
     <!-- Navbar -->
     <header class="row sticky-top">
       <nav id="navbar" class="col-12 navbar navbar-expand-custom navbar-light bg-light
-          @if ((Auth::check() && Auth::user()->theme != 'dyslexia') || (isset($_COOKIE['theme']) && $_COOKIE['theme'] != 'dyslexia'))
+          @if ((Auth::check() && Auth::user()->theme != 'dyslexia') || (isset($_COOKIE['theme']) && $_COOKIE['theme'] != 'dyslexia') || (!isset($_COOKIE['theme'])))
             navbar-expand-xl"
           @endif
           alt=""
@@ -40,9 +40,9 @@
         <a class="navbar-brand" class="mb-5 mb-lg-0" href="/">
           <img class="d-inline-block align-top logo mr-2"
             @if (isset($animal->animal_id))
-              src="../images/logo.png"
+              src="../../images/logo.png"
             @else
-              src="images/logo.png"
+              src="../images/logo.png"
             @endif
             alt=""
           >
@@ -63,42 +63,42 @@
                 Servicios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                <li><a class="dropdown-item" href="/#adopcion">Adopción</a></li>
-                <li><a class="dropdown-item" href="/deliver">Entrega</a></li>
-                <li><a class="dropdown-item" href="/rescue">Rescate</a></li>
+                <li><a class="dropdown-item" href="/#adoption">Adopción</a></li>
+                <li><a class="dropdown-item" href="/animals/deliver">Entrega</a></li>
+                <li><a class="dropdown-item" href="/animals/rescue">Rescate</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/missing-animals">Animales desaparecidos</a>
+              <a class="nav-link" href="/animals/missings">Animales desaparecidos</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Información de interés
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <li><a class="dropdown-item" href="/regulations">Normativa</a></li>
-                <li><a class="dropdown-item" href="/animals-pd">Animales PPP</a></li>
+                <li><a class="dropdown-item" href="/information/regulations">Normativa</a></li>
+                <li><a class="dropdown-item" href="/information/animals-pd">Animales PPP</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/profile">Ajustes</a>
+              <a class="nav-link" href="/settings/profile">Ajustes</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Contacto
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                <li><a class="dropdown-item" href="/contact-information">Datos de contacto</a></li>
-                <li><a class="dropdown-item" href="/about-us">Acerca de nosotros</a></li>
-                <li><a class="dropdown-item" href="/contact-form">Formulario de contacto</a></li>
+                <li><a class="dropdown-item" href="/contact/information">Datos de contacto</a></li>
+                <li><a class="dropdown-item" href="/contact/about-us">Acerca de nosotros</a></li>
+                <li><a class="dropdown-item" href="/contact/form">Formulario de contacto</a></li>
               </ul>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
             @if (!Auth::check())
-              <a href="/login"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
+              <a href="/auth/login"><button class="btn mt-1 mb-1">Iniciar sesión</button></a>
             @else
-              <a href="/logout"><button class="btn mt-1 mb-1">Cerrar sesión</button></a>
+              <a href="/auth/logout"><button class="btn mt-1 mb-1">Cerrar sesión</button></a>
             @endif
           </ul>
         </div>

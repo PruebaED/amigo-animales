@@ -9,9 +9,9 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-    <link rel="STYLESHEET" type="text/css" href="css/login-register.css">
+    <link rel="STYLESHEET" type="text/css" href="../css/login-register.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,7 +41,7 @@
 
       <div class="container">
         <div class="user signinBx">
-          <div class="imgBx"><img src="images/login-register/gato_registro.jpg"></div>
+          <div class="imgBx"><img src="../images/login-register/gato_registro.jpg"></div>
           <div class="formBx">
             <form method="POST">
               @csrf
@@ -52,8 +52,8 @@
               <label class="form-check-label mt-2 mb-2" for="loginRememberMe"> Recuérdame </label>
               <br>
               <input class="btn btn-primary" type="submit" name="loginSubmit" value="Iniciar sesión">
-              <p class="signup"> ¿No tienes una cuenta? <a href="/register"> Regístrate. </a> </p>
-              <p class="signup"> ¿Has olvidado tu contraseña? <a href="/password-reset"> Recupérala. </a> </p>
+              <p class="signup"> ¿No tienes una cuenta? <a href="/auth/register"> Regístrate. </a> </p>
+              <p class="signup"> ¿Has olvidado tu contraseña? <a href="/password/reset"> Recupérala. </a> </p>
             </form>
           </div>
         </div>

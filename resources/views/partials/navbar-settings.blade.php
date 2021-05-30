@@ -7,7 +7,7 @@
 
     <meta content="text/html" charset="utf-8" http-equiv="content-type">
     
-    <link rel="STYLESHEET" type="text/css" href="css/navbar-settings.css">
+    <link rel="STYLESHEET" type="text/css" href="../css/navbar-settings.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,16 +31,16 @@
     <div class="col-2 offset-4 offset-md-2">
       <ul class="nav flex-column vertical-menu">
         <li class="nav-item">
-          <a class="nav-link nav-link-settings active" href="/profile">Perfil</a>
+          <a class="nav-link nav-link-settings active" href="/settings/profile">Perfil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-settings" href="/account">Cuenta</a>
+          <a class="nav-link nav-link-settings" href="/settings/account">Cuenta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-settings" href="/appearance">Apariencia</a>
+          <a class="nav-link nav-link-settings" href="/settings/appearance">Apariencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-settings" href="/security">Seguridad</a>
+          <a class="nav-link nav-link-settings" href="/settings/security">Seguridad</a>
         </li>
       </ul>
     </div>

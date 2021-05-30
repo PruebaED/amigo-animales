@@ -31,7 +31,7 @@ class AuthController extends Controller
   public function getLogout(Request $request)
   {
     Auth::logout();
-    return redirect('/login')->withSuccess('Ha cerrado sesión de forma satisfactoria.');
+    return redirect('/auth/login')->withSuccess('Ha cerrado sesión de forma satisfactoria.');
   }
 
   public function postLogin(LoginPostRequest $request)
@@ -54,9 +54,10 @@ class AuthController extends Controller
         $previousUrl = Session::get('url.intended', url('/'));
         if 
           (
-            $previousUrl != 'http://amigo-animales.test/register' && 
-            $previousUrl != 'http://amigo-animales.test/login' &&
-            $previousUrl != 'http://amigo-animales.test/logout'
+            $previousUrl != 'http://amigo-animales.test/auth/register' && 
+            $previousUrl != 'http://amigo-animales.test/auth/login' &&
+            $previousUrl != 'http://amigo-animales.test/auth/logout' &&
+            $previousUrl != 'http://amigo-animales.test/password/reset'
           ) 
         {
           // Cuando iniciemos sesión, en caso de existir la cookie 'theme', le asignaremos a dicha cookie la preferencia que
@@ -75,7 +76,7 @@ class AuthController extends Controller
     } else {
       $errors = new MessageBag();
       $errors->add('incorrect_login_credentials', 'La contraseña introducida es incorrecta.');
-      return redirect('/login')->withInput()->withErrors($errors);
+      return redirect('/auth/login')->withInput()->withErrors($errors);
     }
 }
 
@@ -90,6 +91,6 @@ class AuthController extends Controller
     $user->password = Hash::make($request->registerPassword);
     $user->save();
     Mail::to($user->email)->send(new UserRegistered($user));
-    return redirect('/login')->withSuccess('Su cuenta ha sido registrada satisfactoriamente.');
+    return redirect('/auth/login')->withSuccess('Su cuenta ha sido registrada satisfactoriamente.');
   }
 }

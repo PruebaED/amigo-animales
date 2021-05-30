@@ -97,7 +97,7 @@ class AnimalsController extends Controller
           $animal->save();
 
           Mail::to($user->email)->send(new AnimalAdopted($user, $animal));
-          return redirect('/#adopcion')->withSuccess('Ha adoptado a ' . $animal->name . ' de forma satisfactoria.');
+          return redirect('/#adoption')->withSuccess('Ha adoptado a ' . $animal->name . ' de forma satisfactoria.');
         } else {
           $errors->add('incorrect_animal_postAdopt', 'El nombre del animal introducido no se corresponde al seleccionado para
           el proceso de adopción.');
@@ -108,7 +108,7 @@ class AnimalsController extends Controller
     } else {
       $errors->add('incorrect_user_postAdopt', 'No puede adoptar a un animal que ya le pertenece.');
     }
-    return redirect('adopt/' . $animal->animal_id)->withInput()->withErrors($errors);
+    return redirect('/animals/adopt/' . $animal->animal_id)->withInput()->withErrors($errors);
   }
 
   public function postFoster(FosterPostRequest $request, $id)
@@ -137,7 +137,7 @@ class AnimalsController extends Controller
           $animal->save();
 
           Mail::to($user->email)->send(new AnimalFostered($user, $animal));
-          return redirect('/#adopcion')->withSuccess('Ha acogido a ' . $animal->name . ' de forma satisfactoria.');
+          return redirect('/#adoption')->withSuccess('Ha acogido a ' . $animal->name . ' de forma satisfactoria.');
         } else {
           $errors->add('incorrect_animal_postAdopt', 'El nombre del animal introducido no se corresponde al seleccionado para
           el proceso de acogida.');
@@ -148,7 +148,7 @@ class AnimalsController extends Controller
     } else {
       $errors->add('incorrect_user_postFoster', 'No puede acoger a un animal que ya le pertenece.');
     }
-    return redirect('foster/' . $animal->animal_id)->withInput()->withErrors($errors);
+    return redirect('/animals/foster/' . $animal->animal_id)->withInput()->withErrors($errors);
   }
 
   public function postMissingAnimalViewed(MissingAnimalPostRequest $request)
@@ -170,7 +170,7 @@ class AnimalsController extends Controller
 
           Mail::to($user->email)->send(new MissingAnimalReport($user, $animal));
           Mail::to($animalOwner->email)->send(new MissingAnimalViewed($animalOwner, $animal, $user, Province::findOrFail($request->reportSelect)));
-          return redirect('/missing-animals')->withSuccess('Ha reportado el avistamiento de ' . $animal->name . ' de forma satisfactoria.');
+          return redirect('/animals/missings')->withSuccess('Ha reportado el avistamiento de ' . $animal->name . ' de forma satisfactoria.');
         } else {
           $errors->add('incorrect_animal_postAnimalViewed', 'El nombre del animal introducido no se corresponde al seleccionado para
           el proceso de reporte de avistamiento.');
@@ -181,6 +181,6 @@ class AnimalsController extends Controller
     } else {
       $errors->add('incorrect_user_postAnimalViewed', 'No puede reportar haber visto a un animal que le pertenece.');
     }
-    return redirect('/missing-animals')->withInput()->withErrors($errors);
+    return redirect('/animals/missings')->withInput()->withErrors($errors);
   }
 }

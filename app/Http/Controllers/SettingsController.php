@@ -49,7 +49,7 @@ class SettingsController extends Controller
           Mail::to($user->email)->send(new AccountDeleted($user));
           $user->delete();
           $request->session()->flush();
-          return redirect('login')->withSuccess('Ha eliminado su cuenta de forma satisfactoria.');
+          return redirect('/auth/login')->withSuccess('Ha eliminado su cuenta de forma satisfactoria.');
         } else {
           $errors->add('incorrect_confirm_deleteAccount', 'La frase de confirmación es incorrecta.');
         }
@@ -59,7 +59,7 @@ class SettingsController extends Controller
     } else {
       $errors->add('incorrect_email_deleteAccount', 'El email introducido no se corresponde al registrado en su cuenta.');
     }
-    return redirect('account')->withInput()->withErrors($errors);
+    return redirect('/settings/account')->withInput()->withErrors($errors);
   }
 
   public function putAppearance(Request $request)
@@ -76,7 +76,7 @@ class SettingsController extends Controller
     // Tiempo de expiración = 1 año
     // ¿Dónde está disponible la cookie? = en la totalidad del dominio
     setcookie('theme', $selectedAppearance, time() + 31556926, '/');
-    return redirect('appearance')->withSuccess('Su preferencia de tema se ha guardado satisfactoriamente.');
+    return redirect('/settings/appearance')->withSuccess('Su preferencia de tema se ha guardado satisfactoriamente.');
   }
 
   public function putProfile(ProfilePutRequest $request)
@@ -95,7 +95,7 @@ class SettingsController extends Controller
       Mail::to($oldEmail)->send(new UserEmailChanged($user));
     }
     Mail::to($user->email)->send(new AccountInformationChanged($user));
-    return redirect('profile')->withSuccess('Ha actualizado su perfil de forma satisfactoria.');
+    return redirect('/settings/profile')->withSuccess('Ha actualizado su perfil de forma satisfactoria.');
   }
 
   public function putSecurity(SecurityPutRequest $request)
@@ -108,7 +108,7 @@ class SettingsController extends Controller
         $user->save();
         Mail::to($user->email)->send(new PasswordChanged($user));
         $request->session()->flush();
-        return redirect('login')->withSuccess('Ha cambiado su contraseña de forma satisfactoria.');
+        return redirect('/auth/login')->withSuccess('Ha cambiado su contraseña de forma satisfactoria.');
       } else {
         $errors->add('incorrect_confirm_password_putSecurity', 'La nueva contraseña y la confirmación de la nueva contraseña
         no coinciden.');
@@ -116,6 +116,6 @@ class SettingsController extends Controller
     } else {
       $errors->add('incorrect_password_putSecurity', 'Su antigua contraseña introducida es incorrecta.');
     } 
-    return redirect('security')->withInput()->withErrors($errors);
+    return redirect('/settings/security')->withInput()->withErrors($errors);
   }
 }

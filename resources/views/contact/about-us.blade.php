@@ -10,9 +10,9 @@
     
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="css/about-us.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/about-us.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -81,7 +81,7 @@
         <div class="container">
           <div class="card">
             <div class="content">
-              <div class="imgBx"><img src="images/about-us/nuestroequipo1.jpg"></div>
+              <div class="imgBx"><img src="../images/about-us/nuestroequipo1.jpg"></div>
               <div class="contentBx">
                 <h3>Ezekixl Akinnewu<br><span>Full Stack Developer</span></h3>
               </div>
@@ -89,7 +89,7 @@
           </div>
           <div class="card">
             <div class="content">
-              <div class="imgBx"><img src="images/about-us/nuestroequipo2.jpg"></div>
+              <div class="imgBx"><img src="../images/about-us/nuestroequipo2.jpg"></div>
               <div class="contentBx">
                 <h3>Kindle Shulpina<br><span>Technical Assistant</span></h3>
               </div>
@@ -97,7 +97,7 @@
           </div>
           <div class="card">
             <div class="content">
-              <div class="imgBx"><img src="images/about-us/nuestroequipo3.jpg"></div>
+              <div class="imgBx"><img src="../images/about-us/nuestroequipo3.jpg"></div>
               <div class="contentBx">
                 <h3>Andrea Piacquadio<br><span>Veterinary Surgeon</span></h3>
               </div>

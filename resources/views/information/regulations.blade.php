@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="css/regulations.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/regulations.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -59,15 +59,15 @@
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/municipal-ordinance.pdf" target="_blank">Ordenanza municipal</a>
+            <a class="link" href="../downloadables/municipal-ordinance.pdf" target="_blank">Ordenanza municipal</a>
           </p>
         </div>
         <div class="col-10 col-xl-4 offset-1 offset-xl-2"> 
@@ -76,54 +76,54 @@
           <p class="justificado"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/state-ordinance1.pdf" target="_blank">Ley 10/1990</a>
+            <a class="link" href="../downloadables/state-ordinance1.pdf" target="_blank">Ley 10/1990</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/state-ordinance2.pdf" target="_blank">Ley 50/1999</a>
+            <a class="link" href="../downloadables/state-ordinance2.pdf" target="_blank">Ley 50/1999</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/state-ordinance3.pdf" target="_blank">R.D. 287/2002</a>
+            <a class="link" href="../downloadables/state-ordinance3.pdf" target="_blank">R.D. 287/2002</a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/state-ordinance4.pdf" target="_blank">Orden 29/06/13</a>
+            <a class="link" href="../downloadables/state-ordinance4.pdf" target="_blank">Orden 29/06/13</a>
           </p>
         </div>
       </section>

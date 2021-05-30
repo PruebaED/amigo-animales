@@ -9,9 +9,9 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-    <link rel="STYLESHEET" type="text/css" href="css/login-register.css">
+    <link rel="STYLESHEET" type="text/css" href="../css/login-register.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -53,10 +53,10 @@
               </select>
               <input class="form-control" type="password" name="registerPassword" placeholder="Contraseña" value="{{ old('registerPassword') }}">
               <input class="btn btn-primary" type="submit" name="registerSubmit" value="Registrarse">
-              <p class="signup"> ¿Ya tienes una cuenta? <a href="/login"> Inicia sesión. </a> </p>
+              <p class="signup"> ¿Ya tienes una cuenta? <a href="/auth/login"> Inicia sesión. </a> </p>
             </form>
           </div>
-          <div class="imgBx imgRegister"><img src="images/login-register/perro_registro.jpg"></div>
+          <div class="imgBx imgRegister"><img src="../images/login-register/perro_registro.jpg"></div>
         </div>
       </div>
     </section>

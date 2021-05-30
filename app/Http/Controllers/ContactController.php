@@ -31,7 +31,7 @@ class ContactController extends Controller
     if (Auth::check()) {
 	    $user = User::findOrFail(Auth::user()->user_id);
       Mail::to('soporteamigoanimales@gmail.com')->send(new UserContactForm($user, $request));
-      return redirect('contact-form')->withSuccess('Su formulario se ha enviado de forma satisfactoria.');
+      return redirect('/contact/form')->withSuccess('Su formulario se ha enviado de forma satisfactoria.');
   	}
   }
 }

@@ -9,9 +9,9 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-    <link rel="STYLESHEET" type="text/css" href="css/password-reset.css">
+    <link rel="STYLESHEET" type="text/css" href="../css/password-reset.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,10 +43,10 @@
               <h2>Restablece tu contraseña</h2>
               <input class="form-control" type="text" name="passwordResetEmail" placeholder="Email" value="{{ old('passwordResetEmail') }}">
               <input class="btn btn-primary" type="submit" name="passwordResetSubmit" value="Envía el link de recuperación">
-              <p class="signup"> ¿Recuerdas tu contraseña? <a href="/login"> Inicia sesión. </a> </p>
+              <p class="signup"> ¿Recuerdas tu contraseña? <a href="/auth/login"> Inicia sesión. </a> </p>
             </form>
           </div>
-          <div class="imgBx"><img src="images/password-reset/perro_recuperar_contraseña.jpg"></div>
+          <div class="imgBx"><img src="../images/password-reset/perro_recuperar_contraseña.jpg"></div>
         </div>
       </div>
     </section>

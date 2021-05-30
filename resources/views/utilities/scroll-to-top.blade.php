@@ -6,9 +6,9 @@
     <!-- Required meta tags -->
 	  <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     @if (isset($animal->animal_id))
-      <link rel="STYLESHEET" type="text/css" href="../css/scroll-to-top.css">
+      <link rel="STYLESHEET" type="text/css" href="../../css/scroll-to-top.css">
     @else
-      <link rel="STYLESHEET" type="text/css" href="css/scroll-to-top.css">
+      <link rel="STYLESHEET" type="text/css" href="../css/scroll-to-top.css">
     @endif
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>

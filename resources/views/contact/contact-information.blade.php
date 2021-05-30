@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="css/contact-information.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/contact-information.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,17 +55,17 @@
           </p>
         </div>
         <div class="card col-10 col-md-8 mb-5 offset-1 offset-md-2">
-          <img class="card-icon" src="images/contact-information/email.png">
+          <img class="card-icon" src="../images/contact-information/email.png">
           <p>soporteamigoanimales@gmail.com</p>
         </div>
   
         <div class="card col-10 col-md-8 mb-5 offset-1 offset-md-2">
-          <img class="card-icon" src="images/contact-information/telefono.png">
+          <img class="card-icon" src="../images/contact-information/telefono.png">
           <p>+34 123 456 789</p>
         </div>
   
         <div class="card col-10 col-md-8 offset-1 offset-md-2">
-          <img class="card-icon" src="images/contact-information/localizacion.png">
+          <img class="card-icon" src="../images/contact-information/localizacion.png">
           <p>Calle Inventada, Nº23</p>
         </div>
       </section>

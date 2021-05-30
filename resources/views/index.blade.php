@@ -52,19 +52,19 @@
           </div>
           <ul class="navigation">
             <li style="--i:1;"><a href="/">Inicio</a></li>
-            <li style="--i:2;"><a href="#adopcion">Adopción</a></li>
-            <li style="--i:3;"><a href="/deliver">Entrega</a></li>
-            <li style="--i:4;"><a href="/rescue">Rescate</a></li>
-            <li style="--i:5;"><a href="/missing-animals">Animales desaparecidos</a></li>
-            <li style="--i:6;"><a href="/regulations">Normativa</a></li>
-            <li style="--i:7;"><a href="/animals-pd">Animales PPP</a></li>
-            <li style="--i:8;"><a href="/contact-form">Contacto</a></li>
-            <li style="--i:9;"><a href="/profile">Ajustes</a></li>
+            <li style="--i:2;"><a href="#adoption">Adopción</a></li>
+            <li style="--i:3;"><a href="/animals/deliver">Entrega</a></li>
+            <li style="--i:4;"><a href="/animals/rescue">Rescate</a></li>
+            <li style="--i:5;"><a href="/animals/missings">Animales desaparecidos</a></li>
+            <li style="--i:6;"><a href="/information/regulations">Normativa</a></li>
+            <li style="--i:7;"><a href="/information/animals-pd">Animales PPP</a></li>
+            <li style="--i:8;"><a href="/contact/form">Contacto</a></li>
+            <li style="--i:9;"><a href="/settings/profile">Ajustes</a></li>
             <li style="--i:10;">
             @if (!Auth::check())
-              <a href="/login">Iniciar sesión</a>
+              <a href="/auth/login">Iniciar sesión</a>
             @else
-              <a href="/logout">Cerrar sesión</a>
+              <a href="/auth/logout">Cerrar sesión</a>
             @endif
             </li>
           </ul>
@@ -75,7 +75,7 @@
 
       <!-- SECCIÓN ANIMALES -->
       <section class="row">
-        <div id="adopcion" class="col-10">
+        <div id="adoption" class="col-10">
           <!-- Éxitos producidos en formularios que redirigen a la página de inicio -->
             @if (session('success')) @include('utilities.form-success') @endif
           <!-- ... --> 
@@ -90,7 +90,7 @@
               <h5 class="mt-3 mb-2">{{ $animal->name }}</h5>
               <h5 class="mb-2">{{ $animal->breed }}</h5>
               <h5 class="mb-2">{{ $animal->provinceAnimal->name }}</h5>
-              <button type="button" onclick="window.location.href='{{ url('detail-view/' . $animal->animal_id ) }}';" class="btn mt-3 mx-3">Más información</button>
+              <button type="button" onclick="window.location.href='{{ url('animals/detail-view/' . $animal->animal_id ) }}';" class="btn mt-3 mx-3">Más información</button>
             </div>
           </div>
         </div>

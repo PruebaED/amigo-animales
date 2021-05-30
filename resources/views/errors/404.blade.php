@@ -9,9 +9,11 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/icono.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/icono.ico">
 
-    <link rel="STYLESHEET" type="text/css" href="../css/404.css">
+    <link rel="STYLESHEET" type="text/css" href="../../css/404.css">
+    <link rel="STYLESHEET" type="text/css" href="../../../css/404.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,13 +36,13 @@
       <div class="container">
         <div class="outerBx">
           <div class="imgBx">
-            <img src="images/404-error/perro_error_404.jpg">
-            <img src="../images/404-error/perro_error_404.jpg">
+            <img src="../../images/404-error/perro_error_404.jpg">
+            <img src="../../../images/404-error/perro_error_404.jpg">
           </div>
           <div class="innerBx row">
             <div class="col-10 offset-1"> <h2>ERROR 404.</h2> </div>
             <div class="col-10 offset-1"> <h2>Lo sentimos, pero la página que estabas buscando no está disponible.</h2> </div>
-            <div class="col-10 offset-6"> <p class="linkHome"> <a href="/"> Llévame a casa. </a> </p> </div>
+            <div class="col-10 offset-5"> <p class="linkHome"> <a href="/"> Llévame a casa. </a> </p> </div>
           </div>
         </div>
       </div>
