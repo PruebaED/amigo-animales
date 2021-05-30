@@ -32,7 +32,7 @@
     <!-- Navbar -->
     <header class="row sticky-top">
       <nav id="navbar" class="col-12 navbar navbar-expand-custom navbar-light bg-light
-          @if ((Auth::check() && Auth::user()->theme != 'dyslexia') || (isset($_COOKIE['theme']) && $_COOKIE['theme'] != 'dyslexia'))
+          @if ((Auth::check() && Auth::user()->theme != 'dyslexia') || (isset($_COOKIE['theme']) && $_COOKIE['theme'] != 'dyslexia') || (!isset($_COOKIE['theme'])))
             navbar-expand-xl"
           @endif
           alt=""
