@@ -54,10 +54,10 @@ class AuthController extends Controller
         $previousUrl = Session::get('url.intended', url('/'));
         if 
           (
-            $previousUrl != 'http://amigo-animales.test/auth/register' && 
-            $previousUrl != 'http://amigo-animales.test/auth/login' &&
-            $previousUrl != 'http://amigo-animales.test/auth/logout' &&
-            $previousUrl != 'http://amigo-animales.test/password/reset'
+            $previousUrl != 'https://amigo-animales.herokuapp.com/auth/register' && 
+            $previousUrl != 'https://amigo-animales.herokuapp.com/auth/login' &&
+            $previousUrl != 'https://amigo-animales.herokuapp.com/auth/logout' &&
+            $previousUrl != 'https://amigo-animales.herokuapp.com/password/reset'
           ) 
         {
           // Cuando iniciemos sesión, en caso de existir la cookie 'theme', le asignaremos a dicha cookie la preferencia que

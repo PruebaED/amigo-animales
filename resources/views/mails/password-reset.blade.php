@@ -9,7 +9,7 @@
   <p>
   	Haga click en el siguiente 
   	<strong>
-      <a href="http://amigo-animales.test/password/reset/{{ $user->remember_token }}"> enlace</a>
+      <a href="https://amigo-animales.herokuapp.com/password/reset/{{ $user->remember_token }}"> enlace</a>
     </strong>
   	para reestablecer su contraseña
   </p>
