@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="../css/adopt.css">
+		<link rel="STYLESHEET" type="text/css" href="../../css/adopt.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,7 +55,7 @@
           <p class="justificado"> En 'El Amigo de los Animales' podrás encontrar animales de <strong> todas las razas y edades </strong> para su adopción. 
           </p>
           <p class="justificado"> En caso de adoptar a un <strong> animal de los catalogados como potencialmente peligroso</strong>, deberá proveerse
-          de la correspondiente licencia administrativa que acredita la posesión de dicho animales. Pulse <a class="link-detalle" href="/animals-pd">aquí</a> para
+          de la correspondiente licencia administrativa que acredita la posesión de dicho animales. Pulse <a class="link-detalle" href="/information/animals-pd">aquí</a> para
           obtener más información. </p>
         </div>
         <div class="col-10 offset-1 mt-3"> 
@@ -215,5 +215,5 @@
   </body>
 </html>
 @else
-<script>window.location = "/404";</script>
+<script>window.location = "/errors/404";</script>
 @endif

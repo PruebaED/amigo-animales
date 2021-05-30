@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="css/deliver.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/deliver.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -81,50 +81,56 @@
           <p class="justificado mt-4">
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/deliver.pdf" target="_blank">Solicitud de entrega de animal</a>
+            <a class="link" href="../downloadables/deliver.pdf" target="_blank">
+              Solicitud de entrega de animal
+            </a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/rescue.pdf" target="_blank">Solicitud de rescate de animal</a>
+            <a class="link" href="../downloadables/rescue.pdf" target="_blank">
+              Solicitud de rescate de animal
+            </a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pdf-white.png"
+                src="../images/mixture/pdf-white.png"
               @else
-                src="images/mixture/pdf.png"
+                src="../images/mixture/pdf.png"
               @endif
               alt=""
             >
-            <a class="link" href="downloadables/move-away.pdf" target="_blank">Solicitud de retirada del domicilio</a>
+            <a class="link" href="../downloadables/move-away.pdf" target="_blank">
+              Solicitud de retirada del domicilio
+            </a>
           </p>
           <p class="justificado mt-5"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/pago-white.png"
+                src="../images/mixture/pago-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/pago-white.png"
+                src="../images/mixture/pago-white.png"
               @else
-                src="images/mixture/pago.png"
+                src="../images/mixture/pago.png"
               @endif
               alt=""
             >

@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="../css/foster.css">
+		<link rel="STYLESHEET" type="text/css" href="../../css/foster.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,7 +56,7 @@
           puedas comprometerte tan a largo plazo  (puedes estar pendiente de un traslado a otro país, puede que vayas a empezar un trabajo nuevo dentro de unos meses...). 
           </p>
           <p class="justificado"> En caso de acoger a un <strong> animal de los catalogados como potencialmente peligroso</strong>, deberá proveerse
-          de la correspondiente licencia administrativa que acredita la posesión de dicho animales. Pulse <a class="link-detalle" href="/animals-pd">aquí</a> para
+          de la correspondiente licencia administrativa que acredita la posesión de dicho animales. Pulse <a class="link-detalle" href="/information/animals-pd">aquí</a> para
           obtener más información. </p>
         </div>
         <div class="col-10 offset-1 mt-3"> 
@@ -211,5 +211,5 @@
   </body>
 </html>
 @else
-<script>window.location = "/404";</script>
+<script>window.location = "/errors/404";</script>
 @endif

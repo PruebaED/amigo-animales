@@ -8,7 +8,7 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="STYLESHEET" type="text/css" href="css/form-errors.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/form-errors.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,9 +22,9 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
     @if (isset($animal->animal_id))
-    <script src="../js/hide-error-alert.js"></script>
+    <script src="../../js/hide-error-alert.js"></script>
     @else
-    <script src="js/hide-error-alert.js"></script>
+    <script src="../js/hide-error-alert.js"></script>
     @endif
 
   </head>

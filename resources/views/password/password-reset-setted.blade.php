@@ -9,9 +9,9 @@
 
     <meta content="text/html"; charset="utf-8" http-equiv="content-type">
     
-    <link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/icono.ico">
 
-    <link rel="STYLESHEET" type="text/css" href="../css/password-reset.css">
+    <link rel="STYLESHEET" type="text/css" href="../../css/password-reset.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,10 +45,10 @@
               <input class="form-control" type="password" name="passwordResetSettedNewPassword" placeholder="Nueva contraseña">
               <input class="form-control" type="password" name="passwordResetSettedConfirmNewPassword" placeholder="Confirme nueva contraseña">
               <input class="btn btn-primary" type="submit" name="passwordResetSettedSubmit" value="Establecer contraseña">
-              <p class="signup"> ¿Recuerdas tu contraseña? <a href="/login"> Inicia sesión. </a> </p>
+              <p class="signup"> ¿Recuerdas tu contraseña? <a href="/auth/login"> Inicia sesión. </a> </p>
             </form>
           </div>
-          <div class="imgBx"><img src="../images/password-reset/gato_contraseña_recuperada.jpg"></div>
+          <div class="imgBx"><img src="../../images/password-reset/gato_contraseña_recuperada.jpg"></div>
         </div>
       </div>
     </section>

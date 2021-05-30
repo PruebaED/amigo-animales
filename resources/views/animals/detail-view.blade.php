@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="../css/detail-view.css">
+		<link rel="STYLESHEET" type="text/css" href="../../css/detail-view.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,11 +56,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/edad-white.png"
+                    src="../../images/detail-view/edad-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/edad-white.png"
+                    src="../../images/detail-view/edad-white.png"
                   @else
-                    src="../images/detail-view/edad.png"
+                    src="../../images/detail-view/edad.png"
                   @endif
                   alt=""
                 >
@@ -69,11 +69,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/ubicacion-white.png"
+                    src="../../images/detail-view/ubicacion-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/ubicacion-white.png"
+                    src="../../images/detail-view/ubicacion-white.png"
                   @else
-                    src="../images/detail-view/ubicacion.png"
+                    src="../../images/detail-view/ubicacion.png"
                   @endif
                   alt=""
                 >
@@ -85,21 +85,21 @@
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
                     @if ($animal->gender == 'Macho')
-                      src="../images/detail-view/sexo-white-macho.png"
+                      src="../../images/detail-view/sexo-white-macho.png"
                     @else
-                      src="../images/detail-view/sexo-white-hembra.png"
+                      src="../../images/detail-view/sexo-white-hembra.png"
                     @endif
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
                     @if ($animal->gender == 'Macho')
-                      src="../images/detail-view/sexo-white-macho.png"
+                      src="../../images/detail-view/sexo-white-macho.png"
                     @else
-                      src="../images/detail-view/sexo-white-hembra.png"
+                      src="../../images/detail-view/sexo-white-hembra.png"
                     @endif
                   @else
                     @if ($animal->gender == 'Macho')
-                      src="../images/detail-view/sexo-macho.png"
+                      src="../../images/detail-view/sexo-macho.png"
                     @else
-                      src="../images/detail-view/sexo-hembra.png"
+                      src="../../images/detail-view/sexo-hembra.png"
                     @endif
                   @endif
                   alt=""
@@ -109,11 +109,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/peso-white.png"
+                    src="../../images/detail-view/peso-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/peso-white.png"
+                    src="../../images/detail-view/peso-white.png"
                   @else
-                    src="../images/detail-view/peso.png"
+                    src="../../images/detail-view/peso.png"
                   @endif
                   alt=""
                 >
@@ -124,11 +124,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/vacunado-white.png"
+                    src="../../images/detail-view/vacunado-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/vacunado-white.png"
+                    src="../../images/detail-view/vacunado-white.png"
                   @else
-                    src="../images/detail-view/vacunado.png"
+                    src="../../images/detail-view/vacunado.png"
                   @endif
                   alt=""
                 >
@@ -137,11 +137,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/sano-white.png"
+                    src="../../images/detail-view/sano-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/sano-white.png"
+                    src="../../images/detail-view/sano-white.png"
                   @else
-                    src="../images/detail-view/sano.png"
+                    src="../../images/detail-view/sano.png"
                   @endif
                   alt=""
                 >
@@ -152,11 +152,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/esterilizado-white.png"
+                    src="../../images/detail-view/esterilizado-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/esterilizado-white.png"
+                    src="../../images/detail-view/esterilizado-white.png"
                   @else
-                    src="../images/detail-view/esterilizado.png"
+                    src="../../images/detail-view/esterilizado.png"
                   @endif
                   alt=""
                 >
@@ -165,11 +165,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/castrado-white.png"
+                    src="../../images/detail-view/castrado-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/castrado-white.png"
+                    src="../../images/detail-view/castrado-white.png"
                   @else
-                    src="../images/detail-view/castrado.png"
+                    src="../../images/detail-view/castrado.png"
                   @endif
                   alt=""
                 >
@@ -180,11 +180,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/desparasitado-white.png"
+                    src="../../images/detail-view/desparasitado-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/desparasitado-white.png"
+                    src="../../images/detail-view/desparasitado-white.png"
                   @else
-                    src="../images/detail-view/desparasitado.png"
+                    src="../../images/detail-view/desparasitado.png"
                   @endif
                   alt=""
                 >
@@ -193,11 +193,11 @@
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
                 <img class="icono mx-3 mx-sm-1 mx-md-3" 
                   @if (Auth::check() && Auth::user()->theme == 'dark')
-                    src="../images/detail-view/microchip-white.png"
+                    src="../../images/detail-view/microchip-white.png"
                   @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                    src="../images/detail-view/microchip-white.png"
+                    src="../../images/detail-view/microchip-white.png"
                   @else
-                    src="../images/detail-view/microchip.png"
+                    src="../../images/detail-view/microchip.png"
                   @endif
                   alt=""
                 >
@@ -215,12 +215,12 @@
         @if ($animal->state == 'disponible')
         <div class="col-10 col-lg-4 offset-1 justificado">
           <h5>¿Crees que encajo en tu vida? 
-            <a class="link-detalle" href="{{ url('adopt/' . $animal->animal_id ) }}">¡Adóptame!</a>
+            <a class="link-detalle" href="{{ url('animals/adopt/' . $animal->animal_id ) }}">¡Adóptame!</a>
           </h5>
         </div>
         <div class="col-10 col-lg-4 mt-5 mt-lg-0 offset-1 offset-lg-2 justificado">
           <h5>¿Quieres que hoy duerma fuera de la perrera?
-            <a class="link-detalle" href="{{ url('foster/' . $animal->animal_id ) }}">¡Acógeme!</a>
+            <a class="link-detalle" href="{{ url('animals/foster/' . $animal->animal_id ) }}">¡Acógeme!</a>
           </h5>
         </div>
         @endif
@@ -239,5 +239,5 @@
 
 </html>
 @else
-<script>window.location = "/404";</script>
+<script>window.location = "/errors/404";</script>
 @endif

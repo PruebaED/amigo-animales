@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="css/rescue.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/rescue.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -73,11 +73,11 @@
           <p class="justificado mt-4"> 
             <img class="icono mx-3" 
               @if (Auth::check() && Auth::user()->theme == 'dark')
-                src="images/mixture/ordenanza-white.png"
+                src="../images/mixture/ordenanza-white.png"
               @elseif (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') 
-                src="images/mixture/ordenanza-white.png"
+                src="../images/mixture/ordenanza-white.png"
               @else
-                src="images/mixture/ordenanza.png"
+                src="../images/mixture/ordenanza.png"
               @endif
               alt=""
             >

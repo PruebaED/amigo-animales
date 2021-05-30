@@ -10,9 +10,9 @@
 
 		<meta content="text/html"; charset="utf-8" http-equiv="content-type">
 		
-		<link rel="shortcut icon" type="image/x-icon" href="images/icono.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/icono.ico">
 
-		<link rel="STYLESHEET" type="text/css" href="css/animals-pd.css">
+		<link rel="STYLESHEET" type="text/css" href="../css/animals-pd.css">
 		
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -60,41 +60,41 @@
           <p class="justificado">Los perros considerados potencialmente peligrosos son aquellos que pertenecen a una de las siguientes razas o a cruces de ellas:</p>
           <div class="row mt-5">
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/AkitaInu.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/AkitaInu.jpg" alt="">
               <h2 class="text-center titulo">Akita Inu</h2>
             </div>
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/AmericanStaffordshireTerrier.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/AmericanStaffordshireTerrier.jpg" alt="">
               <h2 class="text-center titulo">American Staffordshire Terrier</h2>
             </div>
           </div>
           <div class="row mt-5">
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/DogoArgentino.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/DogoArgentino.jpg" alt="">
               <h2 class="text-center titulo">Dogo Argentino</h2>
             </div>
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/FilaBrasileño.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/FilaBrasileño.jpg" alt="">
               <h2 class="text-center titulo">Fila Brasileño</h2>
             </div>
           </div>
           <div class="row mt-5">
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/PitBullTerrier.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/PitBullTerrier.jpg" alt="">
               <h2 class="text-center titulo">Pit Bull Terrier</h2>
             </div>
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/Rottweiler.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/Rottweiler.jpg" alt="">
               <h2 class="text-center titulo">Rottweiler</h2>
             </div>
           </div>
           <div class="row mt-5">
             <div class="col-10 col-xl-3 mb-5 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/StaffordshireBullTerrier.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/StaffordshireBullTerrier.jpg" alt="">
               <h2 class="text-center titulo">Staffordshire Bull Terrier</h2>
             </div>
             <div class="col-10 col-xl-3 offset-1 offset-xl-2 imagen">
-              <img class="rounded-circle mb-3" src="images/animals-pd/TosaInu.jpg" alt="">
+              <img class="rounded-circle mb-3" src="../images/animals-pd/TosaInu.jpg" alt="">
               <h2 class="text-center titulo">Tosa Inu</h2>
             </div>
           </div>

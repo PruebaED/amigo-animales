@@ -27,7 +27,7 @@ class PasswordResetController extends Controller
   	$user->remember_token = $random_token;
   	$user->save();
   	Mail::to($user->email)->send(new SendResetLink($user));
-    return redirect('/login')->withSuccess('Se ha enviado el link de recuperación de contraseña satisfactoriamente.');
+    return redirect('/auth/login')->withSuccess('Se ha enviado el link de recuperación de contraseña satisfactoriamente.');
   }
 
   public function getSetPasswordReset($token)
@@ -49,7 +49,7 @@ class PasswordResetController extends Controller
 	    	$user->remember_token = NULL;
 	    	$user->save();
         Mail::to($user->email)->send(new PasswordChanged($user));
-    		return redirect('/login')->withSuccess('Ha restablecido su contraseña satisfactoriamente.');
+    		return redirect('/auth/login')->withSuccess('Ha restablecido su contraseña satisfactoriamente.');
 	    } else {
 	      $errors->add('incorrect_confirm_password_postPasswordResetSetted', 'La nueva contraseña y la confirmación de la nueva contraseña
 	      no coinciden.');
@@ -57,6 +57,6 @@ class PasswordResetController extends Controller
     } else {
     	$errors->add('incorrect_email_postPasswordResetSetted', 'El email introducido y el email desde el cual se solicitó el reestablecimiento de la contraseña no coinciden.');
     }
-    return redirect('password-reset/' . $token)->withInput()->withErrors($errors);
+    return redirect('/password/reset/' . $token)->withInput()->withErrors($errors);
   }
 }
