@@ -239,5 +239,5 @@
 
 </html>
 @else
-<script>window.location = "/#adopcion";</script>
+<script>window.location = "/404";</script>
 @endif

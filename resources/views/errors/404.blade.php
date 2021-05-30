@@ -40,7 +40,7 @@
           <div class="innerBx row">
             <div class="col-10 offset-1"> <h2>ERROR 404.</h2> </div>
             <div class="col-10 offset-1"> <h2>Lo sentimos, pero la página que estabas buscando no está disponible.</h2> </div>
-            <div class="col-10 offset-6"> <p class="linkHome"> <a href="/"> Llévame a casa. </a> </p> </div>
+            <div class="col-10 offset-5"> <p class="linkHome"> <a href="/"> Llévame a casa. </a> </p> </div>
           </div>
         </div>
       </div>

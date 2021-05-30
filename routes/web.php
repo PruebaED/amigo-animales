@@ -68,3 +68,5 @@ Route::get('contact-information', 'App\Http\Controllers\ContactController@getCon
 Route::get('animals-pd', 'App\Http\Controllers\InformationController@getAnimalsPd');
 
 Route::get('regulations', 'App\Http\Controllers\InformationController@getRegulations');
+
+Route::get('404', 'App\Http\Controllers\ErrorHandlerController@get404Error');
