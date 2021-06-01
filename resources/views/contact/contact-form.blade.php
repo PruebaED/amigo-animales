@@ -106,8 +106,8 @@
             </div>
           </div>
           <div class="col-10 col-lg-4 col-xl-3 offset-1 offset-xl-2 mb-5">
-            <div class="inputBox">
-              <input type="text" name="contactFormQuery" value="{{ old('contactFormQuery') }}">
+            <div class="inputBox textarea">
+              <textarea type="text" name="contactFormQuery" value="{{ old('contactFormQuery') }}"></textarea>
               <span class="text">Motivo de la consulta</span>
               <span class="line"></span>
             </div>
