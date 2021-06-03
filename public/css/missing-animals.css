@@ -172,7 +172,7 @@ input[type="submit"]:hover {
   background-color: #24262b;
   color: #ffffff;
 }
-  /* ... */
+/* ... */
 
 /* Dark mode */
 body.dark {
@@ -196,10 +196,6 @@ body.dark .card {
 body.dark .modal-closed,
 body.dark .btnMissingAnimal {
   opacity: 0.7;
-}
-
-body.dark .btnMissingAnimal {
-
 }
 
 body.dark .modal-body {

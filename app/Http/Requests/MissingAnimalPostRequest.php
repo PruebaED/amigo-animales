@@ -27,9 +27,8 @@ class MissingAnimalPostRequest extends FormRequest
   {
     $user = User::findOrFail(Auth::user()->user_id);
     return [
-      // El email y teléfono usados han de ser únicos (que no existan en la BBDD). Sin embargo, 
-      // se permitirá que dichos valores no sean únicos cuando sean iguales al email o al
-      // teléfono del usuario logueado.
+      // El email usado ha de ser único (que no exista en la BBDD). Sin embargo, se permitirá
+      // que dicho valor no sean único cuando sea iguale al email del usuario logueado.
       'reportEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
       'reportSelect' => 'required',
       'reportAnimalName' => 'required|alpha'

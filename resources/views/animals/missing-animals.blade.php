@@ -192,6 +192,7 @@
                         <div class="col-10 offset-1 mb-5">
                           <span class="provincia-text">¿Dónde me has visto?</span>
                           <select class="select-provincia" name="reportSelect" onmousedown="this.size=6" onclick="this.size=0">
+                            <option disabled selected>Seleccione una provincia</option>
                             @foreach($provinces as $key => $province) 
                             <option value="{{ $province->province_id }}" {{ old('registerSelect') == $province->province_id ? 'selected' : '' }}>{{ $province->name }}</option>
                             @endforeach

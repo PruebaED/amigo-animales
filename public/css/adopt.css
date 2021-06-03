@@ -186,7 +186,7 @@ input[type="checkbox"]:checked {
   background: #e74c3c;
   border-color: #e74c3c;
 }
-  /* ... */
+/* ... */
 
 /* Dark mode */
 body.dark {
