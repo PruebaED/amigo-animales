@@ -24,6 +24,10 @@
   background-color: white !important;
 }
 
+.nav .nav-item.active .nav-link-settings {
+  color: #e74c3c !important;
+}
+
 .nav-link-settings:visited {
   text-decoration: none;
 }

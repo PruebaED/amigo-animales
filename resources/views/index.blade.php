@@ -51,13 +51,13 @@
             <h2><span>No vamos a cambiar el mundo ayudando a un animal, pero al menos el mundo habrá cambiado para él.</span></h2>
           </div>
           <ul class="navigation">
-            <li style="--i:1;"><a href="/">Inicio</a></li>
-            <li style="--i:2;"><a href="#adoption">Adopción</a></li>
+            <li class="d-none" style="--i:1;"><a href="/">Inicio</a></li>
+            <li class="d-none" style="--i:2;"><a href="#adoption">Adopción</a></li>
             <li style="--i:3;"><a href="/animals/deliver">Entrega</a></li>
             <li style="--i:4;"><a href="/animals/rescue">Rescate</a></li>
             <li style="--i:5;"><a href="/animals/missings">Animales desaparecidos</a></li>
             <li style="--i:6;"><a href="/information/regulations">Normativa</a></li>
-            <li style="--i:7;"><a href="/information/animals-pd">Animales PPP</a></li>
+            <li class="d-none" style="--i:7;"><a href="/information/animals-pd">Animales PPP</a></li>
             <li style="--i:8;"><a href="/contact/form">Contacto</a></li>
             <li style="--i:9;"><a href="/settings/profile">Ajustes</a></li>
             <li style="--i:10;">
