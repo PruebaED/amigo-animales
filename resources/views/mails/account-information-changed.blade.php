@@ -10,8 +10,8 @@
   <ul>
     <li>Nombre: {{ $user->name }}</li>
     <li>Apellidos: {{ $user->surnames }}</li>
-    <li>Email: {{ $user->email }}</li>
     <li>Teléfono: {{ $user->phone }}</li>
+    <li>Email: {{ $user->email }}</li>
     <li>Provincia: {{ $user->userProvince->name }}</li>
   </ul>
   <p>
