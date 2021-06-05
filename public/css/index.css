@@ -297,6 +297,14 @@ section .navigation li a:hover {
   text-align: justify;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 10px;
+  border: none;
+}
+
 .card-body .btn,
 .modal-body .btn {
   display: block;
