@@ -13,13 +13,15 @@ use App\Models\Report;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\AdoptPostRequest;
 use App\Http\Requests\FosterPostRequest;
-use App\Http\Requests\MissingAnimalPostRequest;
+use App\Http\Requests\MissingAnimalViewedPostRequest;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AnimalAdopted;
 use App\Mail\AnimalFostered;
 use App\Mail\MissingAnimalReport;
 use App\Mail\MissingAnimalViewed;
+use App\Http\Requests\MissingAnimalPostRequest;
+use App\Mail\MissingAnimalPosted;
 
 class AnimalsController extends Controller
 {
@@ -42,9 +44,8 @@ class AnimalsController extends Controller
     // Creamos una variable de sesión que almacena la URL previa al acceso del proceso de acogida.
     session(['url.intended' => url()->previous()]);
     return view('animals.adopt',
-      array(
-        'animal' => Animal::findOrFail($id)
-      )
+                array('animal' => Animal::findOrFail($id)),
+                array('provinces' => Province::all())
     );
   }
 
@@ -53,9 +54,8 @@ class AnimalsController extends Controller
     // Creamos una variable de sesión que almacena la URL previa al acceso del proceso de acogida.
     session(['url.intended' => url()->previous()]);
     return view('animals.foster',
-      array(
-        'animal' => Animal::findOrFail($id)
-      )
+                array('animal' => Animal::findOrFail($id)),
+                array('provinces' => Province::all())
     );
   }
 
@@ -151,7 +151,7 @@ class AnimalsController extends Controller
     return redirect('/animals/foster/' . $animal->animal_id)->withInput()->withErrors($errors);
   }
 
-  public function postMissingAnimalViewed(MissingAnimalPostRequest $request)
+  public function postMissingAnimalViewed(MissingAnimalViewedPostRequest $request)
   {
     $user = User::findOrFail(Auth::user()->user_id);
     $animal = Animal::findOrFail($request->reportAnimalId);
@@ -181,6 +181,65 @@ class AnimalsController extends Controller
     } else {
       $errors->add('incorrect_user_postAnimalViewed', 'No puede reportar haber visto a un animal que le pertenece.');
     }
+    return redirect('/animals/missings')->withInput()->withErrors($errors);
+  }
+
+  public function postMissingAnimal(MissingAnimalPostRequest $request, $name = null) {
+    $user = User::findOrFail(Auth::user()->user_id);
+    $errors = new MessageBag();
+   
+  if ($request->missingAnimalEmail == $user->email) {
+    $animal = new Animal();
+    $animal->user_id = $user->user_id;
+    $animal->date = date("Y-m-d", strtotime($request->missingAnimalDate));
+    $animal->province_id = $request->missingAnimalProvince;
+    $animal->name = $request->missingAnimalName;
+    $animal->age = 0;
+    $animal->gender = $request->missingAnimalGender;
+    $animal->breed = $request->missingAnimalBreed;
+    $animal->weight = 0;
+
+    // Realizamos las correspondientes conversiones a la imagen que el usuario nos
+    // ha proporcionado. Subimos la imagen a imgbb (página que permite el alojamiento
+    // de imágenes), haciendo uso de su API. Tras producirse la subida de la imagen de
+    // forma correcta, recuperamos del JSON que nos devuelve la API, la dirección de
+    // la imagen. Esta se introduce en el campo 'image' del animal, para posteriormente
+    // ser mostrada a los usuarios de 'El Amigo de los Animales'.
+    $API_KEY = env('IMGBB_KEY');
+    $image = $request->missingAnimalImage;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://api.imgbb.com/1/upload?key='.$API_KEY);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    $extension = pathinfo($image,PATHINFO_EXTENSION);
+    $file_name = ($name)? $name.'.'.$extension : $image ;
+    $data = array('image' => base64_encode(file_get_contents($image)), 'name' => $file_name);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    $result = curl_exec($ch);
+    if (curl_errno($ch)) {
+      $animal->image = 'IMGBB API ERROR';
+    } else {
+      $imageLink = json_decode($result, true);
+      $animal->image = $imageLink['data']['url'];
+    }
+    curl_close($ch);
+    // ********** //
+
+    $animal->state = 'desaparecido';
+    $animal->description = 0;
+    $animal->vaccinated = 0;
+    $animal->healthy = 0;
+    $animal->sterilize = 0;
+    $animal->castrated = 0;
+    $animal->dewormed = 0;
+    $animal->microchip = 0;
+    $animal->save();
+
+    Mail::to($user->email)->send(new MissingAnimalPosted($user, $animal));
+    return redirect('/animals/missings')->withSuccess('Ha publicado su animal desaparecido de forma satisfactoria.');
+  } else {
+    $errors->add('incorrect_email_postMissingAnimal', 'El email introducido no se corresponde al registrado en su cuenta.');
+  }
     return redirect('/animals/missings')->withInput()->withErrors($errors);
   }
 }

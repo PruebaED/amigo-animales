@@ -51,13 +51,13 @@
             <h2><span>No vamos a cambiar el mundo ayudando a un animal, pero al menos el mundo habrá cambiado para él.</span></h2>
           </div>
           <ul class="navigation">
-            <li style="--i:1;"><a href="/">Inicio</a></li>
-            <li style="--i:2;"><a href="#adoption">Adopción</a></li>
+            <li class="d-none d-sm-block" style="--i:1;"><a href="/">Inicio</a></li>
+            <li class="d-none d-sm-block" style="--i:2;"><a href="#adoption">Adopción</a></li>
             <li style="--i:3;"><a href="/animals/deliver">Entrega</a></li>
             <li style="--i:4;"><a href="/animals/rescue">Rescate</a></li>
             <li style="--i:5;"><a href="/animals/missings">Animales desaparecidos</a></li>
             <li style="--i:6;"><a href="/information/regulations">Normativa</a></li>
-            <li style="--i:7;"><a href="/information/animals-pd">Animales PPP</a></li>
+            <li class="d-none d-sm-block" style="--i:7;"><a href="/information/animals-pd">Animales PPP</a></li>
             <li style="--i:8;"><a href="/contact/form">Contacto</a></li>
             <li style="--i:9;"><a href="/settings/profile">Ajustes</a></li>
             <li style="--i:10;">
@@ -79,8 +79,166 @@
           <!-- Éxitos producidos en formularios que redirigen a la página de inicio -->
             @if (session('success')) @include('utilities.form-success') @endif
           <!-- ... --> 
-          <h1 class="text-center mt-5 mb-5"> Animales en adopción </h1> 
+
+          <!-- Errores producidos en el formulario -->
+          @if (count($errors) > 0) @include('utilities.form-errors') @endif
+          <!-- ... -->
+          <h1 class="text-center mt-5 mb-5"> Animales disponibles </h1> 
           <hr class="mb-4">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn mt-4 mb-5 btnPostAnimal" data-toggle="modal" data-target="#postAnimalModal"> Publique a su animal </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="postAnimalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Dar en adopción/acogida</h5>
+                    <a type="button" href="#" class="close modal-closed" data-dismiss="modal" aria-label="close">&times;</a>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" enctype="multipart/form-data">
+                      @csrf
+                      <div class="row mb-4">
+                        <div class="col-10 offset-1 mt-3 mb-3">
+                          <p class="parrafo"> 
+                            Rogamos cumplimentes el siguiente formulario a fin de poder procesar tu solicitud de forma satisfactoria. Comprueba que la información introducida acerca de tu animal es correcta: 
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="indexAnimalEmail"
+                            @if (Auth::check())
+                              value="{{ Auth::user()->email }}"
+                            @else
+                              value="{{ old('indexEmail') }}"
+                            @endif
+                            >
+                            <span class="text">Introduzca su email</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">Provincia</span>
+                          <select class="select-custom" name="indexAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
+                            <option disabled selected>Seleccione una provincia</option>
+                            @foreach($provinces as $key => $province) 
+                            <option value="{{ $province->province_id }}">{{ $province->name }}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="indexAnimalName">
+                            <span class="text">Nombre</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="indexAnimalAge">
+                            <span class="text">Edad</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">Género</span>
+                          <select class="select-custom" name="indexAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="indexAnimalBreed">
+                            <span class="text">Raza</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input type="text" name="indexAnimalWeight">
+                            <span class="text">Peso</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <div class="inputBox">
+                            <input class="mt-1" type="file" name="indexAnimalImage" accept="image/*">
+                            <span class="text">Imagen</span>
+                            <span class="line"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <div class="inputBox textarea">
+                          <textarea type="text" name="indexAnimalDescription"></textarea>
+                          <span class="text">Descripción</span>
+                          <span class="line"></span>
+                        </div>
+                      </div>
+                      <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">¿Está vacunado?</span>
+                          <select class="select-custom" name="indexAnimalVaccinated" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">¿Está sano?</span>
+                          <select class="select-custom" name="indexAnimalHealthy" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">¿Está esterilizado?</span>
+                          <select class="select-custom" name="indexAnimalSterilize" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">¿Está castrado?</span>
+                          <select class="select-custom" name="indexAnimalCastrated" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">¿Está desparasitado?</span>
+                          <select class="select-custom" name="indexAnimalDewormed" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                          </select>
+                        </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">¿Tiene microchip?</span>
+                          <select class="select-custom" name="indexAnimalMicrochip" onmousedown="this.size=3" onclick="this.size=0">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                          </select>
+                        </div>
+                      <div class="row">
+                        <div class="text-center col-10 offset-1 mt-3 mb-3">
+                          <input type="submit" name="indexPostAnimal" value="Enviar">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- ... -->
         </div>
         @foreach($animalsToAdopt as $key => $animal) 
         <div class="col-md-10 col-lg-6 col-xl-4 mb-5">

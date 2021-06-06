@@ -48,6 +48,11 @@
 	.icono {
     width: 15%;
   }
+  img {
+    max-width: 639px;
+    max-height: 400px;
+    margin: 0 auto;
+  }
 }
 
 /* Dark mode */

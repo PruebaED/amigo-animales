@@ -50,7 +50,7 @@
           <!-- ... -->
           <h1 class="text-center mt-5 mb-5">{{ $animal->name }}</h1>
         </div>
-        <div class="col-10 col-xl-4 offset-1"> <img class="w-100 mt-lg-3 mt-xl-1 mb-lg-5 mb-xl-0" src="{{ $animal->image }}"></div>
+        <div class="col-10 col-xl-4 offset-1"> <img class="w-100 center-block mt-lg-3 mt-xl-1 mb-lg-5 mb-xl-0" src="{{ $animal->image }}"></div>
         <div class="col-10 col-xl-5 offset-1 offset-md-2 offset-xl-1 mt-5 mb-5 mt-lg-0 mt-xl-2 justificado">
             <div class="row mb-sm-3">
               <div class="col-12 col-sm-6 mb-4 mb-sm-2">
@@ -210,7 +210,7 @@
           mb-5
           @endif"
         > 
-          <p>{{ $animal->description }}</p>
+          <p class="mt-3">{{ $animal->description }}</p>
         </div>
         @if ($animal->state == 'disponible')
         <div class="col-10 col-lg-4 offset-1 justificado">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Province;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +31,7 @@ class SettingsController extends Controller
 
   public function getProfile()
   {
-    return view('settings.profile');
+    return view('settings.profile', array('provinces' => Province::all()));
   }
 
   public function getSecurity()
@@ -84,9 +85,10 @@ class SettingsController extends Controller
     $user = User::findOrFail(Auth::user()->user_id);
     $user->name = $request->profileName;
     $user->surnames = $request->profileSurnames;
+    $user->phone = $request->profilePhone;
     $oldEmail = $user->email;
     $user->email = $request->profileEmail;
-    $user->phone = $request->profilePhone;
+    $user->province_id = $request->profileProvince;
     $user->save();
     // Si el usuario ha cambiado su correo electrónico, se le envía un mensaje al antiguo correo
     // indicándole que ha cambiada de cuenta. Por otro lado, se enviará al nuevo correo

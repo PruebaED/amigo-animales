@@ -81,12 +81,6 @@
                   Modo dislexia
                 </label>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="appearanceRadioButton" id="flexRadioDefault4" value="color-blindness" @if (Auth::check()) {{ (Auth::user()->theme == 'color-blindness')? "checked" : "" }} @endif >
-                <label class="form-check-label" for="flexRadioDefault4">
-                  Modo daltonismo
-                </label>
-              </div>
               <br>
               <input class="mb-3" type="submit" value="Guardar preferencias">
             </form>

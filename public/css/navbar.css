@@ -107,12 +107,11 @@ ul {
 }
 
 .navbar-expand-xl .navbar-nav .nav-link:hover {
-  border-top: 4px solid #e74c3c;
+  color: #e74c3c;
 }
 
-.navbar-expand-xl .navbar-nav .nav-link:active {
-  border-top: 4px solid #e74c3c;
-  color: #e74c3c;
+.navbar-expand-xl .navbar-nav .nav-item.active .nav-link {
+  border-top: 3px solid #e74c3c;
 }
 
 .dropdown-menu,
@@ -134,17 +133,27 @@ ul {
   color: #e74c3c !important;
 }
 
+.amigo-animales {
+  display: none;
+}
+
+@media (min-width: 495px) { 
+  .amigo-animales {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1800px) {
+  .amigo-animales {
+    display: none !important;
+  }
+}
+
 /* Aplica a medidas inferiores al tamaño xl */
 @media screen and (max-width: 1200px) {
-  .navbar-expand-xl .navbar-nav .nav-link:hover {
-  	border-top: 0;
-  	border-bottom: 4px solid #e74c3c;
-  }
-
-  .navbar-expand-xl .navbar-nav .nav-link:active {
-  	border-top: 0;
-  	border-bottom: 4px solid #e74c3c;
-  	color: #e74c3c;
+  .navbar-expand-xl .navbar-nav .nav-item.active .nav-link {
+    border-top: 0;
+    border-bottom: 3px solid #e74c3c;
   }
 }
 
@@ -183,7 +192,6 @@ body.dark .nav-link {
 }
 
 body.dark .nav-link:hover {
-  opacity: 0.85;
   color: #e74c3c !important;
 }
 

@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'auth'], function(){
+	Route::get('/', 'App\Http\Controllers\HomeController@getAnimalsToAdopt');
+	Route::post('/', 'App\Http\Controllers\HomeController@postAnimalToAdopt');
+	
 	Route::get('auth/logout', 'App\Http\Controllers\AuthController@getLogout');
 
 	Route::get('animals/adopt/{id}', 'App\Http\Controllers\AnimalsController@getAdopt');
@@ -24,6 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('animals/missings', 'App\Http\Controllers\AnimalsController@getMissingAnimals');
 	Route::post('animals/missings', 'App\Http\Controllers\AnimalsController@postMissingAnimalViewed');
+	Route::post('animals/missings/post', 'App\Http\Controllers\AnimalsController@postMissingAnimal');
 
 	Route::get('contact/form', 'App\Http\Controllers\ContactController@getContactForm');
 	Route::post('contact/form', 'App\Http\Controllers\ContactController@postContactForm');
@@ -40,8 +44,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('settings/security', 'App\Http\Controllers\SettingsController@getSecurity');
 	Route::put('settings/security', 'App\Http\Controllers\SettingsController@putSecurity');
 });
-
-Route::get('/', 'App\Http\Controllers\HomeController@getAnimalsToAdopt');
 
 Route::get('animals/deliver', 'App\Http\Controllers\AnimalsController@getDeliver');
 
