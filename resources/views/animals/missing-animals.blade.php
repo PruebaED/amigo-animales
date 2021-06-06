@@ -77,7 +77,7 @@
                       alt=""
                     >
                     &nbsp;&nbsp;
-                    Desaparece a {{ $missingAnimal->date }}
+                    Desaparece a {{ date("d/m/Y", strtotime($missingAnimal->date)) }}
                   </p>
                   <p class="justificado">
                     <img class="icono" 
