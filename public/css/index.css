@@ -453,7 +453,7 @@ body.dark .parrafo {
 }
 
 body.dark header .toggle:before,
-body.dark span {
+body.dark section .content span {
   background: #010409 !important;
   color: #f0f6fc !important;  
 }
