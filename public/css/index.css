@@ -452,6 +452,48 @@ body.dark .parrafo {
   color: #f0f6fc !important;
 }
 
+body.dark header .toggle:before,
+body.dark span {
+  background: #010409 !important;
+  color: #f0f6fc !important;  
+}
+
+body.dark header a {
+  color: #010409 !important;
+}
+
+body.dark header .toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: url('../images/index-menu/menu-dark.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.dark header .toggle.active {
+  background: url(../images/index-menu/close-dark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 30px;
+}
+
+body.dark section .navigation li a {
+  background: #30363d !important;
+  color: #f0f6fc !important;
+  opacity: 0.7;
+}
+
+body.dark section .navigation li a:hover {
+  opacity: 0.85;
+}
+
 body.dark video {
   filter: grayscale(0.5);
 }
