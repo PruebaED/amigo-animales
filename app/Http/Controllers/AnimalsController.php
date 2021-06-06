@@ -42,9 +42,8 @@ class AnimalsController extends Controller
     // Creamos una variable de sesión que almacena la URL previa al acceso del proceso de acogida.
     session(['url.intended' => url()->previous()]);
     return view('animals.adopt',
-      array(
-        'animal' => Animal::findOrFail($id)
-      )
+                array('animal' => Animal::findOrFail($id)),
+                array('provinces' => Province::all())
     );
   }
 
@@ -53,9 +52,8 @@ class AnimalsController extends Controller
     // Creamos una variable de sesión que almacena la URL previa al acceso del proceso de acogida.
     session(['url.intended' => url()->previous()]);
     return view('animals.foster',
-      array(
-        'animal' => Animal::findOrFail($id)
-      )
+                array('animal' => Animal::findOrFail($id)),
+                array('provinces' => Province::all())
     );
   }
 

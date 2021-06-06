@@ -32,9 +32,9 @@ class AdoptPostRequest extends FormRequest
       // El email y teléfono usados han de ser únicos (que no existan en la BBDD). Sin embargo, 
       // se permitirá que dichos valores no sean únicos cuando sean iguales al email o al
       // teléfono del usuario logueado.
-      'adoptEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
-      'adoptProvince' => 'required|alpha',
       'adoptPhone' => 'required|numeric|digits:9|unique:users,phone,' . $user->phone . ',phone',
+      'adoptEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
+      'adoptProvince' => 'required',
       'adoptAnimalName' => 'required|alpha',
       'adoptAgreement' => 'required'
     ];
@@ -52,16 +52,15 @@ class AdoptPostRequest extends FormRequest
       'adoptName.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Nombre".',
       'adoptSurnames.required' => 'El campo "Apellidos" no puede estar vacío.',
       'adoptSurnames.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Apellidos".',
-      'adoptEmail.required' => 'El campo "Email" no puede estar vacío.',
-      'adoptEmail.email' => 'Ha de cumplir con el patrón texto@texto.dominio en el campo "Email".',
-      'adoptEmail.unique' => 'El email introducido se encuentra en uso.',
-      'adoptProvince.required' => 'El campo "Provincia" no puede estar vacío',
-      'adoptProvince.alpha' => 'Solo se permiten caracteres alfabéticos en el campo "Provincia".',
       'adoptPhone.required' => 'El campo "Teléfono" no puede estar vacío.',
       'adoptPhone.numeric' => 'El campo "Teléfono" solo permite valores númericos, sin espacios.',
       'adoptPhone.digits' => 'El campo "Teléfono" ha de contener 9 caracteres númericos.',
       'adoptPhone.unique' => 'El teléfono introducido se encuentra en uso.',
-      'adoptAnimalName.required' => 'El campo "Nombre del animal" no puede estar vacío',
+      'adoptEmail.required' => 'El campo "Email" no puede estar vacío.',
+      'adoptEmail.email' => 'Ha de cumplir con el patrón texto@texto.dominio en el campo "Email".',
+      'adoptEmail.unique' => 'El email introducido se encuentra en uso.',
+      'adoptProvince.required' => 'El campo "Provincia" no puede estar vacío.',
+      'adoptAnimalName.required' => 'El campo "Nombre del animal" no puede estar vacío.',
       'adoptAnimalName.alpha' => 'Solo se permiten caracteres alfabéticos en el campo "Nombre del animal".',
       'adoptAgreement.required' => 'Debe aceptar los acuerdos de responsabilidad.'
     ];
