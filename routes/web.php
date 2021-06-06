@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('animals/missings', 'App\Http\Controllers\AnimalsController@getMissingAnimals');
 	Route::post('animals/missings', 'App\Http\Controllers\AnimalsController@postMissingAnimalViewed');
+	Route::post('animals/missings/post', 'App\Http\Controllers\AnimalsController@postMissingAnimal');
 
 	Route::get('contact/form', 'App\Http\Controllers\ContactController@getContactForm');
 	Route::post('contact/form', 'App\Http\Controllers\ContactController@postContactForm');

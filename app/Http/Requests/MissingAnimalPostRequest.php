@@ -28,10 +28,15 @@ class MissingAnimalPostRequest extends FormRequest
     $user = User::findOrFail(Auth::user()->user_id);
     return [
       // El email usado ha de ser único (que no exista en la BBDD). Sin embargo, se permitirá
-      // que dicho valor no sean único cuando sea iguale al email del usuario logueado.
-      'reportEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
-      'reportSelect' => 'required',
-      'reportAnimalName' => 'required|alpha'
+      // que dicho valor no sea único cuando sea igual al email del usuario logueado.
+      'missingAnimalEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
+      'missingAnimalDate' => 'required|before:tomorrow',
+      'missingAnimalProvince' => 'required',
+      'missingAnimalName' => 'required|regex:/^[\pL\s]+$/u',
+      'missingAnimalGender' => 'required',
+      'missingAnimalBreed' => 'required|regex:/^[\pL\s]+$/u',
+      // La API donde alojaremos la imagen, permite un máximo de tamaño de archivo de 32MB.
+      'missingAnimalImage' => 'required|max:32768',
     ];
   }
 
@@ -42,13 +47,21 @@ class MissingAnimalPostRequest extends FormRequest
    */
   public function messages()
   {
+    $today = date('d/m/Y', time());
     return [
-      'reportEmail.required' => 'El campo "Email" no puede estar vacío.',
-      'reportEmail.email' => 'Ha de cumplir con el patrón texto@texto.dominio en el campo "Email".',
-      'reportEmail.unique' => 'El email introducido se encuentra en uso.',
-      'reportSelect.required' => 'El campo "Provincia" no puede estar vacío',
-      'reportAnimalName.required' => 'El campo "Nombre del animal" no puede estar vacío',
-      'reportAnimalName.alpha' => 'Solo se permiten caracteres alfabéticos en el campo "Nombre del animal".'
+      'missingAnimalEmail.required' => 'El campo "Email" no puede estar vacío.',
+      'missingAnimalEmail.email' => 'Ha de cumplir con el patrón texto@texto.dominio en el campo "Email".',
+      'missingAnimalEmail.unique' => 'El email introducido se encuentra en uso.',
+      'missingAnimalDate.required' => 'El campo "Fecha de desaparición" no puede estar vacío.',
+      'missingAnimalDate.before' => 'La fecha de desaparición podrá ser, como máximo, igual al ' . $today . '.',
+      'missingAnimalProvince.required' => 'Debe seleccionar una opción del campo "Provincia".',
+      'missingAnimalName.required' => 'El campo "Nombre" no puede estar vacío.',
+      'missingAnimalName.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Nombre".',
+      'missingAnimalGender.required' => 'Debe seleccionar una opción del campo "Género".',
+      'missingAnimalBreed.required' => 'El campo "Raza" no puede estar vacío.',
+      'missingAnimalBreed.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Raza".',
+      'missingAnimalImage.required' => 'El campo "Imagen" no puede estar vacío.',
+      'missingAnimalImage.max' => 'El tamaño máximo permitido para la imagen es de 32MB.'
     ];
   }
 }

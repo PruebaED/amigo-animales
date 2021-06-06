@@ -39,6 +39,7 @@
   padding: 10px 5px;
 }
 
+.btnPostMissingAnimal:hover,
 body:not(.dark) .card-body .btn:hover,
 body:not(.dark) .modal-body .btn:hover {
   background-color: #24262b;
@@ -54,8 +55,11 @@ body:not(.dark) .modal-body .btn:hover {
   width: 10%;
 }
 
+/* Formulario */
 .modal-closed {
   color: #e74c3c !important;
+  text-decoration: none;
+  font-size: 35px;
 }
 
 .modal-closed:hover {
@@ -63,13 +67,18 @@ body:not(.dark) .modal-body .btn:hover {
 }
 
 .modal-closed:focus {
-  outline: none;
+  outline: none !important;
 }
 
-/* Formulario */
 .parrafo {
   color: #111111;
   text-align: justify;
+}
+
+.btnPostMissingAnimal {
+  color: #fff;
+  background: #e74c3c !important;
+  float: right;
 }
 
 .container-fluid .row .col {
@@ -101,7 +110,7 @@ body:not(.dark) .modal-body .btn:hover {
   color: #000;
 }
 
-.select-provincia {
+.select-provincia, .select-custom, .missing-date {
   width: 100%;
   height: 100%;
   min-height: 40px;
@@ -117,7 +126,7 @@ body:not(.dark) .modal-body .btn:hover {
   border: none;
 }
 
-.provincia-text {
+.provincia-text, .select-text, .missing-date-text {
   position: absolute;
   top: 0;
   left: 0;
@@ -141,7 +150,8 @@ body:not(.dark) .modal-body .btn:hover {
   pointer-events: none;
 }
 
-.container-fluid .row .inputBox input:focus + .text, .container-fluid .row .inputBox input:valid + .text {
+.container-fluid .row .inputBox input:focus + .text,
+.container-fluid .row .inputBox input:valid + .text {
   top: -35px;
   left: -10px;
 }
@@ -158,7 +168,8 @@ body:not(.dark) .modal-body .btn:hover {
   pointer-events: none;
 }
 
-.container-fluid .row .inputBox input:focus ~ .line, .container-fluid .row .inputBox input:valid ~ .line {
+.container-fluid .row .inputBox input:focus ~ .line,
+.container-fluid .row .inputBox input:valid ~ .line {
   height: 100%;
 }
 
@@ -176,6 +187,10 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #24262b;
   color: #ffffff;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  padding: 0 10px;
 }
 /* ... */
 
@@ -199,7 +214,8 @@ body.dark .card {
 }
 
 body.dark .modal-closed,
-body.dark .btnMissingAnimal {
+body.dark .btnMissingAnimal,
+body.dark .btnPostMissingAnimal {
   opacity: 0.7;
 }
 
@@ -221,9 +237,14 @@ body.dark .btnMissingAnimal:hover {
   color: #f0f6fc !important;
 }
 
-body.dark .container-fluid .row .inputBox,
+body.dark .select-text,
+body.dark .select-custom,
+body.dark .missing-date,
+body.dark .provincia-text,
 body.dark .select-provincia,
-body.dark .provincia-text {
+body.dark .missing-date-text,
+body.dark .btnPostMissingAnimal,
+body.dark .container-fluid .row .inputBox {
   opacity: 0.7;
 }
 
@@ -235,6 +256,10 @@ body.dark input[type="submit"] {
 body.dark input[type="submit"]:hover {
   opacity: 0.85;
   background-color: #e74c3c;
+}
+
+body.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 /* ... */
 

@@ -53,7 +53,7 @@ class HomeController extends Controller
 	  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 	  $result = curl_exec($ch);
 	  if (curl_errno($ch)) {
-	    //$animal->image = 'Error';
+	    $animal->image = 'IMGBB API ERROR';
 	  } else {
 	    $imageLink = json_decode($result, true);
 	    $animal->image = $imageLink['data']['url'];

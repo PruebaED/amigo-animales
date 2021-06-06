@@ -51,13 +51,105 @@
           @if (count($errors) > 0) @include('utilities.form-errors') @endif
           <!-- ... -->
           <h1 class="text-center mt-5 mb-5"> Animales desaparecidos </h1> 
-          <hr>
+          <hr class="mb-4">
+          
+
         </div>
         <div class="col-10 offset-1">
           <p class="justificado">Si cree haber visto alguno de los animales desaparecidos y su dueño no respondiera a través de los medios facilitados, le rogamos que
           rellene el formulario de contacto del que dispone en esta web, indicando en el asunto de la consulta el nombre del animal desaparecido. Nuestro equipo hará
           el resto.
           </p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn mt-4 mb-5 btnPostMissingAnimal" data-toggle="modal" data-target="#postMissingAnimalModal">Publique su animal desaparecido</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="postMissingAnimalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Informar de la desaparición</h5>
+                <a type="button" href="#" class="close modal-closed" data-dismiss="modal" aria-label="close">&times;</a>
+              </div>
+              <div class="modal-body">
+                <form method="POST" action="/animals/missings/post" enctype="multipart/form-data">
+                  @csrf
+                  <div class="row mb-4">
+                    <div class="col-10 offset-1 mt-3 mb-3">
+                      <p class="parrafo"> 
+                        Rogamos cumplimentes el siguiente formulario a fin de poder procesar tu solicitud de forma satisfactoria. Comprueba que la información introducida acerca de tu animal es correcta: 
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-10 offset-1 mb-5">
+                      <div class="inputBox">
+                        <input type="text" name="missingAnimalEmail"
+                        @if (Auth::check())
+                          value="{{ Auth::user()->email }}"
+                        @else
+                          value="{{ old('missingAnimalEmail') }}"
+                        @endif
+                        >
+                        <span class="text">Introduzca su email</span>
+                        <span class="line"></span>
+                      </div>
+                    </div>
+                    <div class="col-10 offset-1 mb-5">
+                      <span class="missing-date-text">Fecha de desaparición</span>
+                      <input class="missing-date" type="date" name="missingAnimalDate">
+                    </div>
+                    <div class="col-10 offset-1 mb-5">
+                      <span class="provincia-text">Provincia</span>
+                      <select class="select-provincia" name="missingAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
+                        <option disabled selected>Seleccione una provincia</option>
+                        @foreach($provinces as $key => $province) 
+                        <option value="{{ $province->province_id }}">{{ $province->name }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="col-10 offset-1 mb-5">
+                      <div class="inputBox">
+                        <input type="text" name="missingAnimalName">
+                        <span class="text">Nombre</span>
+                        <span class="line"></span>
+                      </div>
+                    </div>
+                    <div class="col-10 offset-1 mb-5">
+                      <span class="select-text">Género</span>
+                      <select class="select-custom" name="missingAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
+                        <option disabled selected>Seleccione una...</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                      </select>
+                    </div>
+                    <div class="col-10 offset-1 mb-5">
+                      <div class="inputBox">
+                        <input type="text" name="missingAnimalBreed">
+                        <span class="text">Raza</span>
+                        <span class="line"></span>
+                      </div>
+                    </div>
+                    <div class="col-10 offset-1 mb-5">
+                      <div class="inputBox">
+                        <input class="mt-1" type="file" name="missingAnimalImage" accept="image/*">
+                        <span class="text">Imagen</span>
+                        <span class="line"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="text-center col-10 offset-1 mt-3 mb-3">
+                      <input type="submit" name="missingAnimalPost" value="Enviar">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- ... -->
+          <br><br><br>
           <div class="row mt-5">
             @foreach($missingAnimals as $key => $missingAnimal)
             <!-- col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 mb-5 mb-lg-0 offset-sm-1 offset-md-2 offset-lg-0 offset-xl-1 -->

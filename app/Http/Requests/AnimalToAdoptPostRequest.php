@@ -28,11 +28,11 @@ class AnimalToAdoptPostRequest extends FormRequest
     $user = User::findOrFail(Auth::user()->user_id);
     return [
       // El email usado ha de ser único (que no exista en la BBDD). Sin embargo, se permitirá
-      // que dicho valor no sean único cuando sea iguale al email del usuario logueado.
+      // que dicho valor no sea único cuando sea igual al email del usuario logueado.
       'indexAnimalEmail' => 'required|email:filter|unique:users,email,' . $user->email . ',email',
       'indexAnimalProvince' => 'required',
       'indexAnimalName' => 'required|regex:/^[\pL\s]+$/u',
-      'indexAnimalAge' => 'required|numeric|max:2',
+      'indexAnimalAge' => 'required|digits_between:1,2',
       'indexAnimalGender' => 'required',
       'indexAnimalBreed' => 'required|regex:/^[\pL\s]+$/u',
       // Regex = Permite como máximo 5 caracteres númericos, y opcionalmente (y como máximo),
@@ -62,17 +62,16 @@ class AnimalToAdoptPostRequest extends FormRequest
       'indexAnimalEmail.email' => 'Ha de cumplir con el patrón texto@texto.dominio en el campo "Email".',
       'indexAnimalEmail.unique' => 'El email introducido se encuentra en uso.',
       'indexAnimalProvince.required' => 'Debe seleccionar una opción del campo "Provincia".',
-      'indexAnimalName.required' => 'El campo "Nombre" no puede estar vacío',
+      'indexAnimalName.required' => 'El campo "Nombre" no puede estar vacío.',
       'indexAnimalName.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Nombre".',
       'indexAnimalAge.required' => 'El campo "Edad" no puede estar vacío.',
-      'indexAnimalAge.numeric' => 'El campo "Edad" solo permite valores númericos, sin espacios.',
-      'indexAnimalAge.max' => 'El campo "Edad" ha de contener, como máximo, 2 caracteres númericos.',
+      'indexAnimalAge.digits_between' => 'El campo "Edad" solo permite valores númericos, sin espacios. Se permiten números hasta de dos cifras, y como mínimo, deberá tener una cifra.',
       'indexAnimalGender.required' => 'Debe seleccionar una opción del campo "Género".',
       'indexAnimalBreed.required' => 'El campo "Raza" no puede estar vacío.',
       'indexAnimalBreed.regex' => 'Solo se permiten caracteres alfabéticos en el campo "Raza".',
       'indexAnimalWeight.required' => 'El campo "Peso" no puede estar vacío.',
       'indexAnimalWeight.numeric' => 'El campo "Peso" solo permite valores númericos, sin espacios.',
-      'indexAnimalAge.regex' => 'El campo "Peso" puede contener 5 caracteres númericos como máximo. Dos de ellos, como máximo, podrán de ser decimales.',
+      'indexAnimalWeight.regex' => 'El campo "Peso" puede contener 5 caracteres númericos como máximo. Dos de ellos, como máximo, podrán de ser decimales.',
       'indexAnimalImage.required' => 'El campo "Imagen" no puede estar vacío.',
       'indexAnimalImage.max' => 'El tamaño máximo permitido para la imagen es de 32MB.',
       'indexAnimalDescription.required' => 'El campo "Descripción" no puede estar vacío.',
