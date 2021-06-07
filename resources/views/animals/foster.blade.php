@@ -105,7 +105,7 @@
           <div class="row">
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterName"
+                <input class="form-control" type="text" name="fosterName"
                 @if (Auth::check())
                   value="{{ Auth::user()->name }}"
                 @endif
@@ -116,7 +116,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterSurnames"
+                <input class="form-control" type="text" name="fosterSurnames"
                 @if (Auth::check())
                   value="{{ Auth::user()->surnames }}"
                 @endif
@@ -127,7 +127,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterPhone"
+                <input class="form-control" type="text" name="fosterPhone"
                 @if (Auth::check())
                   value="{{ Auth::user()->phone }}"
                 @endif
@@ -138,7 +138,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-xl-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterEmail"
+                <input class="form-control" type="text" name="fosterEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -149,7 +149,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <span class="provincia-text">Población</span>
-              <select class="select-provincia" name="fosterProvince" onmousedown="this.size=6" onclick="this.size=0">
+              <select class="form-control select-provincia" name="fosterProvince" onmousedown="this.size=6" onclick="this.size=0">
                 <option disabled>Seleccione una provincia</option>
                 @foreach($provinces as $key => $province) 
                 <option value="{{ $province->province_id }}"
@@ -166,7 +166,7 @@
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
-                <input type="text" name="fosterAnimalName" value="{{ $animal->name }}">
+                <input class="form-control" type="text" name="fosterAnimalName" value="{{ $animal->name }}">
                 <span class="text">Nombre del animal</span>
                 <span class="line"></span>
               </div>

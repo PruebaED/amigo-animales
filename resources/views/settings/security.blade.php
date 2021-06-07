@@ -64,7 +64,7 @@
             @csrf
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="securityOldPassword" value="{{ old('securityOldPassword') }}">
+                <input class="form-control" type="password" name="securityOldPassword" value="{{ old('securityOldPassword') }}">
                 <span class="text">Antigua contraseña</span>
                 <span class="line"></span>
               </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="securityNewPassword" value="{{ old('securityNewPassword') }}">
+                <input class="form-control" type="password" name="securityNewPassword" value="{{ old('securityNewPassword') }}">
                 <span class="text">Nueva contraseña</span>
                 <span class="line"></span>
               </div>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="securityConfirmNewPassword" value="{{ old('securityConfirmNewPassword') }}">
+                <input class="form-control" type="password" name="securityConfirmNewPassword" value="{{ old('securityConfirmNewPassword') }}">
                 <span class="text">Confirme nueva contraseña</span>
                 <span class="line"></span>
               </div>

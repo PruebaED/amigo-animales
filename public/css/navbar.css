@@ -46,7 +46,7 @@ html, body {
 }
 
 .nav-link:visited, .navbar-brand:visited {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 ul {
@@ -210,6 +210,10 @@ body.dark .navbar-brand,
 body.dark .navbar-brand:active,
 body.dark .navbar-brand:visited,
 body.dark .dropdown-menu,
+body.dark .dropdown-menu:hover li a,
+body.dark .dropdown-menu:visited li a,
+body.dark .dropdown-menu:active li a,
+body.dark .dropdown-menu:link li a,
 body.dark .dropdown-item:active,
 body.dark .dropdown-item:visited {
   background: #30363d !important;

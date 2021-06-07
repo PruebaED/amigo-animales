@@ -109,7 +109,7 @@
                       <div class="row">
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="indexAnimalEmail"
+                            <input class="form-control" type="text" name="indexAnimalEmail"
                             @if (Auth::check())
                               value="{{ Auth::user()->email }}"
                             @else
@@ -122,7 +122,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">Provincia</span>
-                          <select class="select-custom" name="indexAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
                             <option disabled selected>Seleccione una provincia</option>
                             @foreach($provinces as $key => $province) 
                             <option value="{{ $province->province_id }}">{{ $province->name }}</option>
@@ -131,21 +131,21 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="indexAnimalName">
+                            <input class="form-control" type="text" name="indexAnimalName">
                             <span class="text">Nombre</span>
                             <span class="line"></span>
                           </div>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="indexAnimalAge">
+                            <input class="form-control" type="text" name="indexAnimalAge">
                             <span class="text">Edad</span>
                             <span class="line"></span>
                           </div>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">Género</span>
-                          <select class="select-custom" name="indexAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="Macho">Macho</option>
                             <option value="Hembra">Hembra</option>
@@ -153,21 +153,21 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="indexAnimalBreed">
+                            <input class="form-control" type="text" name="indexAnimalBreed">
                             <span class="text">Raza</span>
                             <span class="line"></span>
                           </div>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="indexAnimalWeight">
+                            <input class="form-control" type="text" name="indexAnimalWeight">
                             <span class="text">Peso</span>
                             <span class="line"></span>
                           </div>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input class="mt-1" type="file" name="indexAnimalImage" accept="image/*">
+                            <input class="form-control-file imageFile" type="file" name="indexAnimalImage" accept="image/*">
                             <span class="text">Imagen</span>
                             <span class="line"></span>
                           </div>
@@ -175,14 +175,14 @@
                       </div>
                       <div class="col-10 offset-1 mb-5">
                         <div class="inputBox textarea">
-                          <textarea type="text" name="indexAnimalDescription"></textarea>
+                          <textarea class="form-control" type="text" name="indexAnimalDescription"></textarea>
                           <span class="text">Descripción</span>
                           <span class="line"></span>
                         </div>
                       </div>
                       <div class="col-10 offset-1 mb-5">
                           <span class="select-text">¿Está vacunado?</span>
-                          <select class="select-custom" name="indexAnimalVaccinated" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalVaccinated" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
@@ -190,7 +190,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">¿Está sano?</span>
-                          <select class="select-custom" name="indexAnimalHealthy" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalHealthy" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
@@ -198,7 +198,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">¿Está esterilizado?</span>
-                          <select class="select-custom" name="indexAnimalSterilize" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalSterilize" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
@@ -206,7 +206,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">¿Está castrado?</span>
-                          <select class="select-custom" name="indexAnimalCastrated" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalCastrated" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
@@ -214,7 +214,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">¿Está desparasitado?</span>
-                          <select class="select-custom" name="indexAnimalDewormed" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalDewormed" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
@@ -222,7 +222,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="select-text">¿Tiene microchip?</span>
-                          <select class="select-custom" name="indexAnimalMicrochip" onmousedown="this.size=3" onclick="this.size=0">
+                          <select class="form-control select-custom" name="indexAnimalMicrochip" onmousedown="this.size=3" onclick="this.size=0">
                             <option disabled selected>Seleccione una...</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
