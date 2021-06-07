@@ -84,7 +84,7 @@
                   <div class="row">
                     <div class="col-10 offset-1 mb-5">
                       <div class="inputBox">
-                        <input type="text" name="missingAnimalEmail"
+                        <input class="form-control" type="text" name="missingAnimalEmail"
                         @if (Auth::check())
                           value="{{ Auth::user()->email }}"
                         @else
@@ -97,11 +97,11 @@
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <span class="missing-date-text">Fecha de desaparición</span>
-                      <input class="missing-date" type="date" name="missingAnimalDate">
+                      <input class="form-control missing-date" type="date" name="missingAnimalDate">
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <span class="provincia-text">Provincia</span>
-                      <select class="select-provincia" name="missingAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
+                      <select class="form-control select-provincia" name="missingAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
                         <option disabled selected>Seleccione una provincia</option>
                         @foreach($provinces as $key => $province) 
                         <option value="{{ $province->province_id }}">{{ $province->name }}</option>
@@ -110,14 +110,14 @@
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <div class="inputBox">
-                        <input type="text" name="missingAnimalName">
+                        <input class="form-control" type="text" name="missingAnimalName">
                         <span class="text">Nombre</span>
                         <span class="line"></span>
                       </div>
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <span class="select-text">Género</span>
-                      <select class="select-custom" name="missingAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
+                      <select class="form-control select-custom" name="missingAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
                         <option disabled selected>Seleccione una...</option>
                         <option value="Macho">Macho</option>
                         <option value="Hembra">Hembra</option>
@@ -125,14 +125,14 @@
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <div class="inputBox">
-                        <input type="text" name="missingAnimalBreed">
+                        <input class="form-control" type="text" name="missingAnimalBreed">
                         <span class="text">Raza</span>
                         <span class="line"></span>
                       </div>
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <div class="inputBox">
-                        <input class="mt-1" type="file" name="missingAnimalImage" accept="image/*">
+                        <input class="form-control-file imageFile" type="file" name="missingAnimalImage" accept="image/*">
                         <span class="text">Imagen</span>
                         <span class="line"></span>
                       </div>
@@ -270,7 +270,7 @@
                       <div class="row">
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="reportEmail"
+                            <input class="form-control" type="text" name="reportEmail"
                             @if (Auth::check())
                               value="{{ Auth::user()->email }}"
                             @else
@@ -283,7 +283,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <span class="provincia-text">¿Dónde me has visto?</span>
-                          <select class="select-provincia" name="reportSelect" onmousedown="this.size=6" onclick="this.size=0">
+                          <select class="form-control select-provincia" name="reportSelect" onmousedown="this.size=6" onclick="this.size=0">
                             <option disabled selected>Seleccione una provincia</option>
                             @foreach($provinces as $key => $province) 
                             <option value="{{ $province->province_id }}" {{ old('registerSelect') == $province->province_id ? 'selected' : '' }}>{{ $province->name }}</option>
@@ -292,7 +292,7 @@
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
-                            <input type="text" name="reportAnimalName" value="{{ $missingAnimal->name }}">
+                            <input class="form-control" type="text" name="reportAnimalName" value="{{ $missingAnimal->name }}">
                             <span class="text">Nombre del animal</span>
                             <span class="line"></span>
                           </div>

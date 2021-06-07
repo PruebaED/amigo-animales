@@ -63,7 +63,7 @@
             @csrf
             <div class="col-12 mt-5">
               <div class="inputBox">
-                <input type="email" name="accountEmail"
+                <input class="form-control" type="email" name="accountEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -75,7 +75,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="password" name="accountPassword" value="{{ old('accountPassword') }}">
+                <input class="form-control" type="password" name="accountPassword" value="{{ old('accountPassword') }}">
                 <span class="text">Contraseña</span>
                 <span class="line"></span>
               </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="accountConfirmDelete" value="{{ old('accountConfirmDelete') }}">
+                <input class="form-control" type="text" name="accountConfirmDelete" value="{{ old('accountConfirmDelete') }}">
                 <span class="text"><strong>Escribe:</strong> <i>Deseo borrar mi cuenta</i></span>
                 <span class="line"></span>
               </div>

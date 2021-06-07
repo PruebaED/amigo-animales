@@ -64,7 +64,7 @@
             @csrf
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="profileName"
+                <input class="form-control" type="text" name="profileName"
                 @if (Auth::check())
                   value="{{ Auth::user()->name }}"
                 @endif
@@ -76,7 +76,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="text" name="profileSurnames"
+                <input class="form-control" type="text" name="profileSurnames"
                 @if (Auth::check())
                   value="{{ Auth::user()->surnames }}"
                 @endif
@@ -88,7 +88,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="tel" name="profilePhone"
+                <input class="form-control" type="tel" name="profilePhone"
                 @if (Auth::check())
                   value="{{ Auth::user()->phone }}"
                 @endif
@@ -100,7 +100,7 @@
             </div>
             <div class="col-12">
               <div class="inputBox">
-                <input type="email" name="profileEmail"
+                <input class="form-control" type="email" name="profileEmail"
                 @if (Auth::check())
                   value="{{ Auth::user()->email }}"
                 @endif
@@ -112,7 +112,7 @@
             </div>
             <div class="col-12 mb-2">
               <span class="provincia-text">Provincia</span>
-              <select class="select-provincia" name="profileProvince" onmousedown="this.size=6" onclick="this.size=0">
+              <select class="form-control select-provincia" name="profileProvince" onmousedown="this.size=6" onclick="this.size=0">
                 <option disabled>Seleccione una provincia</option>
                 @foreach($provinces as $key => $province) 
                 <option value="{{ $province->province_id }}"
