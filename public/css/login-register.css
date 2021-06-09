@@ -123,6 +123,10 @@ section .container .user .formBx select {
   font-weight: 300;
 }
 
+section .container .user .formBx .btn {
+  min-width: 130px;
+}
+
 ::-webkit-input-placeholder { 
   color: #111 !important; 
 } 
