@@ -76,9 +76,6 @@ body:not(.dark) .modal-body .btn:hover {
 }
 
 select, input[type="date"] {
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
   padding-left: 10px;
   border: none !important;
 }

@@ -98,9 +98,6 @@ body {
 }
 
 select {
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
   padding-left: 10px;
   border: none !important;
 }
