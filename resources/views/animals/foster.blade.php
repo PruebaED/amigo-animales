@@ -147,22 +147,24 @@
                 <span class="line"></span>
               </div>
             </div>
-            <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
-              <span class="provincia-text">Población</span>
-              <select class="form-control select-provincia" name="fosterProvince" onmousedown="this.size=6" onclick="this.size=0">
-                <option disabled>Seleccione una provincia</option>
-                @foreach($provinces as $key => $province) 
-                <option value="{{ $province->province_id }}"
-                  @if (Auth::check())
-                    @if ($province->province_id == Auth::user()->province_id)
-                      selected
+            <div class="form-group">
+              <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
+                <span class="provincia-text">Población</span>
+                <select class="form-control select-provincia" name="fosterProvince" onmousedown="this.size=6" onclick="this.size=0">
+                  <option disabled>Seleccione una provincia</option>
+                  @foreach($provinces as $key => $province) 
+                  <option value="{{ $province->province_id }}"
+                    @if (Auth::check())
+                      @if ($province->province_id == Auth::user()->province_id)
+                        selected
+                      @endif
                     @endif
-                  @endif
-                >
-                {{ $province->name }}
-                </option>
-                @endforeach
-              </select>
+                  >
+                  {{ $province->name }}
+                  </option>
+                  @endforeach
+                </select>
+              </div>
             </div>
             <div class="col-10 col-md-4 col-xl-3 offset-1 offset-md-2 mb-5">
               <div class="inputBox">
