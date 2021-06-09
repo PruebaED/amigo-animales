@@ -57,21 +57,23 @@ header .toggle.active {
   background-size: 30px;
 }
 
-header .toggle:before {
-  content: "Menú";
-  position: absolute;
-  right: 45px;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 2px;
-  font-size: 22px;
-  padding: 2px 5px;
-  background: #fff;
-  color: #111;
-}
+@media (min-width: 450px) {
+  header .toggle:before {
+    content: "Menú";
+    position: absolute;
+    right: 45px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 22px;
+    padding: 2px 5px;
+    background: #fff;
+    color: #111;
+  }
 
-header .toggle.active:before {
-  content: "Cerrar";
+  header .toggle.active:before {
+    content: "Cerrar";
+  }
 }
 
 header .logo {
