@@ -99,14 +99,16 @@
                       <span class="missing-date-text">Fecha de desaparición</span>
                       <input class="form-control missing-date" type="date" name="missingAnimalDate">
                     </div>
-                    <div class="col-10 offset-1 mb-5">
-                      <span class="provincia-text">Provincia</span>
-                      <select class="form-control select-provincia" name="missingAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
-                        <option disabled selected>Seleccione una provincia</option>
-                        @foreach($provinces as $key => $province) 
-                        <option value="{{ $province->province_id }}">{{ $province->name }}</option>
-                        @endforeach
-                      </select>
+                    <div class="form-group">
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="provincia-text">Provincia</span>
+                        <select class="form-control select-provincia" name="missingAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
+                          <option disabled selected>Seleccione una provincia</option>
+                          @foreach($provinces as $key => $province) 
+                          <option value="{{ $province->province_id }}">{{ $province->name }}</option>
+                          @endforeach
+                        </select>
+                      </div>
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <div class="inputBox">
@@ -115,13 +117,15 @@
                         <span class="line"></span>
                       </div>
                     </div>
-                    <div class="col-10 offset-1 mb-5">
-                      <span class="select-text">Género</span>
-                      <select class="form-control select-custom" name="missingAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
-                        <option disabled selected>Seleccione una...</option>
-                        <option value="Macho">Macho</option>
-                        <option value="Hembra">Hembra</option>
-                      </select>
+                    <div class="form-group">
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">Género</span>
+                        <select class="form-control select-custom" name="missingAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="Macho">Macho</option>
+                          <option value="Hembra">Hembra</option>
+                        </select>
+                      </div>
                     </div>
                     <div class="col-10 offset-1 mb-5">
                       <div class="inputBox">
@@ -281,14 +285,16 @@
                             <span class="line"></span>
                           </div>
                         </div>
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="provincia-text">¿Dónde me has visto?</span>
-                          <select class="form-control select-provincia" name="reportSelect" onmousedown="this.size=6" onclick="this.size=0">
-                            <option disabled selected>Seleccione una provincia</option>
-                            @foreach($provinces as $key => $province) 
-                            <option value="{{ $province->province_id }}" {{ old('registerSelect') == $province->province_id ? 'selected' : '' }}>{{ $province->name }}</option>
-                            @endforeach
-                          </select>
+                        <div class="form-group">
+                          <div class="col-10 offset-1 mb-5">
+                            <span class="provincia-text">¿Dónde me has visto?</span>
+                            <select class="form-control select-provincia" name="reportSelect" onmousedown="this.size=6" onclick="this.size=0">
+                              <option disabled selected>Seleccione una provincia</option>
+                              @foreach($provinces as $key => $province) 
+                              <option value="{{ $province->province_id }}" {{ old('registerSelect') == $province->province_id ? 'selected' : '' }}>{{ $province->name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
