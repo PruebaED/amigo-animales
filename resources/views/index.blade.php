@@ -120,16 +120,14 @@
                             <span class="line"></span>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="col-10 offset-1 mb-5">
-                            <span class="select-text">Provincia</span>
-                            <select class="form-control select-custom" name="indexAnimalProvince" onmousedown="this.size=6" onclick="this.size=0">
-                              <option disabled selected>Seleccione una provincia</option>
-                              @foreach($provinces as $key => $province) 
-                              <option value="{{ $province->province_id }}">{{ $province->name }}</option>
-                              @endforeach
-                            </select>
-                          </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">Provincia</span>
+                          <select class="form-control select-custom" name="indexAnimalProvince" onmousedown="this.size=6;" onchange='this.size=0;' onblur="this.size=0;">
+                            <option disabled selected>Seleccione una provincia</option>
+                            @foreach($provinces as $key => $province) 
+                            <option value="{{ $province->province_id }}">{{ $province->name }}</option>
+                            @endforeach
+                          </select>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
@@ -145,15 +143,13 @@
                             <span class="line"></span>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="col-10 offset-1 mb-5">
-                            <span class="select-text">Género</span>
-                            <select class="form-control select-custom" name="indexAnimalGender" onmousedown="this.size=3" onclick="this.size=0">
-                              <option disabled selected>Seleccione una...</option>
-                              <option value="Macho">Macho</option>
-                              <option value="Hembra">Hembra</option>
-                            </select>
-                          </div>
+                        <div class="col-10 offset-1 mb-5">
+                          <span class="select-text">Género</span>
+                          <select class="form-control select-custom" name="indexAnimalGender" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                            <option disabled selected>Seleccione una...</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                          </select>
                         </div>
                         <div class="col-10 offset-1 mb-5">
                           <div class="inputBox">
@@ -184,65 +180,53 @@
                           <span class="line"></span>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="select-text">¿Está vacunado?</span>
-                          <select class="form-control select-custom" name="indexAnimalVaccinated" onmousedown="this.size=3" onclick="this.size=0">
-                            <option disabled selected>Seleccione una...</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                          </select>
-                        </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">¿Está vacunado?</span>
+                        <select class="form-control select-custom" name="indexAnimalVaccinated" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="form-group">
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="select-text">¿Está sano?</span>
-                          <select class="form-control select-custom" name="indexAnimalHealthy" onmousedown="this.size=3" onclick="this.size=0">
-                            <option disabled selected>Seleccione una...</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                          </select>
-                        </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">¿Está sano?</span>
+                        <select class="form-control select-custom" name="indexAnimalHealthy" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="form-group">
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="select-text">¿Está esterilizado?</span>
-                          <select class="form-control select-custom" name="indexAnimalSterilize" onmousedown="this.size=3" onclick="this.size=0">
-                            <option disabled selected>Seleccione una...</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                          </select>
-                        </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">¿Está esterilizado?</span>
+                        <select class="form-control select-custom" name="indexAnimalSterilize" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="form-group">
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="select-text">¿Está castrado?</span>
-                          <select class="form-control select-custom" name="indexAnimalCastrated" onmousedown="this.size=3" onclick="this.size=0">
-                            <option disabled selected>Seleccione una...</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                          </select>
-                        </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">¿Está castrado?</span>
+                        <select class="form-control select-custom" name="indexAnimalCastrated" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="form-group">
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="select-text">¿Está desparasitado?</span>
-                          <select class="form-control select-custom" name="indexAnimalDewormed" onmousedown="this.size=3" onclick="this.size=0">
-                            <option disabled selected>Seleccione una...</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                          </select>
-                        </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">¿Está desparasitado?</span>
+                        <select class="form-control select-custom" name="indexAnimalDewormed" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="form-group">
-                        <div class="col-10 offset-1 mb-5">
-                          <span class="select-text">¿Tiene microchip?</span>
-                          <select class="form-control select-custom" name="indexAnimalMicrochip" onmousedown="this.size=3" onclick="this.size=0">
-                            <option disabled selected>Seleccione una...</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                          </select>
-                        </div>
+                      <div class="col-10 offset-1 mb-5">
+                        <span class="select-text">¿Tiene microchip?</span>
+                        <select class="form-control select-custom" name="indexAnimalMicrochip" onmousedown="this.size=3;" onchange='this.size=0;' onblur="this.size=0;">
+                          <option disabled selected>Seleccione una...</option>
+                          <option value="1">Si</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
                       <div class="row">
                         <div class="text-center col-10 offset-1 mt-3 mb-3">
